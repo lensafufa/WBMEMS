@@ -1,0 +1,80 @@
+ 
+.main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: 500;
+    width: fit-content;
+    height:100vh;
+    z-index: 100;
+    top: 0;
+    left:0;
+    bottom: 0;
+}
+.nav-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    padding-left: 15px;
+    height: 100%;
+    padding-top: 20px;
+}
+.lists{
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-size: medium;
+    padding-left: 20px;
+}
+.lists:hover{
+    color: rgb(63, 165, 212);
+}
+.icons{
+    margin-right: 10px;
+    
+}
+.close-button{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    border-radius: 50%;
+    right: 0;
+    margin-right: 10px ;
+    margin-top: 10px;
+    color: white;
+    cursor:pointer; 
+}
+.link{
+    text-decoration: none;
+    color: white;
+}
+.section-one{
+    background-color: rgba(11, 61, 107);
+}
+.hum-button{
+    background: none;
+    display: flex;
+    color: rgb(254, 254, 254);
+    font-size: larger;
+    margin-right: 20px;
+    height: 100px;
+}
+.main {
+    position: fixed;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    left: -300px; /* Start off screen */
+    transition: left 0.3s ease; 
+    width: 250px;
+    height: 100%;
+  }
+  .open {
+    left: 0; 
+  }
+  
+  

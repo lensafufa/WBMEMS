@@ -1,0 +1,225 @@
+body{
+   overflow-y:auto;
+   overflow-x: auto;
+}
+
+.notification-count-display{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+   left: -15px;
+  
+    font-size: small;
+    background-color: red;
+    border-radius: 50%;
+}
+.sub-class{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 20px;
+    background-color: rgb(204, 207, 211);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.device-overview{
+    display: flex;
+    background-color: rgb(12, 104, 54);
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 5px;
+    justify-content: center;  
+}
+.schedule-maintenance:hover,
+.device-overview:hover,
+.pending-requests:hover,
+.alert-and-notification:hover,
+.sorts:hover,
+.reports:hover{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ;
+}
+.alert-and-notification{
+    display: flex;
+    background-color: rgb(16, 107, 138);
+    position: relative;
+    align-items: center;
+    color: white;
+    height: 70px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: x-large;
+    justify-content: center;
+}
+.schedule-maintenance{
+    display: flex;
+    background-color: black;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    padding-left: 10px;
+    height: 70px;
+    font-size: x-large;
+    justify-content: center;
+}
+.pending-requests{
+    display: flex;
+    background-color: rgb(16, 107, 138);
+    align-items: center;color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: x-large;
+    padding-left: 10px;
+    justify-content: center;
+}
+.sorts{
+    display: flex;
+    background-color: rgb(15, 15, 0);
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 70px;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: x-large;
+    justify-content: center;
+}
+.reports{
+    display: flex;
+    background-color: rgb(18, 100, 55);
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: x-large;
+    justify-content: center;
+}
+.dashboard-icons{
+    margin-right: 20px;
+    font-size: xx-large;
+}
+.dashboard-icons-bell{
+    font-size: xx-large;
+}
+.my-link{
+    text-decoration: none;
+    height: 70px;
+}
+.right-part{
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.main-class{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+}
+.computer-icon{ 
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-bar{
+    background-color: rgb(8, 63, 82);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    color: white;
+    bottom: 0;
+    padding-right: 30px;
+    padding-left: 30px;
+    
+}
+.computer-and-title{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.bottom-bar-icons{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.adresses{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+.adresses:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.the-navigation-main-class{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(to top left, #122855, #000000); /* Example gradient colors */
+    color: rgb(255, 255, 255);
+    height: 200px;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    font-size: small;
+}
+.the-navigation-title{
+    display: flex;
+    align-items: center;
+    font-size:24px;
+    color:white;
+}
+.address-icon{
+    margin-right: 20px;
+    height: 30px;
+}
+.script{
+    display: flex;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.piecharts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 50px;
+    padding-left:50px;
+}
+.bell-and-notification-count{
+    display: flex;
+}
+.notification-null-count{
+    opacity: 0;
+}
+.piechart-in-the-dashboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(208, 210, 211);
+    padding-right: 100px;
+    padding-left: 100px;
+    column-gap: 20px;
+
+}
+

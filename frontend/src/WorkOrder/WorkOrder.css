@@ -1,0 +1,54 @@
+th{
+    background-color: rgb(73, 82, 104);
+    color: white;
+    font-weight:500; 
+}
+Table{
+    background-color: rgb(211, 210, 209);
+    padding: 20px;
+    border-radius: 10px;
+}
+.cell{
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    height: 20px;
+    width: 100%;
+    
+}
+.delate-button{
+    background-color: red;
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 5px;
+}
+.workorder-button{
+    border-radius: 3px;
+    padding: 2px;
+    margin-left: 20px;
+}
+.table-content{
+   width: 100%;
+}
+.date-and-time{
+    margin-left:2px;
+    font-size: small;
+}
+.workorderform{
+    display: flex;
+    color: black; 
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+    height: 200px;
+    background-image: linear-gradient(rgba(17, 151, 196, 0.5), rgba(193, 206, 243, 0.9)), url('/b2.PNG');
+
+}
+.main-table{
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-right: 20px;
+    
+}

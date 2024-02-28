@@ -1,0 +1,60 @@
+.individual-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin:20px;
+  
+}
+.user-table{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 20px;
+    height: max-content;
+}
+.image{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.staff-name{
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    border-bottom: 1px solid white;
+}
+.staff-email{
+    color: white;
+    font-weight: 500;
+   
+}
+.staff-occupation{
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px solid white;
+}
+.user-main{
+    background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
+    height: 200px;
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-left: 20px;
+}
+.staff-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
+    color: white;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-bottom: 5px;
+}

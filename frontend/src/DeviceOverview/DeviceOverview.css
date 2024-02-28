@@ -1,0 +1,182 @@
+
+.individual-device{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 7px;
+    background-color: aliceblue;
+ 
+}
+.individual-device:hover{
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.device-profile-picture{
+    height: 170px;
+    width: 100%;
+}
+.device-table{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 20px;
+    height: 100%;
+    background-color: rgb(231, 222, 222);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px )); /* Dynamic number of columns */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+@media (min-width: 600px) {
+    .device-table {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .device-table {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 810px) {
+    .device-table {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @media (min-width: 1100px) {
+    .device-table {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  @media (min-width: 1350px) {
+    .device-table {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+.device-image{
+    height: 180px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.device-name{
+    color: black;
+    font-weight: 500;
+    padding: 5px;
+    background-color: rgb(220, 223, 226);
+    
+}
+.device-manufacturer{
+    color: black;
+    font-weight: 500;
+    padding:5px;
+    background-color: rgb(213, 214, 216);
+}
+.device-main{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
+    color: rgb(251, 251, 251);
+   
+    padding-left: 50px;
+    height: 200px;
+    font-size:small;
+}
+.device-description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.dispose-button{
+    background-color: rgb(19, 40, 63);
+    color: white;
+    width: 100%;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.grand-device{
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.device-model{
+    background-color: rgb(167, 167, 167);
+    color: black;
+    padding: 5px;
+}
+.dispose-warning-alert{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    width: 400px;
+    color: black;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); 
+}
+
+.dispose-alert-button{
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 100px;  
+    color: white;
+    background-color: rgb(8, 40, 61)
+    
+ 
+}
+.alert-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(165, 166, 167);
+}
+@media (max-width: 600px) { /* Adjust the max-width as needed */
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Change column size for smaller screens */
+    }
+  }
+ 
+ 
+.detailed-view-1 {
+    position: fixed; /* Change from absolute to fixed */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; /* Ensure it's on top of other content */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+    }
+      
+  
+  .detail-description{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    position: relative;
+    width: 500px;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); 
+    padding-top: 100px;
+  
+  }
+.detail-title{
+    color: white;
+    background-color: #0a284a;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+ .detail-close-button{
+    background-color: #0a284a;
+ }
+  

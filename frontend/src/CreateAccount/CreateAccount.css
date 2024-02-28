@@ -1,0 +1,42 @@
+.create-account-inputs{
+    height: 25px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.createAccount{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: top;
+    justify-content: start;
+}
+.create-account-title{
+  background-color:rgb(189, 186, 186) ;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.create-account-picture{
+    background-color: rgb(193, 194, 196);
+    margin-bottom: 20px;
+    height: 25px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.sub-create-account{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding: 40px;
+    border-radius: 10px;
+    margin-left:350px;
+    margin-top: 20px;
+    background-color: rgb(199, 201, 202);
+}
+.create-account-labels{
+    margin-top: 10px;
+}

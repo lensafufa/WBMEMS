@@ -1,0 +1,50 @@
+.Requested-title-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
+  padding-left: 20px;
+  height: 200px;
+  color: white;
+}
+.request-description-display{
+    color: white;
+    font-size: small;
+}
+.request-title-display{
+    color: white;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: medium;
+}
+
+.requested-issues{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+    background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+.individual-requests{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #bbb4b4;
+    padding: 20px;
+}
+.accept-button{
+    margin-top: 10px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border-radius: 7px;
+}
