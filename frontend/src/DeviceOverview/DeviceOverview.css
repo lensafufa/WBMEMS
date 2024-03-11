@@ -18,7 +18,7 @@
 }
 .device-table{
     display: grid;
-    row-gap: 10px;
+    row-gap: 20px;
     column-gap: 20px;
     height: 100%;
     background-color: rgb(231, 222, 222);
@@ -52,6 +52,11 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
   }
+  @media (max-width: 554px) {
+    .device-table {
+      grid-template-columns: 1fr;
+    }
+  }
 
 .device-image{
     height: 180px;
@@ -79,9 +84,8 @@
     align-items: center;
     background: linear-gradient(to top left, #0a284a, #262930); /* Example gradient colors */
     color: rgb(251, 251, 251);
-   
     padding-left: 50px;
-    height: 200px;
+    height: 150px;
     font-size:small;
 }
 .device-description{
@@ -111,31 +115,44 @@
 .dispose-warning-alert{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 400px;
+    font-weight: 450;
     color: black;
     flex-direction: column;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); 
 }
-
-.dispose-alert-button{
+.dispose-alert-button-yes{
     border-radius: 5px;
     margin-right: 20px;
     margin-top: 20px;
     width: 100px;  
     color: white;
-    background-color: rgb(8, 40, 61)
-    
- 
+    background-color: rgb(212, 26, 26)
 }
+.dispose-alert-button-cancel{
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 100px;  
+  color: white;
+  background-color: rgb(18, 40, 61)
+}
+
 .alert-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgb(165, 166, 167);
+  position: fixed; /* Change from absolute to fixed */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999; /* Ensure it's on top of other content */
+  overflow-y: auto;
 }
 @media (max-width: 600px) { /* Adjust the max-width as needed */
     .grid-container {

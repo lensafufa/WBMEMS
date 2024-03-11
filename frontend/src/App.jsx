@@ -19,7 +19,7 @@ import RequestHistory from './DashboardForDoctors/RequestHistory';
 import DoctorAnnouncement from './DashboardForDoctors/DoctorAnnouncement';
 import DisposedDevices from './DisposedDevices/DisposedDevices';
 import SortByDepartment from './SortByDepartment/SortByDepartment';
-import NotificationDisplay from './StateManagement/notificationDisplay';
+import DoctorSortByDep from './DashboardForDoctors/DoctorSortByDep';
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function App() {
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
-          <Route path='/NotificationDisplay' element={<NotificationDisplay/>}/> 
+          <Route path='/DoctorSortByDep' element={<DoctorSortByDep/>}/>
           
         </Routes>
       </div>

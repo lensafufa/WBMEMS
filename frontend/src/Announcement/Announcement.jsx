@@ -35,12 +35,21 @@ const AnnouncementForm = ({ setNotificationCount }) => {
           announcement_time,
         });
         alert('Announcement posted Successfully');
-        handleIncrement();
+        handleNotification();
+       
       } else {
         alert('Please fill both fields');
       }
     } catch (error) {
       console.error('Error posting announcement:', error);
+    }
+  };
+
+  const handleNotification=async()=>{
+    try{
+      await axios.post('http://localhost:7000/api/alertAndNotification',{NotificationType: 'Announcement'});
+    }catch(error){
+      console.error('error posting Announcement Type', error.message)
     }
   };
 
