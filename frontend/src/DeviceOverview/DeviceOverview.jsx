@@ -84,17 +84,19 @@ const DeviceOverview = () => {
 
   return (
     <div className='cc'>
-      {warning ? (
+      {warning && (
         <div className='alert-main'>
           <div className='dispose-warning-alert'>
             <div>Are you sure you want to dispose the device! ?</div>
             <div className='dispose-alert-buttons'>
-              <button className='dispose-alert-button' onClick={() => updateStatus(idHolder, 'Disposed')}>Yes</button>
-              <button className='dispose-alert-button' onClick={() => setWarning(false)}>Cancel</button>
+              <button className='dispose-alert-button-yes' onClick={() => updateStatus(idHolder, 'Disposed')}>Yes</button>
+              <button className='dispose-alert-button-cancel' onClick={() => setWarning(false)}>Cancel</button>
             </div>
           </div>
         </div>
-      ) : (
+      )
+}
+       {(
         <div className='grand-device'>
           <div className='device-main'>
             <div><Home/></div>
@@ -124,8 +126,7 @@ const DeviceOverview = () => {
             ))}
           </div>
         </div>
-      )}
-      {/* Detailed View */}
+      )};
       {detailed && (
         <div className='detailed-view-1'>
           <div className='detail-description'>
@@ -151,6 +152,5 @@ const DeviceOverview = () => {
       )}
     </div>
   );
-};
-
+  }
 export default DeviceOverview;

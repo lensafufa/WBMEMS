@@ -8,6 +8,8 @@ const registrationRoutes = require('./routes/registration');
 const deviceRegistrationRoutes = require('./routes/deviceRegistration');
 const loginRoutes = require('./routes/login');
 const requestRoutes = require('./routes/request');
+const notificationRoutes = require('./routes/alertAndNotification');
+const requestOptions= require('./routes/requestOptions');
 
 // Middleware
 app.use(express.json()); // Body parser middleware
@@ -19,8 +21,8 @@ app.use('/api/registration', registrationRoutes);
 app.use('/api/deviceRegistration', deviceRegistrationRoutes);
 app.use('/api/login', loginRoutes);
 app.use('/api/request', requestRoutes);
-
-
+app.use('/api/requestOptions', requestOptions);
+app.use('/api/alertAndNotification', notificationRoutes);
 
 // Serve static files (like profile pictures)
 const uploadsDirectory = '/uploads';

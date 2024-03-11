@@ -31,6 +31,30 @@ router.post('/', upload.single('profilePicture'), async (req, res) => {
   }
 });
 
+router.put('/:userId/profile', upload.single('profilePicture'), async (req, res) => {
+    const { userId } = req.params;
+    const profilePicture = req.file ? req.file.path : null; // Store image path if uploaded, otherwise null
+  
+    try {
+      // Find the user by ID
+      let user = await User.findById(userId);
+  
+      if (!user) {
+        return res.status(404).json({ msg: 'User not found' });
+      }
+      // Update the profile picture
+      user.profilePicture = profilePicture;
+      await user.save();
+      console.log(user);
+      res.json({ msg: 'Profile picture updated successfully', user });
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  });
+  
+
+
 // GET all users
 router.get('/', async (req, res) => {
   try {

@@ -28,8 +28,7 @@ const Piechart = () => {
   const drawPieChart = () => {
     const labels = pieChartData.map((data) => data.status);
     const counts = pieChartData.map((data) => data.count);
-    console.log('Pie chart data:', pieChartData);
-  
+    
     const ctx = document.getElementById('myPieChart2').getContext('2d');
     new Chart(ctx, {
       type: 'pie',
@@ -38,7 +37,7 @@ const Piechart = () => {
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130',
+            'rgba(12, 89, 130)',
             'rgba(160, 167, 171)',
            
            
@@ -94,7 +93,7 @@ const Piechart = () => {
   
   return (
     <div>
-      <canvas id="myPieChart2" width="200" height="200"></canvas>
+      <canvas id="myPieChart2" width="300" height="200"></canvas>
     </div>
   );
 };

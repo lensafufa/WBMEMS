@@ -19,7 +19,15 @@ import RequestHistory from './DashboardForDoctors/RequestHistory';
 import DoctorAnnouncement from './DashboardForDoctors/DoctorAnnouncement';
 import DisposedDevices from './DisposedDevices/DisposedDevices';
 import SortByDepartment from './SortByDepartment/SortByDepartment';
-import NotificationDisplay from './StateManagement/notificationDisplay';
+import DoctorSortByDep from './DashboardForDoctors/DoctorSortByDep';
+import Request_options from './DashboardForDoctors/Requests/Request_options';
+import ProcurementForm from './DashboardForDoctors/Requests/Procurement/Procurement.jsx';
+import CalibrationForm from './DashboardForDoctors/Requests/Calibration/Calibration.jsx';
+import MaintenanceForm from './DashboardForDoctors/Requests/Maintenance/Maintenance.jsx';
+import SpecificationForm from './DashboardForDoctors/Requests/Specification/Specification.jsx';
+import TrainingForm from './DashboardForDoctors/Requests/Training/Training.jsx';
+import InstallationForm from './DashboardForDoctors/Requests/Installation/Installation.jsx';
+
 
 function App() {
   return (
@@ -45,7 +53,15 @@ function App() {
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
-          <Route path='/NotificationDisplay' element={<NotificationDisplay/>}/> 
+          <Route path='/DoctorSortByDep' element={<DoctorSortByDep/>}/>
+          <Route path='/Requests' element={<Request_options/>}/>
+          <Route path='/Requests/Procurement' element={<ProcurementForm/>}/>
+          <Route path='/Requests/Calibration' element={<CalibrationForm/>}/>
+          <Route path='/Requests/Maintenance' element={<MaintenanceForm/>}/>
+          <Route path='/Requests/Specification' element={<SpecificationForm/>}/>
+          <Route path='/Requests/Training' element={<TrainingForm/>}/>
+          <Route path='/Requests/Installation' element={<InstallationForm/>}/>
+
           
         </Routes>
       </div>

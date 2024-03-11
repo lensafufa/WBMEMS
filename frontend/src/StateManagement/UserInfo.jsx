@@ -18,7 +18,7 @@ const UserInfo = () => {
       // Update local storage with new user data
       localStorage.setItem('userData', JSON.stringify(user));
     }
-  }, [user, userData]);
+  }, [user]);
 
   useEffect(() => {
     // Fetch user data from server when userData is null (component mounts)

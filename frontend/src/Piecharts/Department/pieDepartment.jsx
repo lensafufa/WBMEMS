@@ -105,7 +105,7 @@ const PieDepartment = () => {
   
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart" width="200" height="200"></canvas>
+      <canvas className='pieDepartment' id="myPieChart" width="350" height="500"></canvas>
     </div>
   );
 };

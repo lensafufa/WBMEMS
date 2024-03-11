@@ -55,11 +55,10 @@ const SignUp = () => {
 
   const handlePost = async () => {
     try {
-      // Create FormData object
       if(name.length > 0 && lastName.length > 0 &&
         userName.length > 0 && phoneNumber.length > 0 && 
         email.length > 0 && password.length > 0 &&
-        occupation.length > 0 && profilePicture.length > 0
+        occupation.length > 0
         ){
             const formData = new FormData();
             formData.append('name', name);
@@ -77,7 +76,7 @@ const SignUp = () => {
             },
           });
           alert('Registration Completed');
-          fetchUsers();
+          
         }else{
           alert('please fill all fields')
         }  
@@ -86,23 +85,7 @@ const SignUp = () => {
     }
   };
 
-  const fetchUsers = async () => {
-    try {
-      if(name.length > 0 && lastName.length > 0 &&
-        userName.length > 0 && phoneNumber.length > 0 && 
-        email.length > 0 && password.length > 0 &&
-        occupation.length > 0 && profilePicture.length > 0
-        ){
-          const response = await axios.get('http://localhost:7000/api/registration');
-          setUsers(response.data);
-        }else{
-          alert('Please fill all fields');
-        }
-     
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
+  
 
   return (
     <div className="createAccount-section">

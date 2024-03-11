@@ -8,17 +8,26 @@ import { decrementNotificationCount } from '../StateManagement/actions/notificat
 
 const DisplayAnnouncement = () => {
   const [announcements, setAnnouncements] = useState([]);
-
   const dispatch = useDispatch();
   const handleIncrement = () => {
     dispatch(decrementNotificationCount());
     localStorage.removeItem('notificationCount');
 
   };
-
   useEffect(() => {
     fetchAnnouncements();
+    EraseNotifications();
   }, []);
+
+ const EraseNotifications = async()=>{
+  try{
+    await axios.delete(`http://localhost:7000/api/alertAndNotification/notification?notificationType=${'Announcement'}`);
+  }catch(error){
+    console.error(error)
+  }
+
+ }
+
 
   const fetchAnnouncements = async () => {
     try {
@@ -37,6 +46,7 @@ const DisplayAnnouncement = () => {
       console.error('Error fetching announcements:', error);
     }
   };
+  
 
   return (
     <div className='announcement-table'>

@@ -16,6 +16,7 @@ import LogOut from '../../components/auth/LogOut';
 import { CiSquareQuestion } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiLogout } from "react-icons/ci";
+import ChangeProfilePicture from '../../components/Setting/Setting';
 
 
 const Home = () => {
@@ -46,9 +47,10 @@ const Home = () => {
           <Link className='link' to='/Announcement'><div className='lists'><TfiAnnouncement className='icons'/><div>Announcement</div></div></Link>
           <Link className='link' to='/Requested'><div className='lists'><CiSquareQuestion className='icons'/><div>Requested Issues</div></div></Link>
           <Link className='link' to='/DisposedDevices'><div className='lists'><RiDeleteBin6Line className='icons'/><div>Disposed Equipments</div></div></Link>
-
-        </nav>
+          <Link className='link' to='/Requests'><div className='lists'><RiDeleteBin6Line className='icons'/><div>Requests</div></div></Link>
+          <div><ChangeProfilePicture/></div>
         
+        </nav>
          <LogOut/>
         <div>
           
