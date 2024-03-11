@@ -47,7 +47,9 @@ const Home = () => {
           <Link className='link' to='/Announcement'><div className='lists'><TfiAnnouncement className='icons'/><div>Announcement</div></div></Link>
           <Link className='link' to='/Requested'><div className='lists'><CiSquareQuestion className='icons'/><div>Requested Issues</div></div></Link>
           <Link className='link' to='/DisposedDevices'><div className='lists'><RiDeleteBin6Line className='icons'/><div>Disposed Equipments</div></div></Link>
+          <Link className='link' to='/Requests'><div className='lists'><RiDeleteBin6Line className='icons'/><div>Requests</div></div></Link>
           <div><ChangeProfilePicture/></div>
+        
         </nav>
          <LogOut/>
         <div>
