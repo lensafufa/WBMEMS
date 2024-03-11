@@ -51,6 +51,7 @@ body{
     padding-left: 10px;
     border-radius: 5px;
     justify-content: center;
+    font-family:-apple-system;
 }
 .dashboard-schedule-maintenance{
     display: flex;
@@ -62,6 +63,7 @@ body{
     padding-left: 10px;
     border-radius: 5px;
     justify-content: center;
+    font-family:-apple-system;
 }
 .admin-dashboard-device-overview{
     display: flex;
@@ -73,6 +75,7 @@ body{
     padding-left: 10px;
     border-radius: 5px;
     justify-content: center;
+    font-family:-apple-system;
 }
 .schedule-maintenance{
     display: flex;
