@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.vite",
+    "\\backend\\models",
+    "\\frontend",
+    "\\frontend\\src",
+    "\\frontend\\src\\Announcement"
+  ],
+  "SelectedNode": "\\frontend\\src\\Announcement\\Announcement.css",
+  "PreviewInSolutionExplorer": false
+}
