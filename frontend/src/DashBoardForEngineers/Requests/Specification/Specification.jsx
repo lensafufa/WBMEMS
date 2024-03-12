@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Specification.css';
-import DoctorSidebar from '../../DoctorSidebar';
+import EngineerSidebar from '../../EngineerSidebar';
 
-const SpecificationForm = () => {
+const SpecificationFormEngineer = () => {
   const [equipmentName, setEquipmentName] = useState('');
   const [equipmentType, setEquipmentType] = useState('');
   const [model, setModel] = useState('');
@@ -178,7 +178,7 @@ const SpecificationForm = () => {
   return (
     <div className="main-specification-request">
       <div className="specification-title-request">
-        <DoctorSidebar/>
+        <EngineerSidebar/>
         <h2 className="Specification-Page-request1">Specification Form</h2>
       </div>
       <div className="specification-form-request">
@@ -283,4 +283,4 @@ const SpecificationForm = () => {
   );
 };
 
-export default SpecificationForm;
+export default SpecificationFormEngineer;

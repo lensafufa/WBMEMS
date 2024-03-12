@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Specification.css';
-import DoctorSidebar from '../../DoctorSidebar';
+import React, { useState } from "react";
+import './Procurement.css';
+import axios from "axios";
+import EngineerSidebar from "../../EngineerSidebar";
 
-const SpecificationForm = () => {
+
+const ProcurementFormEngineer = () => {
   const [equipmentName, setEquipmentName] = useState('');
   const [equipmentType, setEquipmentType] = useState('');
-  const [model, setModel] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [manufacturer, setManufacturer] = useState('');
   const [department, setDepartment] = useState('');
-  const [description, setDescription] = useState('');
-  const [dueDate, setDueDate] = useState('');
-  const [specificationDate, setSpecificationDate] = useState('');
+  const [specification, setSpecification] = useState('');
+  const [procurementReason, setProcurementReason] = useState('');
   const [user, setUser] = useState(() => {
     // Retrieve user data from local storage on component mount
     const storedUserData = localStorage.getItem('userData');
@@ -88,6 +85,7 @@ const SpecificationForm = () => {
     'Endocrinology Department',
   ];
   
+
   const handleEquipmentName = (e) => {
     setEquipmentName(e.target.value);
   };
@@ -95,42 +93,26 @@ const SpecificationForm = () => {
   const handleEquipmentType = (e) => {
     setEquipmentType(e.target.value);
   };
-
-  const handleModel = (e) => {
-    setModel(e.target.value);
-  };
-
-  const handleSerialNumber = (e) => {
-    setSerialNumber(e.target.value);
-  };
-
-  const handleManufacturer = (e) => {
-    setManufacturer(e.target.value);
-  };
-
+  
   const handleDepartment = (e) => {
     setDepartment(e.target.value);
   };
 
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
+
+  const handleSpecification = (e) => {
+    setSpecification(e.target.value);
   };
 
-  const handleDueDate = (e) => {
-    setDueDate(e.target.value);
+  const handleProcurementReason = (e) => {
+    setProcurementReason(e.target.value);
   };
 
   const handleFormSubmit = async () => {
     try {
-      if (!equipmentName || !dueDate||
+      if (!equipmentName || !procurementReason||
           !equipmentType||
-          !model||
-          !serialNumber||
-          !manufacturer||
           !department||
-          !description
-          
-        ) {
+          !specification) {
         alert('Please fill all mandatory fields!');
       } else {
         const today = new Date();
@@ -147,45 +129,36 @@ const SpecificationForm = () => {
         const formData = {
           equipmentName,
           equipmentType,
-          model,
-          serialNumber,
-          manufacturer,
           department,
-          description,
-          dueDate,
-          requestDate:formattedDate,
+          specification,
+          procurementReason,
+          requestDate: formattedDate,
           requestedBy:`${user.name} ${user.lastName}`,
         };
 
-        await axios.post('http://localhost:7000/api/requestOptions/specification', formData);
-        alert('Specification request submitted successfully');
+        await axios.post('http://localhost:7000/api/requestOptions/procurement', formData);
+        alert('Procurement request submitted successfully');
 
         setEquipmentName('');
         setEquipmentType('');
-        setModel('');
-        setSerialNumber('');
-        setManufacturer('');
         setDepartment('');
-        setDescription('');
-        setDueDate('');
-        setSpecificationDate('');
+        setSpecification('');
+        setProcurementReason('');
       }
     } catch (error) {
-      console.error('Error submitting specification request:', error);
+      console.error('Error submitting procurement request:', error);
     }
   };
 
   return (
-    <div className="main-specification-request">
-      <div className="specification-title-request">
-        <DoctorSidebar/>
-        <h2 className="Specification-Page-request1">Specification Form</h2>
-      </div>
-      <div className="specification-form-request">
-      <div className="individual">
+    
+      <div className="main-procurement-request">
+        <div className="procurement-title"><EngineerSidebar /><h2 className="Procurement-Page">Procurement Form</h2></div>
+        <div className="procurement-form">
+        <div className="individual">
           <label>Equipment Name*</label>
           <select
-            className="specification-input"
+            className="procurement-input"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -198,10 +171,11 @@ const SpecificationForm = () => {
         ))}
           </select>
         </div>
+              
         <div className="individual">
           <label>Equipment Type*</label>
           <select
-            className="specification-input"
+            className="procurement-input"
             required
             value={equipmentType}
             onChange={handleEquipmentType}
@@ -214,37 +188,11 @@ const SpecificationForm = () => {
         ))}
           </select>
         </div>
-        <div className="individual">
-          <label>Model*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={model}
-            onChange={handleModel}
-          />
-        </div>
-        <div className="individual">
-          <label>Serial Number*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={serialNumber}
-            onChange={handleSerialNumber}
-          />
-        </div>
-        <div className="individual">
-          <label>Manufacturer*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={manufacturer}
-            onChange={handleManufacturer}
-          />
-        </div>
-        <div className="individual">
+          
+          <div className="individual">
           <label>Department*</label>
           <select
-            className="specification-input"
+            className="procurement-input"
             required
             value={department}
             onChange={handleDepartment}
@@ -258,29 +206,34 @@ const SpecificationForm = () => {
           </select>
         </div>
         <div className="individual">
-          <label>Description*</label>
-          <textarea className="specification-description-input"
-            value={description}
-            onChange={handleDescription}
-          />
-        </div>
+            <label>Specification</label>
+            <textarea
+              className="procurement-description-input"
+              value={specification}
+              onChange={handleSpecification}
+            />
+          </div>  
         <div className="individual">
-          <label>Due Date*</label>
-          <input
-            className="specification-input"
-            type="date"
-            required
-            value={dueDate}
-            onChange={handleDueDate}
-          />
-        </div>
-      </div>
+            <label>Procurement Reason*</label>
+            <textarea
+              className="procurement-description-input"
+              required
+              value={procurementReason}
+              onChange={handleProcurementReason}
+            />
+          </div>
 
-      <button className="submit-buttonSpecification" onClick={handleFormSubmit}>
-        Submit Request
-      </button>
-    </div>
+          
+        </div>
+    
+        <button className="submit-buttonProcurement" onClick={handleFormSubmit}>
+          Submit Request
+        </button>
+    
+      </div>
+    
+    
   );
 };
 
-export default SpecificationForm;
+export default ProcurementFormEngineer;
