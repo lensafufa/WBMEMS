@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Specification.css';
-import DoctorSidebar from '../../DoctorSidebar';
+import React, { useState } from "react";
+import axios from "axios";
+import './Maintenance.css';
+import EngineerSidebar from "../../EngineerSidebar";
 
-const SpecificationForm = () => {
+const MaintenanceFormEngineer = () => {
   const [equipmentName, setEquipmentName] = useState('');
   const [equipmentType, setEquipmentType] = useState('');
-  const [model, setModel] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [manufacturer, setManufacturer] = useState('');
+  const [equipmentModel, setEquipmentModel] = useState('');
   const [department, setDepartment] = useState('');
-  const [description, setDescription] = useState('');
+  const [issue, setIssue] = useState('');
+  const [priority, setPriority] = useState('');
   const [dueDate, setDueDate] = useState('');
-  const [specificationDate, setSpecificationDate] = useState('');
   const [user, setUser] = useState(() => {
     // Retrieve user data from local storage on component mount
     const storedUserData = localStorage.getItem('userData');
@@ -87,7 +85,7 @@ const SpecificationForm = () => {
     'Gastroenterology Department',
     'Endocrinology Department',
   ];
-  
+
   const handleEquipmentName = (e) => {
     setEquipmentName(e.target.value);
   };
@@ -96,24 +94,20 @@ const SpecificationForm = () => {
     setEquipmentType(e.target.value);
   };
 
-  const handleModel = (e) => {
-    setModel(e.target.value);
-  };
-
-  const handleSerialNumber = (e) => {
-    setSerialNumber(e.target.value);
-  };
-
-  const handleManufacturer = (e) => {
-    setManufacturer(e.target.value);
+  const handleEquipmentModel = (e) => {
+    setEquipmentModel(e.target.value);
   };
 
   const handleDepartment = (e) => {
     setDepartment(e.target.value);
   };
 
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
+  const handleIssue = (e) => {
+    setIssue(e.target.value);
+  };
+
+  const handlePriority = (e) => {
+    setPriority(e.target.value);
   };
 
   const handleDueDate = (e) => {
@@ -122,14 +116,11 @@ const SpecificationForm = () => {
 
   const handleFormSubmit = async () => {
     try {
-      if (!equipmentName || !dueDate||
-          !equipmentType||
-          !model||
-          !serialNumber||
-          !manufacturer||
-          !department||
-          !description
-          
+      if (!equipmentName || !issue || !dueDate||
+        !equipmentModel||
+        !department||
+        !issue||
+        !priority
         ) {
         alert('Please fill all mandatory fields!');
       } else {
@@ -147,45 +138,39 @@ const SpecificationForm = () => {
         const formData = {
           equipmentName,
           equipmentType,
-          model,
-          serialNumber,
-          manufacturer,
+          equipmentModel,
           department,
-          description,
+          issue,
+          priority,
           dueDate,
-          requestDate:formattedDate,
+          requestDate: formattedDate,
           requestedBy:`${user.name} ${user.lastName}`,
         };
 
-        await axios.post('http://localhost:7000/api/requestOptions/specification', formData);
-        alert('Specification request submitted successfully');
+        await axios.post('http://localhost:7000/api/requestOptions/maintenance', formData);
+        alert('Maintenance request submitted successfully');
 
         setEquipmentName('');
         setEquipmentType('');
-        setModel('');
-        setSerialNumber('');
-        setManufacturer('');
+        setEquipmentModel('');
         setDepartment('');
-        setDescription('');
+        setIssue('');
+        setPriority('');
         setDueDate('');
-        setSpecificationDate('');
       }
     } catch (error) {
-      console.error('Error submitting specification request:', error);
+      console.error('Error submitting maintenance request:', error);
     }
   };
 
   return (
-    <div className="main-specification-request">
-      <div className="specification-title-request">
-        <DoctorSidebar/>
-        <h2 className="Specification-Page-request1">Specification Form</h2>
-      </div>
-      <div className="specification-form-request">
+    <div className="main-maintenance-request">
+      <div className="maintenance-title"><EngineerSidebar/><h2 className="Maintenance-Page">Maintenance Form</h2></div>
+      <div className="maintenance-form-request">
       <div className="individual">
           <label>Equipment Name*</label>
           <select
-            className="specification-input"
+            className="maintenance-input"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -201,7 +186,7 @@ const SpecificationForm = () => {
         <div className="individual">
           <label>Equipment Type*</label>
           <select
-            className="specification-input"
+            className="maintenance-input"
             required
             value={equipmentType}
             onChange={handleEquipmentType}
@@ -215,36 +200,9 @@ const SpecificationForm = () => {
           </select>
         </div>
         <div className="individual">
-          <label>Model*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={model}
-            onChange={handleModel}
-          />
-        </div>
-        <div className="individual">
-          <label>Serial Number*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={serialNumber}
-            onChange={handleSerialNumber}
-          />
-        </div>
-        <div className="individual">
-          <label>Manufacturer*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={manufacturer}
-            onChange={handleManufacturer}
-          />
-        </div>
-        <div className="individual">
           <label>Department*</label>
           <select
-            className="specification-input"
+            className="maintenance-input"
             required
             value={department}
             onChange={handleDepartment}
@@ -258,29 +216,57 @@ const SpecificationForm = () => {
           </select>
         </div>
         <div className="individual">
-          <label>Description*</label>
-          <textarea className="specification-description-input"
-            value={description}
-            onChange={handleDescription}
+          <label>Equipment Model*</label>
+          <input
+            className="maintenance-input"
+            type="text"
+            value={equipmentModel}
+            onChange={handleEquipmentModel}
           />
         </div>
         <div className="individual">
-          <label>Due Date*</label>
+          <label>Priority*</label>
+          <select
+            className="maintenance-input"
+            value={priority}
+            onChange={handlePriority}
+          >
+            <option value=""></option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        
+        <div className="individual">
+         <label>Due Date*</label>
           <input
-            className="specification-input"
+            className="maintenance-input"
             type="date"
             required
             value={dueDate}
             onChange={handleDueDate}
           />
         </div>
+        <div className="individual">
+          <label>Issue*</label>
+          <textarea
+            className="maintenance-description-input"
+            required
+            value={issue}
+            onChange={handleIssue}
+          />
+        </div>
+        
       </div>
-
-      <button className="submit-buttonSpecification" onClick={handleFormSubmit}>
+      <div>
+        <button className="submit-buttonMaintenance" onClick={handleFormSubmit}>
         Submit Request
       </button>
+      </div>
+      
     </div>
   );
 };
 
-export default SpecificationForm;
+export default MaintenanceFormEngineer;

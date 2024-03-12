@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Specification.css';
-import DoctorSidebar from '../../DoctorSidebar';
+import React, { useState } from "react";
+import axios from "axios";
+import './Calibration.css';
+import EngineerSidebar from "../../EngineerSidebar";
 
-const SpecificationForm = () => {
+const CalibrationFormEngineer = () => {
   const [equipmentName, setEquipmentName] = useState('');
   const [equipmentType, setEquipmentType] = useState('');
-  const [model, setModel] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [manufacturer, setManufacturer] = useState('');
+  const [equipmentModel, setEquipmentModel] = useState('');
   const [department, setDepartment] = useState('');
-  const [description, setDescription] = useState('');
+  const [reason, setReason] = useState('');
+  const [calibrationType, setCalibrationType] = useState('');
   const [dueDate, setDueDate] = useState('');
-  const [specificationDate, setSpecificationDate] = useState('');
   const [user, setUser] = useState(() => {
     // Retrieve user data from local storage on component mount
     const storedUserData = localStorage.getItem('userData');
@@ -87,7 +85,8 @@ const SpecificationForm = () => {
     'Gastroenterology Department',
     'Endocrinology Department',
   ];
-  
+
+
   const handleEquipmentName = (e) => {
     setEquipmentName(e.target.value);
   };
@@ -96,24 +95,20 @@ const SpecificationForm = () => {
     setEquipmentType(e.target.value);
   };
 
-  const handleModel = (e) => {
-    setModel(e.target.value);
-  };
-
-  const handleSerialNumber = (e) => {
-    setSerialNumber(e.target.value);
-  };
-
-  const handleManufacturer = (e) => {
-    setManufacturer(e.target.value);
+  const handleEquipmentModel = (e) => {
+    setEquipmentModel(e.target.value);
   };
 
   const handleDepartment = (e) => {
     setDepartment(e.target.value);
   };
 
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
+  const handleReason = (e) => {
+    setReason(e.target.value);
+  };
+
+  const handleCalibrationType = (e) => {
+    setCalibrationType(e.target.value);
   };
 
   const handleDueDate = (e) => {
@@ -122,15 +117,12 @@ const SpecificationForm = () => {
 
   const handleFormSubmit = async () => {
     try {
-      if (!equipmentName || !dueDate||
-          !equipmentType||
-          !model||
-          !serialNumber||
-          !manufacturer||
-          !department||
-          !description
-          
-        ) {
+      if (!equipmentName ||
+         !reason || 
+         !dueDate|| 
+         !equipmentModel||
+         !department
+         ) {
         alert('Please fill all mandatory fields!');
       } else {
         const today = new Date();
@@ -144,48 +136,45 @@ const SpecificationForm = () => {
         hour12: true,
         
       });
+
+
         const formData = {
           equipmentName,
           equipmentType,
-          model,
-          serialNumber,
-          manufacturer,
+          equipmentModel,
           department,
-          description,
+          reason,
+          calibrationType,
           dueDate,
-          requestDate:formattedDate,
+          requestDate: formattedDate,
           requestedBy:`${user.name} ${user.lastName}`,
+          
         };
 
-        await axios.post('http://localhost:7000/api/requestOptions/specification', formData);
-        alert('Specification request submitted successfully');
+        await axios.post('http://localhost:7000/api/requestOptions/calibration', formData);
+        alert('Calibration request submitted successfully');
 
         setEquipmentName('');
         setEquipmentType('');
-        setModel('');
-        setSerialNumber('');
-        setManufacturer('');
+        setEquipmentModel('');
         setDepartment('');
-        setDescription('');
+        setReason('');
+        setCalibrationType('');
         setDueDate('');
-        setSpecificationDate('');
       }
     } catch (error) {
-      console.error('Error submitting specification request:', error);
+      console.error('Error submitting calibration request:', error);
     }
   };
 
   return (
-    <div className="main-specification-request">
-      <div className="specification-title-request">
-        <DoctorSidebar/>
-        <h2 className="Specification-Page-request1">Specification Form</h2>
-      </div>
-      <div className="specification-form-request">
-      <div className="individual">
+    <div className="main-calibration">
+      <div className="calibration-title"><EngineerSidebar /><h2 className="Calibration-Page">Calibration Form</h2></div>
+      <div className="calibration-form">
+        <div className="individual">
           <label>Equipment Name*</label>
           <select
-            className="specification-input"
+            className="calibration-input"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -201,7 +190,7 @@ const SpecificationForm = () => {
         <div className="individual">
           <label>Equipment Type*</label>
           <select
-            className="specification-input"
+            className="calibration-input"
             required
             value={equipmentType}
             onChange={handleEquipmentType}
@@ -215,36 +204,18 @@ const SpecificationForm = () => {
           </select>
         </div>
         <div className="individual">
-          <label>Model*</label>
+          <label>Equipment Model*</label>
           <input
-            className="specification-input"
+            className="calibration-input"
             type="text"
-            value={model}
-            onChange={handleModel}
-          />
-        </div>
-        <div className="individual">
-          <label>Serial Number*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={serialNumber}
-            onChange={handleSerialNumber}
-          />
-        </div>
-        <div className="individual">
-          <label>Manufacturer*</label>
-          <input
-            className="specification-input"
-            type="text"
-            value={manufacturer}
-            onChange={handleManufacturer}
+            value={equipmentModel}
+            onChange={handleEquipmentModel}
           />
         </div>
         <div className="individual">
           <label>Department*</label>
           <select
-            className="specification-input"
+            className="calibration-input"
             required
             value={department}
             onChange={handleDepartment}
@@ -258,29 +229,49 @@ const SpecificationForm = () => {
           </select>
         </div>
         <div className="individual">
-          <label>Description*</label>
-          <textarea className="specification-description-input"
-            value={description}
-            onChange={handleDescription}
-          />
-        </div>
-        <div className="individual">
-          <label>Due Date*</label>
+         <label>Due Date</label>
           <input
-            className="specification-input"
+            className="calibration-input"
             type="date"
             required
             value={dueDate}
             onChange={handleDueDate}
           />
         </div>
+        
+        <div className="individual">
+          <label>Calibration Type</label>
+          <select
+            className="calibration-input"
+            value={calibrationType}
+            onChange={handleCalibrationType}
+          >
+            <option value=""></option>
+            <option value="Type 1">Type 1</option>
+            <option value="Type 2">Type 2</option>
+            <option value="Type 3">Type 3</option>
+          </select>
+        </div>
+        <div className="individual">
+          <label>Reason</label>
+          <textarea
+            className="calibration-description-input"
+            required
+            value={reason}
+            onChange={handleReason}
+          />
+        </div>
+        
       </div>
-
-      <button className="submit-buttonSpecification" onClick={handleFormSubmit}>
+      <div>
+      <button className="submit-buttonCalibration" onClick={handleFormSubmit}>
         Submit Request
       </button>
+      </div>
+
+      
     </div>
   );
 };
 
-export default SpecificationForm;
+export default CalibrationFormEngineer;

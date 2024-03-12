@@ -1,0 +1,108 @@
+.sort-by-reportType-main-report {
+  margin: 0 auto;
+  background-color: whitesmoke;
+}
+
+.home-and-sort-title-report {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: white;
+  height: 100px;
+  background: linear-gradient(to top left, #0a284a, #262930);
+}
+.report-table-report {
+  
+  border-collapse: collapse;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin: 20px;
+  
+  
+}
+
+.report-table-report th,
+.report-table-report td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.report-table-report th {
+  font-weight: bold;
+  color: #000;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+.report-table-report tr:nth-child(even) {
+  background-color: #be1010; /* Adjust this color as needed */
+}
+
+.sort-by-reportType-input-report {
+  padding: 5px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 7px;
+}
+
+.sort-by-reportType-output-report {
+  margin: 20px;
+  position: relative; /* Add relative positioning */
+}
+
+.search-container1 {
+  display: flex;
+  align-items:center;
+  justify-content: end;
+  
+}
+
+.search-input {
+  padding: 5px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd; /* Add bottom border */
+  /
+}
+
+.search-label {
+  margin-right: 1px;
+}
+
+
+.toggle-columns-btn,
+.export-btn-csv,
+.export-btn-pdf {
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.toggle-columns-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.export-btn-csv {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.export-btn-pdf {
+  background-color: brown;
+  color: white;
+}
+
+.toggle-columns-btn:hover,
+.export-btn-csv:hover,
+.export-btn-pdf:hover {
+  filter: brightness(80%); /* Adjust brightness on hover */
+}
+
+
+/* Add any additional styling as needed */
