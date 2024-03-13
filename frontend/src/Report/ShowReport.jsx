@@ -124,7 +124,7 @@ const SortByReportType = () => {
                     </div>
                     <div className="search-container1">
                         <label className="search-label" htmlFor="searchInput">
-                            Search
+                            Search Report
                         </label>
                         <input
                             id="searchInput"

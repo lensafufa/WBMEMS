@@ -39,6 +39,7 @@ import MaintenanceFormEngineer from './DashBoardForEngineers/Requests/Maintenanc
 import TrainingFormEngineer from './DashBoardForEngineers/Requests/Training/Training.jsx';
 import EngineerAnnouncement from './DashBoardForEngineers/EngineerAnnouncement.jsx';
 import SortByReportType from './Report/ShowReport.jsx';
+import CreateAccount from './CreateAccount/CreateAccount.jsx';
 
 
 
@@ -55,7 +56,7 @@ function App() {
           <Route path='/workorder' element={<WorkOrder/>}/>
           <Route path='/Announcement' element={<AnnouncementForm/>}/>
           <Route path='/AnnouncementDisplay' element={<AnnouncementDisplay/>}/>
-          <Route path='/CreateAccount' element={<SignUp/>}/>       
+          <Route path='/CreateAccount' element={<CreateAccount/>}/>       
           <Route path='/StaffInformation' element={<StaffInformation/>}/> 
           <Route path='/DeviceOverview' element={<DeviceOverview/>}/> 
           <Route path='/DoctorDashboard' element={<DoctorDashboard/>}/>  

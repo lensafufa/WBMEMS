@@ -138,145 +138,143 @@ const SortByRequestType = () => {
     const handleUserSelect = (id, userName) => {
         handleAction(id, userName);
     };
-
-    return (
-        <div className='show-request-body'>
-            <div className="sort-by-requestType-main">
-                <div className="home-and-sort-title"><Home /><h2>Request</h2></div>
-                <div className="select-and-body">
-                    <select className="sort-by-requestType-input" required type='text' value={RequestType} onChange={handleRequestType}>
-                        <option value=""> All Requests</option>
-                        <option value="procurement">Procurement</option>
-                        <option value="calibration">Calibration</option>
-                        <option value="maintenance">Maintenance</option>
-                        <option value="specification">Specification</option>
-                        <option value="training">Training</option>
-                        <option value="installation">Installation</option>
-                    </select>
-                    <div className="sort-by-requestType-output">
-                        {handleRequest.map((RequestByType) => (
-                            <div className="request-whole" key={RequestByType.id}>
-                                
-                                    <div  onClick={() => getById(RequestByType.id)}>
-                                        <div className="header">
-                                            <strong> {RequestByType.requestType}</strong> <strong> {RequestByType.requestDate} </strong>
-                                        </div>
-                                       <div className="sort-by-requestType-description">
-                                        <div className="body-item" key={RequestByType}>
-                                                {Object.entries(RequestByType).map(([columnName, value]) => {
-                                                    if (columnName === 'equipmentName' || columnName === 'department' ) {
-                                                        return (
-                                                            <div className='department-color ' key={columnName}>
-                                                                 
-                                                                {value}
-                                                            </div>
-                                                        );
-                                                    }
-                                                    return null;
-                                                })}
-                                            </div>
-
-                                       </div>
-                                        <div className="footer">
-                                            <strong> Status: </strong><span className='status'> {RequestByType.status}</span><br/>
-                                            <strong> Assigned to: </strong>{RequestByType.action}<br/>
-                                            <strong>Requested by: </strong>{RequestByType.requestedBy}
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={() => handleAccept(RequestByType.id)}
-                                        className={RequestByType.status === 'Pending' ? 'accept-button' : 'deleteButton'}
-                                    >
-                                        Accept
-                                    </button>
-                                    <button
-                                        onClick={()=>getByIdReport(RequestByType.id)}
-                                        className={RequestByType.status === 'Completed' ? 'viewReportButton' : 'deleteButton'}
-                                    >
-                                        View Report
-                                    </button>
-                                  
-                                    
-                                    {users.length > 0 && RequestByType.status==='Accepted'&& (
-                                        <select 
-                                            className="user-select"
-                                            onChange={(e) => handleUserSelect(RequestByType.id, e.target.value)}
-                                        >
-                                            <option value="None" selected>Select Enginner</option>
-                                            {users.map((user) => (
-                                                <option key={user.id} value={user.fullName}>
-                                                    {user.fullName}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    )}
-                                
-
-
-                                </div>
-                                
-                            
-                        ))}
-                    </div>
-                </div>
-            </div>
-            {detailed && (
-                <div className='detailed-view-1'>
-                    <div className='detail-description-detailed'>
-                        <div className='device-description-detailed'>
-                            
-                                {Object.entries(detailed).map(([columnName, value]) => {
-                                    if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
-                                        if (value != null) {
-                                            const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
-
+return (
+<div className='show-request-body'>
+    <div className="sort-by-requestType-main">
+    <div className="home-and-sort-title"><Home /><h2>Request</h2></div>
+    <div className="sort-and-main">
+        <select className="sortt-by-request" required type='text' value={RequestType} onChange={handleRequestType}>
+            <option value=""> All Requests</option>
+            <option value="procurement">Procurement</option>
+            <option value="calibration">Calibration</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="specification">Specification</option>
+            <option value="training">Training</option>
+            <option value="installation">Installation</option>
+        </select>
+        <div className="sort-by-requestType-output">
+            {handleRequest.map((RequestByType) => (
+                <div className="request-whole-view" key={RequestByType.id}>
+                        <div  onClick={() => getById(RequestByType.id)}>
+                            <div className="header">
+                                <strong> {RequestByType.requestType}</strong> <strong> {RequestByType.requestDate} </strong>
+                            </div>
+                            <div className="sort-by-requestType-desc">
+                            <div className="body-item" key={RequestByType}>
+                                    {Object.entries(RequestByType).map(([columnName, value]) => {
+                                        if (columnName === 'equipmentName' || columnName === 'department' ) {
                                             return (
-                                                <div className="sort-by-request" key={columnName}>
-                                                    <div className="columnName">{formattedColumnName}</div>
-                                                    <div className='columnValue'>{value}</div>
+                                                <div className='department-color ' key={columnName}>
+                                                        
+                                                    {value}
                                                 </div>
                                             );
                                         }
-                                    }
-                                    return null;
-                                })}
-                            
-                            
+                                        return null;
+                                    })}
+                                </div>
+
+                            </div>
+                            <div className="footer">
+                                <strong> Status: </strong><span className='status'> {RequestByType.status}</span><br/>
+                                <strong> Assigned to: </strong>{RequestByType.action}<br/>
+                                <strong>Requested by: </strong>{RequestByType.requestedBy}
+                            </div>
                         </div>
-                        <button onClick={handleClose} className='detail-close-button1'>Close</button>
+                        <button
+                            onClick={() => handleAccept(RequestByType.id)}
+                            className={RequestByType.status === 'Pending' ? 'when-accept-button' : 'deleteButton'}
+                        >
+                            Accept
+                        </button>
+                        <button
+                            onClick={()=>getByIdReport(RequestByType.id)}
+                            className={RequestByType.status === 'Completed' ? 'viewReportButton' : 'deleteButton'}
+                        >
+                            View Report
+                        </button>
+                        
+                        
+                        {users.length > 0 && RequestByType.status==='Accepted'&& (
+                            <select 
+                                className="user-selecter"
+                                onChange={(e) => handleUserSelect(RequestByType.id, e.target.value)}
+                            >
+                                <option value="None" selected>Select Enginner</option>
+                                {users.map((user) => (
+                                    <option key={user.id} value={user.fullName}>
+                                        {user.fullName}
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                    
+
+
                     </div>
-                </div>
-            )}
+                    
+                
+            ))}
+        </div>
+    </div>
+</div>
+{detailed && (
+    <div className='detailed-view-1'>
+        <div className='detail-description-detailed'>
+            <div className='device-description-detailed'>
+                
+                    {Object.entries(detailed).map(([columnName, value]) => {
+                        if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
+                            if (value != null) {
+                                const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
+
+                                return (
+                                    <div className="sort-by-request" key={columnName}>
+                                        <div className="columnName">{formattedColumnName}</div>
+                                        <div className='columnValue'>{value}</div>
+                                    </div>
+                                );
+                            }
+                        }
+                        return null;
+                    })}
+                
+                
+            </div>
+            <button onClick={handleClose} className='detail-close-button1'>Close</button>
+        </div>
+    </div>
+)}
 
 {reportDetail && (
-                <div className='detailed-view-1'>
-                    <div className='detail-description-detailed'>
-                        <div className='device-description-detailed'>
-                            
-                                {Object.entries(reportDetail).map(([columnName, value]) => {
-                                    if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
-                                        if (value != null) {
-                                            const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
+    <div className='detailed-view-1'>
+        <div className='detail-description-detailed'>
+            <div className='device-description-detailed'>
+                
+                    {Object.entries(reportDetail).map(([columnName, value]) => {
+                        if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
+                            if (value != null) {
+                                const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
 
-                                            return (
-                                                <div className="sort-by-request" key={columnName}>
-                                                    <div className="columnName">{formattedColumnName}</div>
-                                                    <div className='columnValue'>{value}</div>
-                                                </div>
-                                            );
-                                        }
-                                    }
-                                    return null;
-                                })}    
-                        </div>
-                        <button onClick={handleCloseReport} className='detail-close-button1'>Close</button>
-                    </div>
-                </div>
-            )}
-
-
+                                return (
+                                    <div className="sort-by-request" key={columnName}>
+                                        <div className="columnName">{formattedColumnName}</div>
+                                        <div className='columnValue'>{value}</div>
+                                    </div>
+                                );
+                            }
+                        }
+                        return null;
+                    })}    
+            </div>
+            <button onClick={handleCloseReport} className='detail-close-button1'>Close</button>
         </div>
-    );
+    </div>
+)}
+
+
+</div>
+);
 }
 
 export default SortByRequestType;

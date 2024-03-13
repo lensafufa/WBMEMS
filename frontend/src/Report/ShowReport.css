@@ -1,24 +1,32 @@
 .sort-by-reportType-main-report {
-  margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
+  width: max-content;
 }
-
+@media (max-width: 1700px) {
+  .sort-by-reportType-main-report {
+    width:100%
+  }
+}
+.select-and-body-report{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .home-and-sort-title-report {
   display: flex;
   align-items: center;
   padding-left: 30px;
   color: white;
   height: 100px;
-  background: linear-gradient(to top left, #0a284a, #262930);
+  width: 100%;
+  background-color: #000;
+  font-size: medium;
+  font-family: -apple-system;
 }
 .report-table-report {
-  
   border-collapse: collapse;
-  padding: 10px;
   border-bottom: 1px solid #ddd;
   margin: 20px;
-  
-  
 }
 
 .report-table-report th,
@@ -26,14 +34,19 @@
   padding: 5px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  font-family: -apple-system;
+  font-size: medium;
 }
 
 .report-table-report th {
   font-weight: bold;
   color: #000;
   padding: 10px;
-  border-top: 1px solid #ddd;
+  font-family: -apple-system;
+  font-size: medium;
+  background-color: rgb(235, 237, 238);
+  border-top: 1px solid #c9c7c7;
 }
 .report-table-report tr:nth-child(even) {
   background-color: #be1010; /* Adjust this color as needed */
@@ -41,9 +54,13 @@
 
 .sort-by-reportType-input-report {
   padding: 5px;
-  font-size: 16px;
   margin: 20px;
-  border-radius: 7px;
+  border: none;
+  width: 200px;
+  background-color: #f0f0f0;
+  font-size: medium;
+  font-family: -apple-system;
+ 
 }
 
 .sort-by-reportType-output-report {
@@ -54,22 +71,23 @@
 .search-container1 {
   display: flex;
   align-items:center;
-  justify-content: end;
-  
+  margin-top: 20px;
+  font-size: medium;
+  font-family: -apple-system;
 }
-
 .search-input {
   padding: 5px;
-  font-size: 16px;
-  margin: 20px;
-  border-radius: 7px;
+  font-size: medium;
+  font-family: -apple-system;
   border: none;
-  border-bottom: 1px solid #ddd; /* Add bottom border */
-  /
+  outline: none;
+  background-color: #dedfde;
 }
 
 .search-label {
-  margin-right: 1px;
+  font-family: -apple-system;
+  font-size: large;
+  margin-right: 10px;
 }
 
 
@@ -79,8 +97,9 @@
   cursor: pointer;
   padding: 10px 15px;
   margin: 5px;
-  border: none;
   border-radius: 5px;
+  font-family: -apple-system;
+  font-size: medium;
 }
 
 .toggle-columns-btn {
@@ -89,8 +108,9 @@
 }
 
 .export-btn-csv {
-  background-color: dodgerblue;
+  background-color: rgb(28, 75, 122);
   color: white;
+
 }
 
 .export-btn-pdf {
@@ -101,8 +121,5 @@
 .toggle-columns-btn:hover,
 .export-btn-csv:hover,
 .export-btn-pdf:hover {
-  filter: brightness(80%); /* Adjust brightness on hover */
+  filter: brightness(90%); 
 }
-
-
-/* Add any additional styling as needed */
