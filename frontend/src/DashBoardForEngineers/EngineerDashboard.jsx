@@ -38,9 +38,15 @@ const EngineerDashboard = () => {
       <div className="main-class-engineer">
       <div className="dashboard-home-engineer"></div>
       <div className="right-part-engineer">
-        <div className="the-navigation-main-class-engineer"><EngineerSidebar/><h2 className="the-navigation-title-engineer">Navigation</h2></div>
+        <div className="engineer-the-navigation-main-class"><EngineerSidebar/><h2 className="the-navigation-title-engineer">Navigation</h2></div>
         <div className="sub-class-engineer">
-            <Link to='/RequestForEngineer' className='my-link'><div className="dashboard-Request-overview-engineer"> <GrOverview className="dashboard-icons"/>Device Overview</div></Link>      
+            <Link to='/EngineerDeviceShow' className='my-link'><div className="dashboard-device-overview-engineer"> <GrOverview className="engineer-dashboard-icons"/>Device Overview</div></Link>      
+            <Link to='/EngineerAnnouncement' className='my-link'><div className="alert-and-notification-show-engineer"><div className="bell-and-notification-count"> <IoNotifications className="engineer-dashboard-icons-bell"/> 
+            <span className={NotificationCount !== 0 ? "engineer-notification-count-display" : 'engineer-notification-null-count'}>
+            {NotificationCount !== null ? NotificationCount : ''}
+            </span></div>Announcement Board</div></Link>          
+            <Link to ='/EngineerSortByDep' className='my-link'><div className="doctor-sort-by-dep"><FaSort className="engineer-dashboard-icons"/>Sort By Department</div></Link>
+        
         </div>
 
         <div className="piechart-in-the-dashboard-engineer">

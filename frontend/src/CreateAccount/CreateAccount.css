@@ -4,6 +4,7 @@
     border: none;
     padding-left: 10px;
     border-radius: 5px;
+    max-width: 400px;
     background-color: #e4e4e6;
 }
 .create-account-title-icon{
@@ -62,18 +63,20 @@
 .sub-create-account{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    width: 800px;
+    justify-content: baseline;
     column-gap: 20px;
     row-gap: 15px;
     padding: 20px;
-    padding-bottom: 0px;
     margin-top: 20px;
     box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.1);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    background-color: rgb(255, 255, 255);
 }
+@media (max-width: 890px) {
+    .sub-create-account {
+      grid-template-columns: 1fr;
+    }
+  }
 .create-account-labels{
    font-family: -apple-system;
    font-size: large;
@@ -92,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(228, 126, 126);
     border-radius: 5px;
 }
 .password-input{
@@ -108,7 +111,7 @@
     align-items: center;
     justify-content: center;
     width: 25px;
-    height: 100%;
+    height: 25px;
     border-top-right-radius: 5px;
     background-color: #e4e4e6;
 }
@@ -119,3 +122,13 @@
     width: 840px;
 
 }
+@media (max-width: 890px) {
+    .create-account-button {
+      width:326px ;
+    }
+  }
+  @media (min-width: 890px) {
+    .create-account-button {
+      width:628px ;
+    }
+  }

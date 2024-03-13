@@ -40,6 +40,8 @@ import TrainingFormEngineer from './DashBoardForEngineers/Requests/Training/Trai
 import EngineerAnnouncement from './DashBoardForEngineers/EngineerAnnouncement.jsx';
 import SortByReportType from './Report/ShowReport.jsx';
 import CreateAccount from './CreateAccount/CreateAccount.jsx';
+import EngineerDeviceShow from './DashBoardForEngineers/EngineerDeviceShow.jsx';
+import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
 
 
 
@@ -71,6 +73,8 @@ function App() {
           <Route path='/Requests' element={<Request_options/>}/>
           <Route path='/RequestsByEngineer' element={<Request_optionsEngineer/>}/>
           <Route path='/EngineerDashBoard' element={<EngineerDashboard/>}/>
+          <Route path='/EngineerDeviceShow' element={<EngineerDeviceShow/>}/>
+          <Route path='/EngineerSortByDep' element={<EngineerSortByDep/>}/>
           <Route path='/RequestsForEngineer' element={<RequestForEngineer/>}/>
           <Route path='/Requests/Procurement' element={<ProcurementForm/>}/>
           <Route path='/Requests/Calibration' element={<CalibrationForm/>}/>

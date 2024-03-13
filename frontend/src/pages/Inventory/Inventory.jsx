@@ -99,7 +99,7 @@ const Inventory = () => {
   return (
     <div className="grand-page">
       <div className="main-inventory">
-        <div className="inventory-title"><Home/><h2 className="Inventory-Page">Inventory Page</h2></div>
+        <div className="inventory-titlee"><Home/><h2 className="Inventory-Page">Inventory Page</h2></div>
         <div className="inventory">
           <div className="individual">
             <label className="first-label">Equipment Name*</label>
@@ -151,23 +151,7 @@ const Inventory = () => {
                   <option value="Psychiatry">Psychiatry</option>
               </select>
           </div>
-          <div className="individual">
-            <label>Equipment Description*</label>
-            <textarea
-              className="inventory-description-input"
-              value={equipmentDescription}
-              required
-              onChange={handleEquipmentDescription}
-            ></textarea>
-          </div>
-          <div className="individual">
-            <label>Maintenance History*</label>
-            <textarea
-              className="inventory-description-input"
-              value={maintenanceHistory}
-              onChange={handleMaintenanceHistory}
-            ></textarea>
-          </div>
+          
           <div className="individual">
             <label>Manufacturer*</label>
             <input
@@ -207,25 +191,27 @@ const Inventory = () => {
               onChange={handleEquipmentImage}
             />
           </div>
-          
+          <div className="individual">
+              <label>Equipment Description*</label>
+              <textarea
+                className="inventory-description-input"
+                value={equipmentDescription}
+                required
+                onChange={handleEquipmentDescription}
+              ></textarea>
+            </div>
+            <div className="individual">
+              <label>Maintenance History*</label>
+              <textarea
+                className="inventory-description-input"
+                value={maintenanceHistory}
+                onChange={handleMaintenanceHistory}
+              ></textarea>
+            </div>
+  
         </div>
         <button className="register-button" onClick={handleFormSubmit}>Register</button>
-      
       </div>
-
-      <div className="inventory-bottom-bar">
-          <h1 className="inventory-computer-and-title">
-            <TiDeviceDesktop className="computer-icon" />
-            MDMiS for your company</h1>
-            <div className="inventory-bottom-bar-icons">
-              <div className="adresses"><FaLinkedin className="address-icon"/>Linked In</div>
-              <div className="adresses"><FaSquareFacebook className="address-icon"/>Facebook</div>
-              <div className="adresses"><FaInstagramSquare className="address-icon"/>Instagram</div>
-            </div>
-        </div>
-
-
-
     </div>
   );
 };

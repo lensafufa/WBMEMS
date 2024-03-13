@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import './SortByDepartment.css';
-import Home from "../pages/Home/Home";
+import './EngineerSortByDep.css';
+import EngineerSidebar from "./EngineerSidebar";
 
-const SortByDepartment = () => {
+const EngineerSortByDep = () => {
     const [EquipmentDepartment, setEquipmentDepartment] = useState('');
     const [handleDevice, setHandleDevice] = useState([]);
 
@@ -81,9 +81,9 @@ const SortByDepartment = () => {
 
     return (
         <div className="sort-by-department-main">
-            <div className="main-home-and-sort-title"><Home/><h2>Sort By Department</h2></div>
-            <div className="main-select-and-body">
-                <select className="sort-by-department-input-main" required type='text' value={EquipmentDepartment} onChange={handleEquipmentDepartment}>
+            <div className="home-and-sort-title"><EngineerSidebar/><h2>Sort By Department</h2></div>
+            <div className="select-and-body">
+                <select className="sort-by-department-input" required type='text' value={EquipmentDepartment} onChange={handleEquipmentDepartment}>
                     <option value="">All Equipments</option>
                     <option value="Emergency">Emergency</option>
                     <option value="Pediatrics">Pediatrics</option>
@@ -100,24 +100,24 @@ const SortByDepartment = () => {
                     <option value="Physical Therapy">Physical Therapy</option>
                     <option value="Psychiatry">Psychiatry</option>
                 </select>
-                <div className="sort-by-department-output-hello">
-  {handleDevice.map(DeviceByDepartment => (
-    DeviceByDepartment.status === 'Active' ? (
-      <div key={DeviceByDepartment.id} className="device-by-dep">
-        <img className='sort-device-image' src={`http://localhost:7000/${DeviceByDepartment.equipmentImage}`} alt='Profile' />
-        <div>
-          <div className="sort-by-department">{DeviceByDepartment.equipmentName}</div>
-          <div className="sort-by-department">{DeviceByDepartment.equipmentDepartment}</div>
-          <div className="sort-by-department">{DeviceByDepartment.manufacturer}</div>
-        </div>
-      </div>
-    ) : null
-  ))}
-</div>
+                <div className="sort-by-department-output">
+                    {handleDevice.map(DeviceByDepartment => (
 
+                        <div key={DeviceByDepartment.id} className="device-by-department">
+                            <img className='device-image' src={`http://localhost:7000/${DeviceByDepartment.equipmentImage}`} alt='Profile' />
+                            <div className="sort-by-department-description">
+                                <div className="sort-by-department">{DeviceByDepartment.equipmentName}</div>
+                                <div className="sort-by-department">{DeviceByDepartment.equipmentDepartment}</div>
+                                <div className="sort-by-department">{DeviceByDepartment.manufacturer}</div>
+                            </div>
+                        </div>
+
+
+                    ))}
+                </div>
             </div> 
      </div>
     );
 }
 
-export default SortByDepartment;
+export default EngineerSortByDep;

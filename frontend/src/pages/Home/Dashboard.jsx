@@ -42,7 +42,7 @@ const Dashboard = () => {
         <div className="admin-sub-class">
             <Link to='/DeviceOverview' className='my-link'><div className="admin-dashboard-device-overview"> <GrOverview className="main-dashboard-icons"/>Device Overview</div></Link>
             <Link to='/AnnouncementDisplay' className='my-link'><div className="alert-and-notification-show"><div className="bell-and-notification-count"> <IoNotifications className="dashboard-icons-bell"/> 
-            <span className={NotificationCount !== 0 ? "notification-count-display" : 'notification-null-count'}>
+            <span className={NotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
             {NotificationCount !== null ? NotificationCount : ''}
             </span></div>Announcement Board</div></Link>
             <Link className="my-link" to='/workorder'> <div className="dashboard-schedule-maintenance"> <FaRegCalendarAlt className="main-dashboard-icons"/>Schedule Maintenance</div></Link>

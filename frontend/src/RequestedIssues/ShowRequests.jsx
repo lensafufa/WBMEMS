@@ -141,7 +141,7 @@ const SortByRequestType = () => {
 return (
 <div className='show-request-body'>
     <div className="sort-by-requestType-main">
-    <div className="home-and-sort-title"><Home /><h2>Request</h2></div>
+    <div className="home-and-sort-title-request"><Home /><h2>Request</h2></div>
     <div className="sort-and-main">
         <select className="sortt-by-request" required type='text' value={RequestType} onChange={handleRequestType}>
             <option value=""> All Requests</option>
@@ -221,6 +221,7 @@ return (
 {detailed && (
     <div className='detailed-view-1'>
         <div className='detail-description-detailed'>
+         <h3 className="request-detail-title">Request Detail</h3>
             <div className='device-description-detailed'>
                 
                     {Object.entries(detailed).map(([columnName, value]) => {
@@ -229,7 +230,7 @@ return (
                                 const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
 
                                 return (
-                                    <div className="sort-by-request" key={columnName}>
+                                    <div className="sort-by-request-detail" key={columnName}>
                                         <div className="columnName">{formattedColumnName}</div>
                                         <div className='columnValue'>{value}</div>
                                     </div>
@@ -249,6 +250,7 @@ return (
 {reportDetail && (
     <div className='detailed-view-1'>
         <div className='detail-description-detailed'>
+            <h3 className="request-detail-title">Report Detail</h3>
             <div className='device-description-detailed'>
                 
                     {Object.entries(reportDetail).map(([columnName, value]) => {
