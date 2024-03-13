@@ -21,20 +21,22 @@ const toggleSidebar = () => {
 
   return ( 
     <div className='dodo-engineer'>
-      <FaBars onClick={toggleSidebar}  className='hum-button-engineer'/>
-      <div className={`main ${sidebarOpen ? 'open' : ''}`}>
-        <div className='section-one-engineer'>
-        <div onClick={toggleSidebar}><CiLogout className='close-button-engineer'/></div>
+      <FaBars onClick={toggleSidebar}  className='engineer-hum-button'/>
+      <div className={`engineer-main-menu ${sidebarOpen ? 'engineer-open' : ''}`}>
+        <div>
+        <div onClick={toggleSidebar}><CiLogout className='engineer-close-button'/></div>
           <div className='profile-picture-engineer'>
             <UserInfo/>
           </div>
         </div>
         <nav className='nav-bar-engineer'>
-           
+          <Link className='link' to='/EngineerDashboard'><div className='lists'><AiOutlineHome className='icons'/><div>Dashboard</div></div></Link>
           <Link className='link' to='/RequestsForEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>WorkOrders</div></div></Link>
           <Link className='link' to='/RequestsByEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>Requests</div></div></Link>
+          <Link className='link' to='/EngineerDeviceShow'><div className='lists'><MdOutlineWorkOutline className='icons'/><div>Devices Overview</div></div></Link> 
           <Link className='link' to='/EngineerAnnouncement'><div className='lists'><CiMedicalClipboard className='icons' /><div>Announcement Board</div></div></Link>
-          
+          <Link className='link' to='/RequestHistory'><div className='lists'><MdHistoryToggleOff className='icons' /><div>Request History</div></div></Link>
+        
         </nav>
             <LogOut/>
         <div>

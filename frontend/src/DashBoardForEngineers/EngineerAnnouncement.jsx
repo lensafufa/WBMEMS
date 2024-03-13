@@ -9,6 +9,7 @@ const EngineerAnnouncement = () => {
 
   useEffect(() => {
     fetchAnnouncements();
+    EraseNotifications();
   }, []);
 
   const fetchAnnouncements = async () => {
@@ -26,7 +27,16 @@ const EngineerAnnouncement = () => {
     } catch (error) {
       console.error('Error fetching announcements:', error);
     }
+
   };
+  const EraseNotifications = async()=>{
+    try{
+      await axios.delete(`http://localhost:7000/api/alertAndNotification/notification?notificationType=${'Announcement'}`);
+    }catch(error){
+      console.error(error)
+    }
+  
+   }
 
   return (
     <div className='announcement-table'>
