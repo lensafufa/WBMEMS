@@ -27,6 +27,22 @@ import MaintenanceForm from './DashboardForDoctors/Requests/Maintenance/Maintena
 import SpecificationForm from './DashboardForDoctors/Requests/Specification/Specification.jsx';
 import TrainingForm from './DashboardForDoctors/Requests/Training/Training.jsx';
 import InstallationForm from './DashboardForDoctors/Requests/Installation/Installation.jsx';
+import SortByRequestType from './RequestedIssues/ShowRequests.jsx';
+import RequestForEngineer from './DashBoardForEngineers/RequestForENgineer/RequestForEngineer.jsx';
+import EngineerDashboard from './DashBoardForEngineers/EngineerDashboard.jsx';
+import Request_optionsEngineer from './DashBoardForEngineers/Requests/Request_options.jsx';
+import SpecificationFormEngineer from './DashBoardForEngineers/Requests/Specification/Specification.jsx';
+import InstallationFormEngineer from './DashBoardForEngineers/Requests/Installation/Installation.jsx';
+import CalibrationFormEngineer from './DashBoardForEngineers/Requests/Calibration/Calibration.jsx';
+import ProcurementFormEngineer from './DashBoardForEngineers/Requests/Procurement/Procurement.jsx';
+import MaintenanceFormEngineer from './DashBoardForEngineers/Requests/Maintenance/Maintenance.jsx';
+import TrainingFormEngineer from './DashBoardForEngineers/Requests/Training/Training.jsx';
+import EngineerAnnouncement from './DashBoardForEngineers/EngineerAnnouncement.jsx';
+import SortByReportType from './Report/ShowReport.jsx';
+import CreateAccount from './CreateAccount/CreateAccount.jsx';
+import EngineerDeviceShow from './DashBoardForEngineers/EngineerDeviceShow.jsx';
+import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
+
 
 
 function App() {
@@ -42,26 +58,38 @@ function App() {
           <Route path='/workorder' element={<WorkOrder/>}/>
           <Route path='/Announcement' element={<AnnouncementForm/>}/>
           <Route path='/AnnouncementDisplay' element={<AnnouncementDisplay/>}/>
-          <Route path='/CreateAccount' element={<SignUp/>}/>       
+          <Route path='/CreateAccount' element={<CreateAccount/>}/>       
           <Route path='/StaffInformation' element={<StaffInformation/>}/> 
           <Route path='/DeviceOverview' element={<DeviceOverview/>}/> 
           <Route path='/DoctorDashboard' element={<DoctorDashboard/>}/>  
           <Route path='/DoctorDeviceShow' element={<DoctorDeviceShow/>}/> 
           <Route path='/DoctorMakeRequest' element={<DoctorMakeRequest/>}/> 
-          <Route path='/Requested' element={<Requested/>}/> 
+          <Route path='/Requested' element={<SortByRequestType/>}/> 
           <Route path='/RequestHistory' element={<RequestHistory/>}/> 
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
           <Route path='/DoctorSortByDep' element={<DoctorSortByDep/>}/>
           <Route path='/Requests' element={<Request_options/>}/>
+          <Route path='/RequestsByEngineer' element={<Request_optionsEngineer/>}/>
+          <Route path='/EngineerDashBoard' element={<EngineerDashboard/>}/>
+          <Route path='/EngineerDeviceShow' element={<EngineerDeviceShow/>}/>
+          <Route path='/EngineerSortByDep' element={<EngineerSortByDep/>}/>
+          <Route path='/RequestsForEngineer' element={<RequestForEngineer/>}/>
           <Route path='/Requests/Procurement' element={<ProcurementForm/>}/>
           <Route path='/Requests/Calibration' element={<CalibrationForm/>}/>
           <Route path='/Requests/Maintenance' element={<MaintenanceForm/>}/>
           <Route path='/Requests/Specification' element={<SpecificationForm/>}/>
           <Route path='/Requests/Training' element={<TrainingForm/>}/>
           <Route path='/Requests/Installation' element={<InstallationForm/>}/>
-
+          <Route path='/RequestsByEngineer/Procurement' element={<ProcurementFormEngineer/>}/>
+          <Route path='/RequestsByEngineer/Calibration' element={<CalibrationFormEngineer/>}/>
+          <Route path='/RequestsByEngineer/Maintenance' element={<MaintenanceFormEngineer/>}/>
+          <Route path='/RequestsByEngineer/Specification' element={<SpecificationFormEngineer/>}/>
+          <Route path='/RequestsByEngineer/Training' element={<TrainingFormEngineer/>}/>
+          <Route path='/RequestsByEngineer/Installation' element={<InstallationFormEngineer/>}/>
+          <Route path='/EngineerAnnouncement' element={<EngineerAnnouncement/>}/>
+          <Route path='/Report' element={<SortByReportType/>}/>
           
         </Routes>
       </div>

@@ -13,6 +13,11 @@ const SpecificationForm = () => {
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [specificationDate, setSpecificationDate] = useState('');
+  const [user, setUser] = useState(() => {
+    // Retrieve user data from local storage on component mount
+    const storedUserData = localStorage.getItem('userData');
+    return storedUserData ? JSON.parse(storedUserData) : null;
+  });
 
   const equipmentOptions = [
     'X-ray Machine',
@@ -149,6 +154,7 @@ const SpecificationForm = () => {
           description,
           dueDate,
           requestDate:formattedDate,
+          requestedBy:`${user.name} ${user.lastName}`,
         };
 
         await axios.post('http://localhost:7000/api/requestOptions/specification', formData);

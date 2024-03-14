@@ -154,7 +154,7 @@ const ProcurementForm = () => {
     
       <div className="main-procurement-request">
         <div className="procurement-title"><DoctorSidebar /><h2 className="Procurement-Page">Procurement Form</h2></div>
-        <div className="procurement-form">
+        <div className="procurement1-form">
         <div className="individual">
           <label>Equipment Name*</label>
           <select
