@@ -29,19 +29,7 @@ const RequestHistory = () => {
 
     return ( 
         <div>
-            <div className='doctor-Request-title'><DoctorSidebar/><h2>Requested</h2></div>
-             <div className='individual-grid'>
-            {requestedHistory.map((requestHistory)=>(
-                
-                <div className='doctor-individual-request' key={requestHistory.id}>
-                    <h3 className='doctor-request-title'>{requestHistory.title} {requestHistory.announcement_time}</h3>
-                    <p className='doctor-request-description'>{requestHistory.description}</p>
-                    <p className={requestHistory.stat ? 'accepted' : 'pending'}>
-                      {requestHistory.stat? 'Accepted' : 'Pending'}
-                    </p>
-                </div>
-            ))} 
-            </div>  
+            njk 
         </div>
      );
 };

@@ -32,7 +32,7 @@ const PieDepartment = () => {
   
     const ctx = document.getElementById('myPieChart').getContext('2d');
     new Chart(ctx, {
-      type: 'pie',
+      type: 'line',
       data: {
         labels: labels,
         datasets: [{
@@ -75,14 +75,15 @@ const PieDepartment = () => {
           },
           legend: {
             display:true,
-            align: 'right',
-            position: 'bottom', 
+            align: 'bottom',
+            position: 'right', 
             labels: {
               color:'black',
               font:{
                 size: 17,
                 color: 'black',
-                weight: 'bold'
+                weight: 'bold',
+                family: '-apple-system'
               }
             },
             
@@ -94,7 +95,8 @@ const PieDepartment = () => {
             color: 'black',
             font:{
               weight: 'bold',
-              size: 20
+              size: 20,
+              family: '-apple-system'
             }   
           }
         },   

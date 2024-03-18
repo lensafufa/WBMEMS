@@ -27,7 +27,11 @@
     border: none;
     border-radius: 5px;
     height: 25px;
-    background-color: #e4e4e6;
+    background-color: #dddddf;
+    font-size: medium;
+    font-family: -apple-system;
+    font-weight: bold;
+    color: #454546;
 }
 .account-title-section{
   color: white;
@@ -60,15 +64,22 @@
     width: 100%;
     background-color: #ffffff;
 }
+.select-occupation-ph{
+    font-weight: bold;
+    color: #0a284a;
+}
 .sub-create-account{
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: baseline;
-    column-gap: 20px;
+    column-gap: 100px;
     row-gap: 15px;
     padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
     margin-top: 20px;
-    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.1);
+    color: #4f4f50;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -119,7 +130,7 @@
     background-color: #0a284a;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 840px;
+    margin-bottom: 20px;
 
 }
 @media (max-width: 890px) {
@@ -129,6 +140,6 @@
   }
   @media (min-width: 890px) {
     .create-account-button {
-      width:628px ;
+      width:754px ;
     }
   }

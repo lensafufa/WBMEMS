@@ -27,18 +27,19 @@
     line-height: 10px;
     
 }
-.lists{
+.main-lists{
     display: flex;
     align-items: center;
     line-height: 38px;
     cursor: pointer;
     transition: all 0.5s;
     font-size: medium;
-    padding-left: 15px;
+    width: 200px;
+    padding-left: 5px;
     font-family:-apple-system;
     color: rgb(150, 149, 149);
 }
-.lists:hover{
+.main-lists:hover{
     color: rgb(255, 255, 255);
     background-color: rgba(28, 28, 29, 0.918);
     border-radius: 5px;

@@ -17,7 +17,32 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+////////////////////////////////////////////
+router.get('/EquipmentWithCost', async (req, res) => {
+  try {
+    // Fetch data from the database, considering 'devicename' and 'cost' columns
+    const allReports = await AllReports.findAll({
+      attributes: ['reportType', 'replacementCostInETB'] // Select only 'devicename' and 'cost' columns
+    });
 
+    // Process data to get counts by 'devicename'
+    const countsByDevice = {};
+    allReports.forEach(item => {
+      countsByDevice[item.reportType] = countsByDevice[item.reportType] ? countsByDevice[item.reportType] + item.replacementCostInETB : item.replacementCostInETB;
+    });
+
+    // Convert data to format expected by frontend
+    const pieChartData = Object.keys(countsByDevice).map(reportType => ({
+      reportType,
+      cost: countsByDevice[reportType]
+    }));
+    res.json(pieChartData);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+////////////////////////////////////
 // GET reports by Type 
 
 router.get('/getByReportType', async(req, res) => {
@@ -167,8 +192,8 @@ router.post('/calibrationReport', async (req, res) => {
             visualInspection,
             visibleDamageBefore,
             replacedSparePart:partsReplacedOrRepaired,
-            replacementCost,
-            replacementCostInETB:environmentalConditions,
+            replacementCostInETB: replacementCost,
+            environmentalConditions,
             referenceStandards,
             proceduresDescription,
             complianceWithGuidelines,

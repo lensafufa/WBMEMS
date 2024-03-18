@@ -9,11 +9,14 @@ body{
      align-items: center;
      position: relative;
      justify-content: center;
-     height: 15px;
-     width: 15px;
+     height: 20px;
+     width: 20px;
      left: -15px;
+     top: -4px;
+     border: 2px solid rgb(255, 255, 255);
      font-size: small;
-     background-color: rgba(230, 4, 4, 0.9);
+     font-family: -apple-system;
+     background-color: rgb(250, 3, 3);
      border-radius: 50%;
      color: white;
  }
@@ -127,19 +130,19 @@ body{
      font-size: x-large;
      justify-content: center;
  }
- .main-dashboard-icons{
+ .doctor-dashboard-icons{
      margin-right: 20px;
      font-size:large;
      min-width: 20px;
      min-height: 20px;
-     background-color: #910f86;
+     background-color: #f02f0d;
      color: white;
      padding: 7px;
      border-radius: 50%;
  }
- .dashboard-icons-bell{
+ .doctor-dashboard-icons-bell{
      font-size: large;
-     background-color: #910f86;
+     background-color: #990f0a;
      padding: 7px;
      color: white;
      border-radius: 50%;

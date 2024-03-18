@@ -73,6 +73,12 @@ router.get('/Piechart', async (req, res) => {
   }
 });
 /////////////////////////////////////////////////
+
+
+
+
+
+
 router.get('/byDepartment', async (req, res) => {
   try {
     // Fetch data from the database

@@ -16,13 +16,14 @@ import axios from "axios";
 const DoctorDashboard = () => {
 
   const [NotificationCount, setNotificationCount] = useState(null);
-  useEffect(() => {
-    NotificationNumber();
-  }, [NotificationCount]);
+  const [NewDeviceNotificationCount, setNewDeviceNotificationCount] = useState(null);
 
   useEffect(() => {
-   
-  }, []);
+    NotificationNumber();
+    NotificationNumberNewDevice();
+  }, [NotificationCount, NewDeviceNotificationCount]);
+
+
   const NotificationNumber = async()=>{
     try{
       const response = await axios.get(`http://localhost:7000/api/alertAndNotification/getByType?notificationType=${'Announcement'}`);
@@ -33,6 +34,17 @@ const DoctorDashboard = () => {
       console.error('error fetching the notifications', error);
     }
   };
+  const NotificationNumberNewDevice = async()=>{
+    try{
+      const response = await axios.get(`http://localhost:7000/api/alertAndNotification/getByType?notificationType=${'NewDevice'}`);
+      console.log('The response data:', response.data);
+      const counter1 = response.data.length;
+      setNewDeviceNotificationCount(counter1);
+    }catch(error){
+      console.error('error fetching the notifications', error);
+    }
+  };
+
 
     return ( 
       <div className="doctor-main-class">
@@ -40,12 +52,19 @@ const DoctorDashboard = () => {
       <div className="doctor-right-part">
         <div className="the-navigation-main-class"><DoctorSidebar/><h2 className="the-navigation-title">Navigation</h2></div>
         <div className="doctor-sub-class">
-            <Link to='/DoctorDeviceShow' className='my-link'><div className="doctor-dashboard-device-overview"> <GrOverview className="dashboard-icons"/>Device Overview</div></Link>
-            <Link to='/DoctorAnnouncement' className='my-link'><div className="alert-and-notification-show"><div className="bell-and-notification-count"> <IoNotifications className="dashboard-icons-bell"/> 
+            
+            <Link to='/DoctorDeviceShow' className='my-link'><div className="alert-and-notification-show"><div className="bell-and-notification-count"> <GrOverview className="doctor-dashboard-icons-bell"/> 
+            <span className={NewDeviceNotificationCount !== 0 ? "notification-count-display" : 'notification-null-count'}>
+            {NewDeviceNotificationCount !== null ? NewDeviceNotificationCount : ''}
+            </span></div>Device Overview</div></Link>  
+
+            <Link to='/DoctorAnnouncement' className='my-link'><div className="alert-and-notification-show"><div className="bell-and-notification-count"> <IoNotifications className="doctor-dashboard-icons-bell"/> 
             <span className={NotificationCount !== 0 ? "notification-count-display" : 'notification-null-count'}>
             {NotificationCount !== null ? NotificationCount : ''}
-            </span></div>Announcement Board</div></Link>          
-            <Link to ='/DoctorSortByDep' className='my-link'><div className="doctor-sort-by-dep"><FaSort className="dashboard-icons"/>Sort By Department</div></Link>
+            </span></div>Announcement Board</div></Link>  
+
+
+            <Link to ='/DoctorSortByDep' className='my-link'><div className="doctor-sort-by-dep"><FaSort className="doctor-dashboard-icons"/>Sort By Department</div></Link>
         </div>
 
         <div className="piechart-in-the-dashboard">

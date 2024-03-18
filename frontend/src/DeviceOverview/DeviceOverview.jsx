@@ -13,6 +13,7 @@ const DeviceOverview = () => {
 
   useEffect(() => {
     fetchDeviceOverview();
+    EraseNotifications();
   }, [warning]);
 
   const fetchDeviceOverview = async () => {
@@ -51,9 +52,15 @@ const DeviceOverview = () => {
       console.error('Error updating device status:', error);
       return null;
     }
-    setWarning(false);
-    
   };
+  const EraseNotifications = async()=>{
+    try{
+      await axios.delete(`http://localhost:7000/api/alertAndNotification/notification?notificationType=${'NewDevice'}`);
+    }catch(error){
+      console.error(error)
+    }
+  
+   }
 
   const getById = async (id) => {
     try {
@@ -137,6 +144,7 @@ const DeviceOverview = () => {
           <div className='detail-description'>
             <div className='device-profile-picture'>
               <img className='main-device-image' src={`http://localhost:7000/${detailed.equipmentImage}`} alt='Profile' />
+              <div><p className='device-manufacturer'><p className='detail-title'>Description </p> {detailed.equipmentDescription}</p></div>
             </div>
             <div >
               <div className='de-device-description'>
@@ -147,7 +155,6 @@ const DeviceOverview = () => {
                   <p className='device-manufacturer'><p className='detail-title'>Warranty Expiry Date</p> {detailed.warrantyExpiryDate}</p>
                   <p className='device-manufacturer'><p className='detail-title'>Status </p> {detailed.status}</p>
               </div>
-                <div><p className='device-manufacturer'><p className='detail-title'>Description </p> {detailed.equipmentDescription}</p></div>
             </div>
 
               <button onClick={handleClose} className='detail-close-button'>Close</button>

@@ -239,6 +239,51 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+/////////////////////////////////////
+router.get('/byStatus', async (req, res) => {
+  try {
+    // Fetch data from the database
+    const requests = await Requests.findAll();
+    // Process data to get counts by category
+    const countsByCategory = {};
+    requests.forEach(item => {
+      countsByCategory[item.status] = countsByCategory[item.status] ? countsByCategory[item.status] + 1 : 1;
+    });
+
+    // Convert data to format expected by frontend
+    const pieChartData = Object.keys(countsByCategory).map(status => ({
+      status,
+      count: countsByCategory[status]
+    }));
+    res.json(pieChartData);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+///////////////////////
+router.get('/RequestType', async (req, res) => {
+  try {
+    // Fetch data from the database
+    const requests = await Requests.findAll();
+    // Process data to get counts by category
+    const countsByCategory = {};
+    requests.forEach(item => {
+      countsByCategory[item.requestType] = countsByCategory[item.requestType] ? countsByCategory[item.requestType] + 1 : 1;
+    });
+
+    // Convert data to format expected by frontend
+    const pieChartData = Object.keys(countsByCategory).map(requestType => ({
+      requestType,
+      count: countsByCategory[requestType]
+    }));
+    res.json(pieChartData);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+/////////////////////////////
 
 // GET requests by Type 
 

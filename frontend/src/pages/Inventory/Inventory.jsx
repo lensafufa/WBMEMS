@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import './Inventory.css';
 import axios from "axios";
 import Home from '../Home/Home';
-import { TiDeviceDesktop } from "react-icons/ti";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaSquareFacebook } from "react-icons/fa6";
 
 const Inventory = () => {
   const [equipmentName, setEquipmentName] = useState('');
@@ -77,7 +73,7 @@ const Inventory = () => {
         },
       });
       alert('Equipment registered successfully');
-      
+      handleNotification();
       setEquipmentName(''),
       setModel(''),
       setSerialNumber(''),
@@ -95,6 +91,16 @@ const Inventory = () => {
       console.error('Error registering equipment:', error);
     }
   };
+
+
+  const handleNotification =async()=>{
+    try{
+      await axios.post('http://localhost:7000/api/alertAndNotification',{
+      NotificationType: 'NewDevice'
+    })
+  }catch(error){
+       error.message(error);
+  }}
 
   return (
     <div className="grand-page">

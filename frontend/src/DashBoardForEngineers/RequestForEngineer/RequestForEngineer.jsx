@@ -3,11 +3,6 @@ import React, { useEffect, useState } from "react";
 import './RequestForEngineer.css';
 import EngineerSidebar from "../EngineerSidebar";
 
-
-
-
-
-
 const RequestForEngineer = () => {
     const [RequestType, setRequestType] = useState('');
     const [handleRequest, setHandlerequest] = useState([]);
@@ -602,9 +597,9 @@ const RequestForEngineer = () => {
 
                                        </div>
                                         <div className="footer-maintenance">
-                                            <strong> Status :</strong>{RequestByType.status}<br/>
-                                            <strong> Assigned To:</strong>{RequestByType.action}<br/>
-                                            <strong> Requested By:</strong>{RequestByType.requestedBy}<br/>
+                                            <strong> Status: </strong>{RequestByType.status}<br/>
+                                            <strong> Ass. To: </strong>{RequestByType.action}<br/>
+                                            <strong> Req. By: </strong>{RequestByType.requestedBy}<br/>
 
                                         </div>
                                     </div>
@@ -612,7 +607,7 @@ const RequestForEngineer = () => {
                                         onClick={()=>handleDisplayForm(RequestByType.id)}
                                         className={RequestByType.status === 'Completed' ? 'deleteButton' : 'action-button-maintenance'}
                                     >
-                                        Action
+                                        Make Report
                                     </button>
                                     <button
                                         onClick={()=>getByIdReport(RequestByType.id)}
@@ -630,7 +625,8 @@ const RequestForEngineer = () => {
             {detailed && (
                 <div className='detailed-view-1-maintenance'>
                     <div className='detail-description-maintenance'>
-                        <div className='device-description-maintenance'>
+                      Request Detail
+                        <div className='device-description-maintenancee'>
                             
                                 {Object.entries(detailed).map(([columnName, value]) => {
                                     if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
@@ -648,7 +644,7 @@ const RequestForEngineer = () => {
                                     return null;
                                 })}
                             </div>
-                            <button onClick={handleClose} className='detail-close-button-maintenance'>Close</button>
+                            <button onClick={handleClose} className='detail-close-button-maintenancee'>Close</button>
                         </div>
                     </div>
                 
@@ -656,7 +652,8 @@ const RequestForEngineer = () => {
     {reportDetail && (
                 <div className='detailed-view-1-maintenance'>
                     <div className='detail-description-maintenance'>
-                        <div className='device-description-maintenance'>
+                      Report Detail
+                        <div className='report-detail-device-description-maintenance'>
                             
                                 {Object.entries(reportDetail).map(([columnName, value]) => {
                                     if (columnName !== 'id' && columnName !== 'createdAt' && columnName !== 'updatedAt') {
@@ -664,9 +661,9 @@ const RequestForEngineer = () => {
                                             const formattedColumnName = columnName.charAt(0).toUpperCase() + columnName.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
 
                                             return (
-                                                <div className="sort-by-request-maintenance" key={columnName}>
+                                                <div className="sort-by-request-maintenancee" key={columnName}>
                                                     <div className="columnName-maintenance">{formattedColumnName}</div>
-                                                    <div className='columnValue-maintenance'>{value}</div>
+                                                    <div className='columnValue-maintenance-report-detail'>{value}</div>
                                                 </div>
                                             );
                                         }
@@ -674,7 +671,7 @@ const RequestForEngineer = () => {
                                     return null;
                                 })}
                         </div>
-                        <button onClick={handleCloseReport} className='detail-close-button-maintenance'>Close</button>
+                        <button onClick={handleCloseReport} className='detail-close-button-maintenancee'>Close</button>
                     </div>
                 </div>
             )}
@@ -684,7 +681,9 @@ const RequestForEngineer = () => {
 {displayMaintenance && (
   <div className="detailed-view-maintenanceReport">
     <div className="detailed-description-maintenanceReport"> 
+    <div className="Maintenance-Report-Form-title">Maintenance Report Form</div>
     <div className="maintenanceReport">
+      
       <label className="maintenance-label">
       <div className='maintenancelabel'>Serial Number</div> 
         <input
@@ -722,7 +721,7 @@ const RequestForEngineer = () => {
       </label>
 
       <label className="maintenance-label">
-      <div className='maintenancelabel'>Brief Description of Maintenance </div>  
+      <div className='maintenancelabel'>Brief Description of Maintenance work</div>  
         <textarea
           name="maintenanceDescription"
           value={maintenanceFormData.maintenanceDescription}
@@ -733,7 +732,7 @@ const RequestForEngineer = () => {
       </label>
 
       <label className="maintenance-label">
-      <div className='maintenancelabel'>Task performed during Maintenance Work</div> 
+      <div className='maintenancelabel'>Task performed during Maintenance work</div> 
         <textarea
           name="tasksPerformed"
           value={maintenanceFormData.tasksPerformed}
@@ -743,89 +742,10 @@ const RequestForEngineer = () => {
         />
       </label>
 
-      <label className="maintenance-label">
-      <div className='maintenancelabel'>Any Repair of breakage</div>
-        <input
-          type="checkbox"
-          name="repair"
-          checked={maintenanceFormData.repair}
-          onChange={maintenanceHandleChange}
-          className="maintenance-checkbox"
-        />
-      </label>
-
-      {maintenanceFormData.repair && (
-        <label className="maintenance-label">
-          <div className='maintenancelabel'>Nature of breakage</div>
-          <textarea
-            name="natureOfBreakage"
-            value={maintenanceFormData.natureOfBreakage}
-            onChange={maintenanceHandleChange}
-            className="maintenance-textarea"
-          />
-        </label>
-      )}
+     
 
       <label className="maintenance-label">
-        <div className="maintenancelabel">Any replacement</div>
-        <input
-          type="checkbox"
-          name="replacement"
-          checked={maintenanceFormData.replacement}
-          onChange={maintenanceHandleChange}
-          className="maintenance-checkbox"
-        />
-      </label>
-
-      {maintenanceFormData.replacement && (
-        <div className="maintenance-replacement-section">
-          
-          <label className="maintenance-label">
-            <div className='maintenancelabel'>Replaced spare part</div>
-            <textarea
-              name="replacedSparePart"
-              value={maintenanceFormData.replacedSparePart}
-              onChange={maintenanceHandleChange}
-              className="maintenance-textarea"
-            />
-          </label>
-          <label className="maintenance-label">
-          <div className='maintenancelabel'>Cost of replacement</div>
-            <input
-              type="number"
-              name="replacementCost"
-              value={maintenanceFormData.replacementCost}
-              onChange={maintenanceHandleChange}
-              className="maintenance-input-report"
-            />
-          </label>
-        </div>
-      )}
-
-      <label className="maintenance-label">
-      <div className='maintenancelabel'>Compliance with Manufacturer's Guidelines and Specifications</div>
-        <input
-          type="checkbox"
-          name="complianceWithGuidelines"
-          checked={maintenanceFormData.complianceWithGuidelines}
-          onChange={maintenanceHandleChange}
-          className="maintenance-checkbox"
-        />
-      </label>
-
-      <label className="maintenance-label">
-      <div className='maintenancelabel'>Verify Functionality</div>
-        <input
-          type="checkbox"
-          name="verifyFunctionality"
-          checked={maintenanceFormData.verifyFunctionality}
-          onChange={maintenanceHandleChange}
-          className="maintenance-checkbox"
-        />
-      </label>
-
-      <label className="maintenance-label">
-      <div className='maintenancelabel'>Duration in Hours</div>
+      <div className='maintenancelabel'>Duration of the action took in Hours</div>
         <input
           type="number"
           name="durationInHours"
@@ -856,7 +776,57 @@ const RequestForEngineer = () => {
         />
       </label>
 
-      
+      <label className="maintenance-label">
+        <div className='maintenancelabel'>Nature of breakage</div>
+        <textarea
+          name="natureOfBreakage"
+          value={maintenanceFormData.natureOfBreakage}
+          onChange={maintenanceHandleChange}
+          className="maintenance-textarea"
+        />
+      </label>
+          <label className="maintenance-label">
+            <div className='maintenancelabel'>Replaced spare part</div>
+            <textarea
+              name="replacedSparePart"
+              value={maintenanceFormData.replacedSparePart}
+              onChange={maintenanceHandleChange}
+              className="maintenance-textarea"
+            />
+          </label>
+          <label className="maintenance-label">
+          <div className='maintenancelabel'>Cost of replacement</div>
+            <input
+              type="number"
+              name="replacementCost"
+              value={maintenanceFormData.replacementCost}
+              onChange={maintenanceHandleChange}
+              className="maintenance-input-report"
+            />
+          </label>
+
+
+          <label className="maintenance-labell">
+      <div className='maintenancelabel'>Verify Functionality</div>
+        <input
+          type="checkbox"
+          name="verifyFunctionality"
+          checked={maintenanceFormData.verifyFunctionality}
+          onChange={maintenanceHandleChange}
+          className="maintenance-checkbox"
+        />
+      </label>
+
+      <label className="maintenance-labell">
+      <div className='maintenancelabel'>Compliance with Manufacturer's Guidelines and Specifications</div>
+        <input
+          type="checkbox"
+          name="complianceWithGuidelines"
+          checked={maintenanceFormData.complianceWithGuidelines}
+          onChange={maintenanceHandleChange}
+          className="maintenance-checkbox"
+        />
+      </label>
     </div>
     <button onClick={handleFormSubmitMaintenance} className="maintenance-submit-button" >Submit</button>
     <button onClick={() => setDisplayMaintenance(false)} className="maintenance-cancel-button">Cancel</button>
@@ -868,6 +838,7 @@ const RequestForEngineer = () => {
 {displayCalibration && (
   <div className="detailed-view-calibrationReport">
   <div className="detailed-description-calibrationReport">
+    <div className="Maintenance-Report-Form-title">Calibration Report Form</div>
     <div className="calibration-report">
       <label className="calibration-label">
         <div className='calibration-label-text'>Manufacturer</div>
@@ -903,34 +874,7 @@ const RequestForEngineer = () => {
           required
           className="calibration-input-report"
         />
-      </label>
-
-      <label className="calibration-label">
-        <div className='calibration-label-text'>Visual inspection of the Equipment for any Damage or Wear</div>
-        <input
-          type="checkbox"
-          name="visualInspection"
-          checked={calibrationFormData.visualInspection}
-          onChange={calibrationHandleChange}
-          className="calibration-input-report"
-        />
-      </label>
-
-      {calibrationFormData.visualInspection && (
-        <div className="calibration-visual-inspection-details">
-          <label className="calibration-label">
-            <div className='calibration-label-text'>Any visible damage before</div>
-            <input
-              type="checkbox"
-              name="visibleDamageBefore"
-              checked={calibrationFormData.visibleDamageBefore}
-              onChange={calibrationHandleChange}
-              className="calibration-input-report"
-            />
-          </label>
-
-          {calibrationFormData.visibleDamageBefore && (
-            <div className="calibration-replacement-details">
+      </label>      
               <label className="calibration-label">
                 <div className='calibration-label-text'>Parts replaced or repaired</div>
                 <input
@@ -952,21 +896,7 @@ const RequestForEngineer = () => {
                   className="calibration-input-report"
                 />
               </label>
-            </div>
-          )}
-        </div>
-      )}
-      <label className="calibration-label">
-      <div className='calibration-label-text'>Verification of environmental conditions</div>
-      <input
-        type="checkbox"
-        name="environmentalConditions"
-        checked={calibrationFormData.environmentalConditions}
-        onChange={calibrationHandleChange}
-        className="calibration-input-report"
-      />
-    </label>
-
+    
     <label className="calibration-label">
     <div className='calibration-label-text'>Reference standards</div>
       <input
@@ -988,29 +918,6 @@ const RequestForEngineer = () => {
       />
     </label>
 
-    <label className="calibration-label">
-    <div className='calibration-label-text'>Compliance with Manufacturer's Guidelines and Specifications</div>
-      <input
-        type="checkbox"
-        name="complianceWithGuidelines"
-        checked={calibrationFormData.complianceWithGuidelines}
-        onChange={calibrationHandleChange}
-        className="calibration-input-report"
-      />
-    </label>
-
-    <label className="calibration-label">
-    <div className='calibration-label-text'>Any changes or adjustments made to Instrument Settings</div>
-      <input
-        type="checkbox"
-        name="adjustmentsMade"
-        checked={calibrationFormData.adjustmentsMade}
-        onChange={calibrationHandleChange}
-        className="calibration-input-report"
-      />
-    </label>
-
-    {calibrationFormData.adjustmentsMade && (
       <label className="calibration-label">
         <div className='calibration-label-text'>Adjustments</div>
         <input
@@ -1021,8 +928,6 @@ const RequestForEngineer = () => {
           className="calibration-input-report"
         />
       </label>
-    )}
-
     <label className="calibration-label">
     <div className='calibration-label-text'>Deviation from the Reference Standard (if any)</div>
       <input
@@ -1055,17 +960,6 @@ const RequestForEngineer = () => {
     </label>
 
     <label className="calibration-label">
-    <div className='calibration-label-text'>Verify Functionality</div>
-      <input
-        type="checkbox"
-        name="verifyFunctionality"
-        checked={calibrationFormData.verifyFunctionality}
-        onChange={calibrationHandleChange}
-        className="calibration-input-report"
-      />
-    </label>
-
-    <label className="calibration-label">
     <div className='calibration-label-text'>Duration in Hours</div>
       <input
         type="number"
@@ -1081,9 +975,42 @@ const RequestForEngineer = () => {
           name="recommendation"
           value={calibrationFormData.recommendation}
           onChange={calibrationHandleChange}
-          className="calibration-textarea"
+          className="calibration-input-report"
         />
       </label>
+      
+    <label className="calibration-labell">
+    <div className='calibration-label-text'>Compliance with Manufacturer's Guidelines and Specifications</div>
+      <input
+        type="checkbox"
+        name="complianceWithGuidelines"
+        checked={calibrationFormData.complianceWithGuidelines}
+        onChange={calibrationHandleChange}
+        className="calibration-checkbox"
+      />
+    </label>
+    <label className="calibration-labell">
+      <div className='calibration-label-text'>Verification of environmental conditions</div>
+      <input
+        type="checkbox"
+        name="environmentalConditions"
+        checked={calibrationFormData.environmentalConditions}
+        onChange={calibrationHandleChange}
+        className="calibration-checkbox"
+      />
+    </label>
+
+      <label className="calibration-labell">
+    <div className='calibration-label-text'>Verify Functionality</div>
+      <input
+        type="checkbox"
+        name="verifyFunctionality"
+        checked={calibrationFormData.verifyFunctionality}
+        onChange={calibrationHandleChange}
+        className="calibration-checkbox"
+      />
+    </label>
+
     </div>
     
         <button onClick={handleFormSubmitCalibration} className="calibration-submit-button">Submit</button>
@@ -1097,6 +1024,7 @@ const RequestForEngineer = () => {
 {displaySpecification &&
   <div className="detailed-view-specificationReport">
     <div className="detailed-description-specificationReport">
+      <div className="Specification-Report-Form-title">Specification Report Form</div>
       <div className="specification-report">
         <label className="specification-label">
           <div className='specification-label-text'>Serial Number</div>
@@ -1198,6 +1126,7 @@ const RequestForEngineer = () => {
 {displayInstallation &&
   <div className="detailed-view-installationReport">
     <div className="detailed-description-installationReport">
+      <div className="Installation-Report-Form-title">Installation Report Form</div>
       <div className="installation-report">
         <label className="installation-label">
           <div className='installation-label-text'>Manufacturer</div>
@@ -1232,32 +1161,8 @@ const RequestForEngineer = () => {
           />
         </label>
 
-        <label className="installation-label">
-          <div className='installation-label-text'>Visual inspection of the Equipment</div>
-          <input
-            type="checkbox"
-            name="visualInspection"
-            checked={installationFormData.visualInspection}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
+        
 
-        {installationFormData.visualInspection && (
-          <div>
-            <label className="installation-label">
-              <div className='installation-label-text'>Any Visible Damage Before installation</div>
-              <input
-                type="checkbox"
-                name="visibleDamageBefore"
-                checked={installationFormData.visibleDamageBefore}
-                onChange={(e) => installationHandleChange(e)}
-                className="installation-input-report"
-              />
-            </label>
-
-            {installationFormData.visibleDamageBefore && (
-              <div>
                 <label className="installation-label">
                   <div className='installation-label-text'>Parts replaced or repaired</div>
                   <input
@@ -1279,34 +1184,7 @@ const RequestForEngineer = () => {
                     className="installation-input-report"
                   />
                 </label>
-              </div>
-            )}
-          </div>
-        )}
 
-        <label className="installation-label">
-          <div className='installation-label-text'>All Accessories Present</div>
-          <input
-            type="checkbox"
-            name="accessoriesPresent"
-            checked={installationFormData.accessoriesPresent}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
-
-        <label className="installation-label">
-          <div className='installation-label-text'>Any modification during Installation</div>
-          <input
-            type="checkbox"
-            name="modificationsDuringInstallation"
-            checked={installationFormData.modificationsDuringInstallation}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
-
-        {installationFormData.modificationsDuringInstallation && (
           <div>
             <label className="installation-label">
               <div className='installation-label-text'>Adjustment made</div>
@@ -1319,32 +1197,10 @@ const RequestForEngineer = () => {
               />
             </label>
           </div>
-        )}
+      
 
-        <label className="installation-label">
-          <div className='installation-label-text'>Compliance With Guidelines</div>
-          <input
-            type="checkbox"
-            name="complianceWithGuidelines"
-            checked={installationFormData.complianceWithGuidelines}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
+        
 
-        <label className="installation-label">
-          <div className='installation-label-text'>Any challenges Or issues encountered</div>
-          <input
-            type="checkbox"
-            name="challengesOrIssuesEncountered"
-            checked={installationFormData.challengesOrIssuesEncountered}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
-
-        {installationFormData.challengesOrIssuesEncountered && (
-          <div>
             <label className="installation-label">
               <div className='installation-label-text'>Issue addressed</div>
               <input
@@ -1355,31 +1211,7 @@ const RequestForEngineer = () => {
                 className="installation-input-report"
               />
             </label>
-          </div>
-        )}
-
-        <label className="installation-label">
-          <div className='installation-label-text'>Verify Functionality</div>
-          <input
-            type="checkbox"
-            name="verifyFunctionality"
-            checked={installationFormData.verifyFunctionality}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
-
-        <label className="installation-label">
-          <div className='installation-label-text'>Safety Standards Compliance</div>
-          <input
-            type="checkbox"
-            name="safetyStandardsCompliance"
-            checked={installationFormData.safetyStandardsCompliance}
-            onChange={(e) => installationHandleChange(e)}
-            className="installation-input-report"
-          />
-        </label>
-
+        
         <label className="installation-label">
           <div className='installation-label-text'>Duration in Hours</div>
           <input
@@ -1401,6 +1233,89 @@ const RequestForEngineer = () => {
             className="installation-input-report"
           />
         </label>
+
+       
+            <label className="installation-labell">
+          <div className='installation-label-text'>Safety Standards Compliance</div>
+          <input
+            type="checkbox"
+            name="safetyStandardsCompliance"
+            checked={installationFormData.safetyStandardsCompliance}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+          <div className='installation-label-text'>Verify Functionality</div>
+          <input
+            type="checkbox"
+            name="verifyFunctionality"
+            checked={installationFormData.verifyFunctionality}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+          <div className='installation-label-text'>Any challenges Or issues encountered</div>
+          <input
+            type="checkbox"
+            name="challengesOrIssuesEncountered"
+            checked={installationFormData.challengesOrIssuesEncountered}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+              <div className='installation-label-text'>Any Visible Damage Before installation</div>
+              <input
+                type="checkbox"
+                name="visibleDamageBefore"
+                checked={installationFormData.visibleDamageBefore}
+                onChange={(e) => installationHandleChange(e)}
+                className="installation-checkbox"
+              />
+            </label>
+            <label className="installation-labell">
+          <div className='installation-label-text'>Compliance With Guidelines</div>
+          <input
+            type="checkbox"
+            name="complianceWithGuidelines"
+            checked={installationFormData.complianceWithGuidelines}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+          <div className='installation-label-text'>All Accessories Present</div>
+          <input
+            type="checkbox"
+            name="accessoriesPresent"
+            checked={installationFormData.accessoriesPresent}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+          <div className='installation-label-text'>Visual inspection of the Equipment</div>
+          <input
+            type="checkbox"
+            name="visualInspection"
+            checked={installationFormData.visualInspection}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+        <label className="installation-labell">
+          <div className='installation-label-text'>Any modification during Installation</div>
+          <input
+            type="checkbox"
+            name="modificationsDuringInstallation"
+            checked={installationFormData.modificationsDuringInstallation}
+            onChange={(e) => installationHandleChange(e)}
+            className="installation-checkbox"
+          />
+        </label>
+
       </div>
       <button type="submit" onClick={handleFormSubmitInstallation} className="installation-submit-button">Submit</button>
       <button onClick={() => setDisplayInstallation(false)} className="installation-cancel-button">Cancel</button>

@@ -154,9 +154,9 @@ const ProcurementForm = () => {
     
       <div className="main-procurement-request">
         <div className="procurement-title"><DoctorSidebar /><h2 className="Procurement-Page">Procurement Form</h2></div>
-        <div className="procurement1-form">
+        <div className="procurement-form">
         <div className="individual">
-          <label>Equipment Name*</label>
+          <label className="procurement-form-label">Equipment Name*</label>
           <select
             className="procurement-input"
             required
@@ -173,7 +173,7 @@ const ProcurementForm = () => {
         </div>
               
         <div className="individual">
-          <label>Equipment Type*</label>
+          <label className="procurement-form-label">Equipment Type*</label>
           <select
             className="procurement-input"
             required
@@ -190,7 +190,7 @@ const ProcurementForm = () => {
         </div>
           
           <div className="individual">
-          <label>Department*</label>
+          <label className="procurement-form-label">Department*</label>
           <select
             className="procurement-input"
             required
@@ -206,7 +206,7 @@ const ProcurementForm = () => {
           </select>
         </div>
         <div className="individual">
-            <label>Specification</label>
+            <label className="procurement-form-label">Specification</label>
             <textarea
               className="procurement-description-input"
               value={specification}
@@ -214,7 +214,7 @@ const ProcurementForm = () => {
             />
           </div>  
         <div className="individual">
-            <label>Procurement Reason*</label>
+            <label className="procurement-form-label">Procurement Reason*</label>
             <textarea
               className="procurement-description-input"
               required
