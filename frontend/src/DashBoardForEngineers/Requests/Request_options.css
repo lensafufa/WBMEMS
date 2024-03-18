@@ -26,14 +26,15 @@ body {
     padding-left: 30px;
     color: white;
     height: 100px;
-    color: black;
-    background-color: rgba(10, 3, 19, 0.3);
+    background-color: black;
 }
 
 .the-request-title {
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
+    font-size: x-large;
+    font-family: -apple-system;
 }
 .sub-class-requests {
     display: grid;
@@ -57,7 +58,7 @@ body {
     padding: 10px;
     color:black;
     background-color:rgba(0,0,0,0);
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-family: -apple-system;
 }
 .calibration:hover,
@@ -66,13 +67,13 @@ body {
 .training:hover,
 .installation:hover,
 .procurement:hover{
-  background-color:rgba(28, 44, 187, 0.08);
+  background-color:rgba(193, 196, 221, 0.08);
   transition: all 0.3s;
 }
 .Request_options-icons {
     margin-right: 20px;
     font-size: large;
-    background-color: rgb(90, 15, 124);
+    background-color: rgb(16, 107, 138);
     padding: 5px;
     border-radius: 10px;
     color: white;

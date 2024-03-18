@@ -12,7 +12,6 @@ const MaintenanceForm = () => {
   const [priority, setPriority] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [user, setUser] = useState(() => {
-    // Retrieve user data from local storage on component mount
     const storedUserData = localStorage.getItem('userData');
     return storedUserData ? JSON.parse(storedUserData) : null;
   });

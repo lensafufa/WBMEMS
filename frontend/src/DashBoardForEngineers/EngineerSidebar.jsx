@@ -31,8 +31,8 @@ const toggleSidebar = () => {
         </div>
         <nav className='nav-bar-engineer'>
           <Link className='link' to='/EngineerDashboard'><div className='lists'><AiOutlineHome className='icons'/><div>Dashboard</div></div></Link>
-          <Link className='link' to='/RequestsForEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>WorkOrders</div></div></Link>
-          <Link className='link' to='/RequestsByEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>Requests</div></div></Link>
+          <Link className='link' to='/RequestsForEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>Ordered Work</div></div></Link>
+          <Link className='link' to='/RequestsByEngineer'><div className='lists'><MdOutlineBorderColor className='icons' /><div>Make Request</div></div></Link>
           <Link className='link' to='/EngineerDeviceShow'><div className='lists'><MdOutlineWorkOutline className='icons'/><div>Devices Overview</div></div></Link> 
           <Link className='link' to='/EngineerAnnouncement'><div className='lists'><CiMedicalClipboard className='icons' /><div>Announcement Board</div></div></Link>
           <Link className='link' to='/RequestHistory'><div className='lists'><MdHistoryToggleOff className='icons' /><div>Request History</div></div></Link>

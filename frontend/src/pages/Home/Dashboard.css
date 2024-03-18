@@ -20,14 +20,16 @@ body{
     color: white;
 }
 .admin-sub-class{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 40px;
-    column-gap: 20px;
-    background-color: white;
-    padding-bottom: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    row-gap: 21px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 300px;
+    margin-right: 20px;
+
 }
 .admin-schedule-maintenance:hover,
 .admin-dashboard-device-overview:hover,
@@ -36,128 +38,58 @@ body{
 .alert-and-notification-show:hover,
 .sorts:hover,
 .reports:hover{
-    box-shadow: 5px 5px 7px rgba(0,0,0,0.1);
-    transition: all 0.3s ;
-    background-color: rgba(231, 229, 229, 0.3); 
+    transition: all 0.3s ; 
     cursor: pointer;
     color: black;
 }
-.alert-and-notification-show{
-    display: flex;
-    background-color:white;
-    color: black;
-    padding-right: 10px;
-    align-items: center;
-    font-size: large;
-    height: 70px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    padding-left: 10px;
-    border-radius: 5px;
-    justify-content: center;
-    font-family:-apple-system;
-    color: rgb(87, 85, 85);
-    font-weight: bold;
-}
-.dashboard-schedule-maintenance{
-    display: flex;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    color: rgb(87, 85, 85);
-    font-weight: bold;
-    font-size: large;
-    padding-right: 10px;
-    align-items: center;
-    height: 70px;
-    padding-left: 10px;
-    border-radius: 5px;
-    justify-content: center;
-    font-family:-apple-system;
-}
+.schedule-maintenance,
+.pending-requests,
+.alert-and-notification-show,
+.dashboard-schedule-maintenance,
 .admin-dashboard-device-overview{
     display: flex;
-    background-color: white;
+    align-items: center;
     color: rgb(87, 85, 85);
     font-weight: bold;
-    font-size: large;
-    padding-right: 10px;
-    align-items: center;
-    height: 70px;
-    padding-left: 10px;
+    font-size: medium;
+    width: max-content;
     border-radius: 5px;
-    justify-content: center;
     font-family:-apple-system;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-}
-.schedule-maintenance{
-    display: flex;
-    background-color: black;
-    align-items: center;
-    color: white;
-    border-radius: 5px;
-    padding-left: 10px;
-    height: 70px;
-    font-size: x-large;
-    justify-content: center;
-}
-.pending-requests{
-    display: flex;
-    background-color: rgb(16, 107, 138);
-    align-items: center;color: white;
-    border-radius: 5px;
-    font-size: x-large;
-    padding-left: 10px;
-    justify-content: center;
 }
 .sorts{
     display: flex;
     background-color: rgb(15, 15, 0);
     align-items: center;
     color: white;
-    height: 70px;
-    padding-left: 10px;
-    border-radius: 5px;
-    font-size: x-large;
-    justify-content: center;
-}
-.reports{
-    display: flex;
-    background-color: rgb(18, 100, 55);
-    align-items: center;
-    color: white;
-    padding-left: 10px;
-    border-radius: 5px;
     font-size: x-large;
     justify-content: center;
 }
 .main-dashboard-icons{
     margin-right: 20px;
-    font-size:large;
-    min-width: 20px;
-    min-height: 20px;
+    font-size:medium;
+    min-width: 15px;
+    min-height:15px;
     background-color: #910f86;
     color: white;
     padding: 7px;
     border-radius: 50%;
 }
 .dashboard-icons-bell{
-    font-size: large;
+    font-size: medium;
     background-color: #910f86;
     padding: 7px;
     color: white;
     border-radius: 50%;
-    min-width: 20px;
-    min-height: 20px;
+    min-width: 15px;
+    min-height: 15px;
 }
-.my-link{
+.main-my-link{
     text-decoration: none;
-    height: 70px;
-
 }
 
 .right-part{
   display: flex;
   flex-direction: column;
-  margin-left: 0px;
-  margin-right: 0px;
   width: 100%;
 }
 
@@ -182,16 +114,6 @@ body{
     display: flex;
     position: relative;
     flex-direction: column;
-}
-.adresses{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 1px solid white;
-}
-.adresses:hover{
-    color: yellow;
-    cursor: pointer;
 }
 .the-navigation-main-class{
     display: flex;
@@ -221,15 +143,18 @@ body{
 .notification-null-count{
     opacity: 0;
 }
-.piechart-in-the-dashboard{
+.admin-piechart-in-the-dashboard{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 400px)
+  );
+    margin-right: 50px;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    padding-right: 100px;
-    padding-left: 100px;
-    column-gap: 0px;
+    margin-left: 50px;
+    background:none;
+   
 }
 .dashboard-bottom-bar{
     display: flex;
@@ -252,4 +177,24 @@ body{
 .bottombar-description{
     padding: 20px;
 }
+.analytical-device-data{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 10px;
 
+   
+}
+.analytical-data-and-buttons{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.the-two-doughnuts{
+    display: flex;
+    background-color: rgba(255, 255, 255);
+    margin: 20px;
+    margin-top: 0px;
+    border-radius: 10px;
+    width: 100%;
+}

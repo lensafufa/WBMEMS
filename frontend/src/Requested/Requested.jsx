@@ -59,16 +59,7 @@ const Requested = () => {
         
     return ( 
         <div>
-            <div className="Requested-title-icon"><Home/><h2>Requested Issues</h2></div>
-                <div className="individual-requests">
-                {requestValue.map((request) => (
-                  <div className="requested-issues" key={request.id}>
-                    <h3 className="request-title-display">{request.title} {request.announcement_time}</h3>
-                    <p className="request-description-display">{request.description}</p>
-                    <button className="accept-button" onClick={()=>updateStatus(request.id, true)  }> {clickedRequests[request.id] ? 'Accepted' : 'Accept'}</button>
-                  </div>
-                ))}
-                </div>
+            k
         </div>     
      );
   };

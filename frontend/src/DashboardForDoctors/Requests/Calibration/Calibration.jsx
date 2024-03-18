@@ -8,7 +8,7 @@ const CalibrationForm = () => {
   const [equipmentType, setEquipmentType] = useState('');
   const [equipmentModel, setEquipmentModel] = useState('');
   const [department, setDepartment] = useState('');
-  const [reason, setReason] = useState('');
+  const [calibrationReason, setCalibrationReason] = useState('');
   const [calibrationType, setCalibrationType] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [user, setUser] = useState(() => {
@@ -104,7 +104,7 @@ const CalibrationForm = () => {
   };
 
   const handleReason = (e) => {
-    setReason(e.target.value);
+    setCalibrationReason(e.target.value);
   };
 
   const handleCalibrationType = (e) => {
@@ -118,7 +118,7 @@ const CalibrationForm = () => {
   const handleFormSubmit = async () => {
     try {
       if (!equipmentName ||
-         !reason || 
+         !calibrationReason || 
          !dueDate|| 
          !equipmentModel||
          !department
@@ -143,7 +143,7 @@ const CalibrationForm = () => {
           equipmentType,
           equipmentModel,
           department,
-          reason,
+          calibrationReason,
           calibrationType,
           dueDate,
           requestDate: formattedDate,
@@ -158,7 +158,7 @@ const CalibrationForm = () => {
         setEquipmentType('');
         setEquipmentModel('');
         setDepartment('');
-        setReason('');
+        setCalibrationReason('');
         setCalibrationType('');
         setDueDate('');
       }
@@ -171,8 +171,8 @@ const CalibrationForm = () => {
     <div className="main-calibration">
       <div className="calibration-title"><DoctorSidebar /><h2 className="Calibration-Page">Calibration Form</h2></div>
       <div className="calibration-form">
-        <div className="individual">
-          <label>Equipment Name*</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Equipment Name*</label>
           <select
             className="calibration-input"
             required
@@ -187,8 +187,8 @@ const CalibrationForm = () => {
         ))}
           </select>
         </div>
-        <div className="individual">
-          <label>Equipment Type*</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Equipment Type*</label>
           <select
             className="calibration-input"
             required
@@ -203,8 +203,8 @@ const CalibrationForm = () => {
         ))}
           </select>
         </div>
-        <div className="individual">
-          <label>Equipment Model*</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Equipment Model*</label>
           <input
             className="calibration-input"
             type="text"
@@ -212,8 +212,8 @@ const CalibrationForm = () => {
             onChange={handleEquipmentModel}
           />
         </div>
-        <div className="individual">
-          <label>Department*</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Department*</label>
           <select
             className="calibration-input"
             required
@@ -228,8 +228,8 @@ const CalibrationForm = () => {
         ))}
           </select>
         </div>
-        <div className="individual">
-         <label>Due Date</label>
+        <div className="calibration-individual">
+         <label className="calibration-form-label">Due Date</label>
           <input
             className="calibration-input"
             type="date"
@@ -239,8 +239,8 @@ const CalibrationForm = () => {
           />
         </div>
         
-        <div className="individual">
-          <label>Calibration Type</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Calibration Type</label>
           <select
             className="calibration-input"
             value={calibrationType}
@@ -252,16 +252,15 @@ const CalibrationForm = () => {
             <option value="Type 3">Type 3</option>
           </select>
         </div>
-        <div className="individual">
-          <label>Reason</label>
+        <div className="calibration-individual">
+          <label className="calibration-form-label">Reason</label>
           <textarea
             className="calibration-description-input"
             required
-            value={reason}
+            value={calibrationReason}
             onChange={handleReason}
           />
         </div>
-        
       </div>
       <div>
       <button className="submit-buttonCalibration" onClick={handleFormSubmit}>

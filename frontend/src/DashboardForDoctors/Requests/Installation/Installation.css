@@ -3,13 +3,21 @@
 .installation-form {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  column-gap: 20px;
   background: whitesmoke; /* Replace the URL with your desired rose-like pattern */
   padding-top: 50px;
   padding-bottom: 20px;
   padding-left: 50px;
   padding-right: 100px;
   margin-top: 0px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  font-size: medium;
+  font-family: -apple-system;
 }
 
 .Installation-Page {
@@ -23,7 +31,9 @@
   padding-left: 30px;
   color: white;
   height: 100px;
-  background: linear-gradient(to top left, #0a284a, #262930);
+  background-color: black;
+  font-size: medium;
+  font-family: -apple-system;
 }
 
 .main-installation {
@@ -33,7 +43,7 @@
   width: 100%;
   font-weight: 500;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
 }
 
 .individual {
@@ -78,8 +88,9 @@
   margin-left: 50px;
   margin-bottom: 60px;
   margin-top: 0px;
+  border-radius: 5px;
 }
 
 .submit-buttonInstallation:hover {
-  background-color: red; /* Darker green on hover */
+  background-color: red; 
 }

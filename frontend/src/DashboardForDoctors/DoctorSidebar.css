@@ -19,7 +19,7 @@
     padding-left: 20px;
     height: 100%;
 }
-.doctor-nav-bar{
+.doctor-nav-barr{
     display: flex;
     margin-top: 10px;
     flex-direction: column;
@@ -27,16 +27,43 @@
     line-height: 10px;
     
 }
-.lists{
+.doctor-lists{
     display: flex;
     align-items: center;
     line-height: 38px;
     cursor: pointer;
     transition: all 0.5s;
     font-size: medium;
-    padding-left: 15px;
     font-family:-apple-system;
     color: rgb(150, 149, 149);
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 5px;
+    width: 170px;
+}
+.null-display{
+  display: none;
+}
+.doctor-lists:hover{
+    background-color: rgb(47, 48, 48);
+}
+.sidebar-notification{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(112, 112, 112);
+    height: 17px;
+    width: 17px;
+    border-radius: 20%;
+    font-size: smaller;
+    font-family: -apple-system;
+}
+.name-and-notification-count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 .lists:hover{
     color: rgb(255, 255, 255);
@@ -60,8 +87,12 @@
     font-weight: bold;
 }
 .link{
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     color: white;
+
+
 }
 .doctor-hum-button{
     background: none;

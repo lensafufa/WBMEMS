@@ -58,6 +58,15 @@
       grid-template-columns: 1fr;
     }
   }
+  .sort-by-dep-individual{
+    font-size: medium;
+    font-family: -apple-system;
+    background-color: rgb(233, 237, 238);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+    color: #414141;
+  }
   
 .device-by-dep{
     display: flex;
@@ -66,7 +75,7 @@
     border-radius: 5px;
     height: 100%;
     width: fit-content;
-    background-color: #e4e5e6;
+    background-color: #ffffff;
     font-size: medium;
     font-family: -apple-system;
 }
@@ -90,10 +99,6 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.sort-by-department{
-    padding-left: 10px;
-    padding-right: 10px;
-}
 .sort-by-department-input{
     margin-left: 20px;
     margin-top: 10px;
@@ -107,4 +112,16 @@
     background-color: rgb(255, 255, 255);
     margin: 10px;
     border-radius: 10px;
+}
+.sort-by-department1{
+  background-color: #f0f0f0;
+  padding: 3px;
+}
+.sort-by-department2{
+  background-color: rgb(245, 245, 245);
+  padding: 3px;
+}
+.sort-by-department3{
+  background-color: rgb(240, 240, 240);
+  padding: 3px;
 }

@@ -54,7 +54,7 @@ const DisplayAnnouncement = () => {
       <div className='main-individual'>
       {announcements.map((announcement) => (
         
-          <div className='individual-announcement' key={announcement.id}>
+          <div className='individual-announcement-display' key={announcement.id}>
             <h3 className='announcement-heading'>{announcement.title} <p className='announcememnt-moment'>{announcement.announcement_time}</p></h3>
             <p className='announcement-description'>{announcement.description}</p>
           </div>

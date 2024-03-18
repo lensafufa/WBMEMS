@@ -177,8 +177,8 @@ return (
                             </div>
                             <div className="footer">
                                 <strong> Status: </strong><span className='status'> {RequestByType.status}</span><br/>
-                                <strong> Assigned to: </strong>{RequestByType.action}<br/>
-                                <strong>Requested by: </strong>{RequestByType.requestedBy}
+                                <strong> Ass. to: </strong>{RequestByType.action}<br/>
+                                <strong>Req. by: </strong>{RequestByType.requestedBy}
                             </div>
                         </div>
                         <button

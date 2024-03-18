@@ -101,19 +101,19 @@ const SortByDepartment = () => {
                     <option value="Psychiatry">Psychiatry</option>
                 </select>
                 <div className="sort-by-department-output-hello">
-  {handleDevice.map(DeviceByDepartment => (
-    DeviceByDepartment.status === 'Active' ? (
-      <div key={DeviceByDepartment.id} className="device-by-dep">
-        <img className='sort-device-image' src={`http://localhost:7000/${DeviceByDepartment.equipmentImage}`} alt='Profile' />
-        <div>
-          <div className="sort-by-department">{DeviceByDepartment.equipmentName}</div>
-          <div className="sort-by-department">{DeviceByDepartment.equipmentDepartment}</div>
-          <div className="sort-by-department">{DeviceByDepartment.manufacturer}</div>
-        </div>
-      </div>
-    ) : null
-  ))}
-</div>
+                    {handleDevice.map(DeviceByDepartment => (
+                        DeviceByDepartment.status === 'Active' ? (
+                        <div key={DeviceByDepartment.id} className="device-by-dep">
+                            <img className='sort-device-image' src={`http://localhost:7000/${DeviceByDepartment.equipmentImage}`} alt='Profile' />
+                            <div className="sort-by-dep-individual">
+                                <div className="sort-by-department1">{DeviceByDepartment.equipmentName}</div>
+                                <div className="sort-by-department2">{DeviceByDepartment.equipmentDepartment}</div>
+                                <div className="sort-by-department3">{DeviceByDepartment.manufacturer}</div>
+                            </div>
+                        </div>
+                        ) : null
+                    ))}
+                </div>
 
             </div> 
      </div>
