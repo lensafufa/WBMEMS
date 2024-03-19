@@ -43,6 +43,8 @@ import CreateAccount from './CreateAccount/CreateAccount.jsx';
 import EngineerDeviceShow from './DashBoardForEngineers/EngineerDeviceShow.jsx';
 import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
 import Contract from './Contract/Contract.jsx';
+import ScheduleMaintenanceForm from './ScheduleMaintenance/scheduleMaintenance.jsx';
+import InventoryCalendar from './Calandar/Calandar.jsx';
 
 
 
@@ -56,6 +58,9 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path='/Inventory' element={<Inventory/>}/>
           <Route path='/Dashboard' element={<Dashboard/>}/>
+          <Route path='/Calendar' element={<InventoryCalendar/>}/>
+          <Route path='/Schedule' element={<ScheduleMaintenanceForm/>}/>
+
           <Route path='/workorder' element={<WorkOrder/>}/>
           <Route path='/Announcement' element={<AnnouncementForm/>}/>
           <Route path='/AnnouncementDisplay' element={<AnnouncementDisplay/>}/>

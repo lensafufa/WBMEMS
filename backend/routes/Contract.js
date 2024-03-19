@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 router.get('/inventory', async (req, res) => {
   try {
     const equipments = await Inventory.findAll({
-      attributes: ['id','equipmentName','model','serialNumber','equipmentDepartment','manufacturer'] // Specify the columns you want to retrieve
+      
     });
     
     res.json(equipments);

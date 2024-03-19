@@ -6,7 +6,8 @@ import { GrOverview } from "react-icons/gr";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FaSort } from "react-icons/fa";
 import { TbReportAnalytics } from "react-icons/tb";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaRegCalendarAlt } from 'react-icons/fa';
+
 import { Link } from "react-router-dom";
 import Home from "./Home";
 import Piechart from "../../Piecharts/Status/Piechart";
@@ -71,8 +72,8 @@ const Dashboard = () => {
               {NotificationCount !== null ? NotificationCount : ''}
               </span></div>Announcement Board</div></Link>
 
-              <Link className="main-my-link" to='/workorder'> <div className="dashboard-schedule-maintenance"> <FaRegCalendarAlt className="main-dashboard-icons"/>Schedule Maintenance</div></Link>
-              <div className="dashboard-schedule-maintenance"><MdOutlinePendingActions className="main-dashboard-icons"/>Pending Requests</div>
+              <Link className="main-my-link" to='/Calendar'> <div className="dashboard-schedule-maintenance"> <FaRegCalendarAlt className="main-dashboard-icons"/>Calendar</div></Link>
+               <div className="dashboard-schedule-maintenance"><MdOutlinePendingActions className="main-dashboard-icons"/>Pending Requests</div>
               <Link to ='/SortByDepartment' className='main-my-link'><div className="dashboard-schedule-maintenance"><FaSort className="main-dashboard-icons"/>Sort By Department</div></Link>
               <Link to='/Report' className="main-my-link"><div className="dashboard-schedule-maintenance"> <TbReportAnalytics className="main-dashboard-icons"/>Reports</div></Link>
 
