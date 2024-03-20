@@ -43,6 +43,12 @@ import CreateAccount from './CreateAccount/CreateAccount.jsx';
 import EngineerDeviceShow from './DashBoardForEngineers/EngineerDeviceShow.jsx';
 import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
 import Contract from './Contract/Contract.jsx';
+import ScheduleMaintenanceForm from './ScheduleMaintenance/scheduleMaintenance.jsx';
+import InventoryCalendar from './Calandar/Calandar.jsx';
+import TrackChanges from './DashboardForDoctors/TrackChanges/TrackChanges.jsx';
+import EngineerInventoryCalendar from './DashBoardForEngineers/Calandar/Calandar.jsx';
+import DoctorTrackChanges from './DashboardForDoctors/TrackChanges/TrackChanges.jsx';
+import EngineerTrackChanges from './DashBoardForEngineers/TrackChanges/TrackChanges.jsx';
 
 
 
@@ -56,6 +62,9 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path='/Inventory' element={<Inventory/>}/>
           <Route path='/Dashboard' element={<Dashboard/>}/>
+          <Route path='/Calendar' element={<InventoryCalendar/>}/>
+          <Route path='/Schedule' element={<ScheduleMaintenanceForm/>}/>
+
           <Route path='/workorder' element={<WorkOrder/>}/>
           <Route path='/Announcement' element={<AnnouncementForm/>}/>
           <Route path='/AnnouncementDisplay' element={<AnnouncementDisplay/>}/>
@@ -66,7 +75,7 @@ function App() {
           <Route path='/DoctorDeviceShow' element={<DoctorDeviceShow/>}/> 
           <Route path='/DoctorMakeRequest' element={<DoctorMakeRequest/>}/> 
           <Route path='/Requested' element={<SortByRequestType/>}/> 
-          <Route path='/RequestHistory' element={<RequestHistory/>}/> 
+          <Route path='/DoctorRequestHistory' element={<DoctorTrackChanges/>}/> 
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
@@ -74,8 +83,10 @@ function App() {
           <Route path='/Requests' element={<Request_options/>}/>
           <Route path='/RequestsByEngineer' element={<Request_optionsEngineer/>}/>
           <Route path='/EngineerDashBoard' element={<EngineerDashboard/>}/>
+          <Route path='/EngineerCalendar' element={<EngineerInventoryCalendar/>}/>
           <Route path='/EngineerDeviceShow' element={<EngineerDeviceShow/>}/>
           <Route path='/EngineerSortByDep' element={<EngineerSortByDep/>}/>
+          <Route path='/EngineerRequestHistory' element={<EngineerTrackChanges/>}/>
           <Route path='/RequestsForEngineer' element={<RequestForEngineer/>}/>
           <Route path='/Requests/Procurement' element={<ProcurementForm/>}/>
           <Route path='/Requests/Calibration' element={<CalibrationForm/>}/>

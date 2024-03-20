@@ -36,6 +36,10 @@ const Inventory = sequelize.define('Inventory', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  preventiveMaintenancePerAnnual: {
+    type: DataTypes.NUMBER,
+    allowNull: true
+  },
   warrantyExpiryDate: {
     type: DataTypes.DATE,
     allowNull: false
