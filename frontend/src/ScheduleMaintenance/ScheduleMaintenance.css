@@ -1,60 +1,57 @@
-/* Maintenance.css */
-
-.maintenance-form-request {
+.schedule-maintenance-form-requestt {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    background: whitesmoke; /* Replace the URL with your desired pattern */
-    padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 100px;
-    margin-top: 0px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    column-gap: 30px;
+    padding: 20px 30px;
+    margin: 20px;
+    margin-top: 70px;
+    margin-bottom: 0px;
   }
   
-  .Maintenance-Page {
+  .schedule-Maintenance-Page {
     display: flex;
     align-items: center;
+    font-size: x-large;
+    font-family: -apple-system;
   }
   
-  .maintenance-title {
+  .schedule-maintenance-title {
     display: flex;
     align-items: center;
     padding-left: 30px;
     color: white;
     height: 100px;
-    background: linear-gradient(to top left, #0a284a, #262930);
-  }
+    background-color: black;  }
   
-  .main-maintenance-request {
+  .schedule-main-maintenance-request {
     display: flex;
     flex-direction: column;
     color: black;
     width: 100%;
     font-weight: 500;
     height: 100%;
-    background-color: whitesmoke;
   }
   
-  .individual {
+  .schedule-individual {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
     min-width: 50px;
   }
   
-  .maintenance-input {
+  .schedule-maintenance-input {
     outline: none;
-    border: 1px solid #ccc;
+    border: none;
     height: 30px;
-    max-width: 500px;
+    width: 100%;
+    padding-left: 5px;
     border-radius: 5px;
-    margin-top: 5px;
-    padding: 0px 10px;
-    background-color: white;
+    background-color: rgb(236, 236, 236);
   }
   
-  .maintenance-description-input {
+  .schedule-maintenance-description-input {
     outline: none;
     border: 1px solid #ccc;
     border-radius: 7px;
@@ -66,22 +63,23 @@
     min-height: 100px;
   }
   
-  .submit-buttonMaintenance {
+  .schedule-submit-buttonMaintenance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 30px;
     width: 150px;
     color: white;
-    background-color: green; /* Green color as an example, you can change it */
-    border: none;
+    background-color: rgb(20, 90, 20); 
+    border-radius: 5px;
+    font-size: medium;
+    font-family: -apple-system;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
     margin-left: 50px;
-    margin-bottom: 60px;
-    
-    
-    
+    margin-bottom: 60px; 
   }
   
-  .submit-buttonMaintenance:hover {
-    background-color: red; /* Darker green on hover */
+  .schedule-submit-buttonMaintenance:hover {
+    background-color: rgb(12, 102, 12); /* Darker green on hover */
   }
   

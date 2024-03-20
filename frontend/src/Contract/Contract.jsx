@@ -5,6 +5,8 @@ import './Contract.css';
 import Home from "../pages/Home/Home";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import { IoSearchSharp } from "react-icons/io5";
+
 
 const Contract = () => {
     const [handleContract, setHandleContract] = useState([]);
@@ -163,40 +165,60 @@ const defaultContractList = async () => {
     };
 
     const handleExportCSV = () => {
-      const columnsToExport = showAllColumns ? Object.keys(searchQuery ? filteredContract[0] || {} : handleContract[0] || {}) : desiredColumns;
       const dataToExport = searchQuery ? filteredContract : handleContract;
-
+  
+      // Extract column names
+      const columnsToExport = Object.keys(dataToExport[0]);
+  
+      // Prepare CSV data
       const csvData = dataToExport.map((row) => columnsToExport.map((col) => row[col] !== null ? row[col] : 'null'));
+  
+      // Prepare CSV headers
       const csvHeaders = columnsToExport.map((col) => formatColumnName(col));
+  
+      // Combine headers and data
       const csvArray = [csvHeaders, ...csvData];
+  
+      // Convert CSV array to CSV content
       const csvContent = csvArray.map((row) => row.join(',')).join('\n');
-
+  
+      // Create a Blob with CSV content
       const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  
+      // Create a URL for the Blob
       const csvUrl = URL.createObjectURL(csvBlob);
+  
+      // Create a link element to trigger download
       const link = document.createElement('a');
       link.href = csvUrl;
       link.setAttribute('download', 'contract_data.csv');
+  
+      // Append link to document and trigger click event
       document.body.appendChild(link);
       link.click();
+  
+      // Clean up
       document.body.removeChild(link);
   };
+  
+  const desiredColumns = ['supplierManufacturer', 'equipmentName', 'equipmentModel', 'agreementDate', 'contractDuration', 'contractExpiryDate'];
 
   const handleExportPDF = () => {
-      const pdf = new jsPDF();
-      const columnsToExport = showAllColumns ? Object.keys(searchQuery ? filteredContract[0] || {} : handleContract[0] || {}) : desiredColumns;
-      const dataToExport = searchQuery ? filteredContract : handleContract;
+    const pdf = new jsPDF();
+    const dataToExport = searchQuery ? filteredContract : handleContract;
 
-      const tableData = dataToExport.map((row) =>
-          columnsToExport.map((col) => (row[col] !== null ? row[col] : 'null'))
-      );
+    const tableData = dataToExport.map((row) =>
+        Object.values(row).map((value) => (value !== null ? value.toString() : 'null'))
+    );
 
-      pdf.autoTable({
-          head: [columnsToExport.map(col => formatColumnName(col))],
-          body: tableData,
-      });
+    pdf.autoTable({
+        head: [Object.keys(dataToExport[0]).map(col => formatColumnName(col))],
+        body: tableData,
+    });
 
-      pdf.save('contarct_data.pdf');
-  };
+    pdf.save('contract_data.pdf');
+};
+
 
     const handleSearch = (e) => {
         setSearchQuery(e.target.value);
@@ -220,50 +242,48 @@ const defaultContractList = async () => {
 
 return (
         <div className="contract-container">
-            <div className="home-and-sort-title">
-                <Home />
-                <h2>Contract</h2>
+          <div className="contract-home-and-sort-title">
+            <Home />
+            <h2>Contract</h2>
+          </div>
+          <div className="contract-search-and-export">
+            <div className="contract-export-buttons">
+                <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
+                <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
             </div>
-            <div className="search-and-export">
-                <div className="export-buttons">
-                    <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-                    <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
-                    
-                </div>
-                <div className="search-container">
-                    <label className="search-label" htmlFor="searchInput">Search</label>
-                    <input
-                        id="searchInput"
-                        className="search-input"
-                        type="text"
-                        value={searchQuery}
-                        onChange={handleSearch}
-                    />
-                </div>
+            <div className="search-container">
+              <IoSearchSharp  className="search-icon"/>
+              <input
+                id="searchInput"
+                className="contract-search-input"
+                type="text"
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+
             </div>
-            <table className="contract-table">
-                <thead>
-                    <tr>
-                        
-                            <React.Fragment>
-                                <th>Supplier/Manufacturer</th>
-                                <th>EquipmentName</th>
-                                <th>Model</th>
-                                <th>Agreement Date</th>
-                                <th>Contract Duration</th>
-                                <th>Expire Date</th>
-                                <th></th>
-                            </React.Fragment>
-                      
-                    </tr>
-                </thead>
+          </div>
+            <table className="main-contract-table">
+              <thead >
+                <tr >
+                  <React.Fragment >
+                    <th className="contract-thead">Supplier/Manufacturer</th>
+                    <th className="contract-thead">EquipmentName</th>
+                    <th className="contract-thead">Model</th>
+                    <th className="contract-thead">Agreement Date</th>
+                    <th className="contract-thead">Contract Duration</th>
+                    <th className="contract-thead">Expire Date</th>
+                    <th></th>
+                  </React.Fragment>
+                </tr>
+              </thead>
                 <tbody>
                     {filteredContract.map((contract) => (
                         <tr key={contract.id}>
-                            <td>{contract.supplierManufacturer}</td>
-                            <td>{contract.equipmentName}</td>
-                            <td>{contract.equipmentModel}</td>
-                            <td>{new Date(contract.agreementDate).toLocaleString('en-US', {
+                            <td className="contract-table-fields">{contract.supplierManufacturer}</td>
+                            <td className="contract-table-fields">{contract.equipmentName}</td>
+                            <td className="contract-table-fields">{contract.equipmentModel}</td>
+                            <td className="contract-table-fields">{new Date(contract.agreementDate).toLocaleString('en-US', {
                                                   year: 'numeric',
                                                   month: '2-digit',
                                                   day: '2-digit',
@@ -272,19 +292,19 @@ return (
                                                   second: '2-digit',
                                                   hour12: true,
                             })}</td>
-                            <td>{contract.contractDuration}</td>
-                            <td>{new Date(contract.contractExpiryDate).toLocaleString('en-US', {
-                                                  year: 'numeric',
-                                                  month: '2-digit',
-                                                  day: '2-digit',
-                                                  hour: '2-digit',
-                                                  minute: '2-digit',
-                                                  second: '2-digit',
-                                                  hour12: true,
+                            <td className="contract-table-fields">{contract.contractDuration}</td>
+                            <td className="contract-table-fields">{new Date(contract.contractExpiryDate).toLocaleString('en-US', {
+                              year: 'numeric',
+                              month: '2-digit',
+                              day: '2-digit',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                              second: '2-digit',
+                              hour12: true,
                             })}</td>
                             
-                            <td>
-                                <button onClick={() => handleDetailClick(contract)}>Details</button>
+                            <td className="contract-table-fields">
+                                <button className="contract-detail-button" onClick={() => handleDetailClick(contract)}>Details</button>
                             </td>
                         </tr>
                     ))}
@@ -293,7 +313,7 @@ return (
             {selectedContract && (
                 <div className='detailed-view-1-contract-detail'>
                     <div className='detail-description-detailed-contract-detail'>
-                      <div>Contract Agreement Detail</div>
+                      <div className="contract-agreement-detail">Contract Agreement Detail</div>
                         <div className='device-description-detailed-contract-detail'>
                             
                                 {Object.entries(selectedContract).map(([columnName, value]) => {
@@ -303,30 +323,30 @@ return (
 
 
 return (
-                                                <div className="sort-by-contract-detail" key={columnName}>
-                                                    <div className="columnName-contract-detail">{formattedColumnName}</div>
-                                                    <div className='columnValue-contract-detail'>{value}</div>
-                                                </div>
-                                            );
-                                        }
-                                    }
-                                    return null;
-                                })}
+  <div className="sort-by-contract-detail" key={columnName}>
+      <div className="columnName-contract-detail">{formattedColumnName}</div>
+      <div className='columnValue-contract-detail'>{value}</div>
+  </div>
+);
+          }
+      }
+      return null;
+  })}
+
                             
-                            
-                        </div>
-                        <button onClick={handleClose} className='detail-close-button-contract-detail'>Close</button>
-                    </div>
-                </div>
-            )}
+          </div>
+          <button onClick={handleClose} className='detail-close-button-contract-detail'>Close</button>
+      </div>
+  </div>
+  )}
             {showContractForm && (
                 <div className='detailed-view-contract-form'>
-                    <div className='detail-description-detailed-contract-form'>
-                    <div className='medical-contract-form-title' >Contarct Agreement Form</div>
+                    <div className='detail-description-detailed-contract-formm'>
+                    <div className='medical-contract-form-title' >Contract Agreement Form</div>
                         
                         <div  className="medical-contract-form">
                           
-                      <label className="contract-form-label">
+                      <label className="contract-contract-form-label">
                       <div className='contractlabel'>Healthcare Facility/Organization</div> 
                         <input type="text" name="healthcareFacility" value={formData.healthcareFacility} onChange={(e) => setFormData({ ...formData, healthcareFacility: e.target.value })} className="contract-form-input" />
                       </label>
@@ -421,12 +441,12 @@ return (
 
                     </div>
                     <button type="button" onClick={handleSubmit}className="contract-form-submit-btn">Submit</button>
-                    <button onClick={handleCloseContractForm} className='contarct-form-detail-close-button1'>Close</button>
+                    <button onClick={handleCloseContractForm} className='contarct-form-detail-close-button2'>Close</button>
                     </div>
                 </div>
             )}
 
-             <button onClick={handleAddContractClick}>Add Contract</button>
+             <button className="add-contract-button" onClick={handleAddContractClick}>Add Contract</button>
 
 
 

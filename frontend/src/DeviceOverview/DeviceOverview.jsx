@@ -130,10 +130,13 @@ const DeviceOverview = () => {
                     
                   </div>
                 </div>
+                <div className='the-two-inventory-buttons'>
                 <button onClick={() => {
                       setWarning(true);
                       setIdHolder(device.id);
                     }} className='dispose-button'>Dispose</button>
+                    <button className='open-maintenance-button'>Maint. Hist.</button>
+                </div>
               </div>
             ))}
           </div>

@@ -90,25 +90,25 @@ const ScheduleMaintenanceForm = () => {
   };
 
   return (
-    <div className="main-maintenance-request">
-      <div className="maintenance-title">
+    <div className="schedule-maintenance-request">
+      <div className="schedule-maintenance-title">
         <Home />
-        <h2 className="Maintenance-Page">Work Scheduler Form</h2>
+        <h2 className="schedule-Maintenance-Page">Work Scheduler Form</h2>
       </div>
-      <div className="maintenance-form-request">
-        <div className="individual">
+      <div className="schedule-maintenance-form-requestt">
+        <div className="schedule-individual">
           <label>Title*</label>
           <input
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="individual">
+        <div className="schedule-individual">
           <label>Assigned To*</label>
           <select
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             required
             value={assignedTo}
             onChange={(e) => setAssignedTo(e.target.value)}
@@ -121,10 +121,10 @@ const ScheduleMaintenanceForm = () => {
             ))}
           </select>
         </div>
-        <div className="individual">
+        <div className="schedule-individual">
           <label>Equipment Name*</label>
           <select
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -137,30 +137,30 @@ const ScheduleMaintenanceForm = () => {
             ))}
           </select>
         </div>
-        <div className="individual">
+        <div className="schedule-individual">
           <label>Equipment Model*</label>
           <input
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             type="text"
             value={equipmentModel}
             onChange={() => {}} // This field is readonly
             readOnly
           />
         </div>
-        <div className="individual">
+        <div className="schedule-individual">
           <label>Department*</label>
           <input
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             type="text"
             value={department}
             onChange={() => {}} // This field is readonly
             readOnly
           />
         </div>
-        <div className="individual">
+        <div className="schedule-individual">
           <label>Event Date*</label>
           <input
-            className="maintenance-input"
+            className="schedule-maintenance-input"
             type="date"
             required
             value={eventDate}
@@ -169,7 +169,7 @@ const ScheduleMaintenanceForm = () => {
         </div>
       </div>
       <div>
-        <button className="submit-buttonMaintenance" onClick={handleFormSubmit}>
+        <button className="schedule-submit-buttonMaintenance" onClick={handleFormSubmit}>
           Submit Request
         </button>
       </div>

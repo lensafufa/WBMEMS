@@ -55,7 +55,7 @@
 }
 .analytical-icons5{
     color: blueviolet;
-    background-color: rgba(137, 43, 226, 0.247);
+    background-color: #892be23f;
 
 }
 .analytical-icons6{
@@ -99,4 +99,8 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
   }
- 
+ .real-number-data{
+  font-size: x-large;
+  font-weight: bold;
+  font-family: -apple-syatem;
+ }

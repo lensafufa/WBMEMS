@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Calandar.css'
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -9,6 +10,7 @@ const localizer = momentLocalizer(moment);
 
 const InventoryCalendar = () => {
   const [events, setEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
     fetchInventory();
@@ -71,29 +73,69 @@ const InventoryCalendar = () => {
   const EventComponent = ({ event }) => (
     <div className="event">
       <div className="event-title">{event.title}</div>
-      <div className="event-details">
-        <div><strong>Equipment Name:</strong> {event.equipmentName}</div>
-        <div><strong>Model:</strong> {event.model}</div>
-        <div><strong>Department:</strong> {event.department}</div>
-        <div><strong>Assign to</strong> {event.AssignedTo}</div>
-      </div>
     </div>
   );
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedEvent(null);
+  };
+
+  const handleSelectSlot = (slotInfo) => {
+    // Implement your functionality when a slot is selected
+    console.log('Slot selected:', slotInfo);
+    // Example: Show a dialog to create a new event for the selected slot
+    // You can use a state to manage the dialog visibility and store the selected slot information
+  };
 
   return (
     <div>
       <div className='device-main'>
-            <div><Home/></div>
-            <h2>Calendar</h2>
-          </div>
+        <div><Home/></div>
+        <h2>Calendar</h2>
+      </div>
       <Calendar
+        className="calendar-container"
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: '600px' }}
         components={{ event: EventComponent }}
+        onSelectEvent={handleSelectEvent}
+        eventPropGetter={(event, start, end, isSelected) => {
+          const newStyle = {
+            backgroundColor: 'some-color',
+            borderRadius: '0px',
+            border: 'none',
+            color: 'white',
+            fontSize: '12px',
+          };
+          return {
+            style: newStyle,
+          };
+        }}
+        resizable
+        draggable
+        onSelectSlot={handleSelectSlot}
       />
+      {selectedEvent && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseModal}>&times;</span>
+            <h2>{selectedEvent.title}</h2>
+            <p><strong>Equipment:</strong> {selectedEvent.equipmentName}</p>
+            <p><strong>Model:</strong> {selectedEvent.model}</p>
+            <p><strong>Department:</strong> {selectedEvent.department}</p>
+            <p><strong>Assigned to:</strong> {selectedEvent.AssignedTo}</p>
+            {/* Additional features can be added here */}
+            {/* For example, buttons to edit or delete the event */}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
