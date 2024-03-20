@@ -3,11 +3,11 @@ import axios from 'axios';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import Home from '../pages/Home/Home';
+import EngineerSidebar from '../EngineerSidebar';
 
 const localizer = momentLocalizer(moment);
 
-const InventoryCalendar = () => {
+const EngineerInventoryCalendar = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -82,10 +82,8 @@ const InventoryCalendar = () => {
 
   return (
     <div>
-      <div className='device-main'>
-            <div><Home/></div>
-            <h2>Calendar</h2>
-          </div>
+      <div className='announcement-main'> <EngineerSidebar/> <h2 className='announcements-main-title'>Calendar</h2></div>
+      
       <Calendar
         localizer={localizer}
         events={events}
@@ -98,4 +96,4 @@ const InventoryCalendar = () => {
   );
 };
 
-export default InventoryCalendar;
+export default EngineerInventoryCalendar;

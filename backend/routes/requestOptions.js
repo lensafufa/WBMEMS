@@ -348,6 +348,29 @@ router.get('/occupation', async (req, res) => {
 });
 
 // ...
+// ... Get requests to Track changes
+router.get('/trackchanges', async (req, res) => {
+  try {
+    const fullName = req.query.fullName;
+    
+    // List of RequestType values you want to include
+    
+
+    const requests = await Requests.findAll({
+      where: {
+        requestedBy: fullName,
+       
+      },
+    });
+
+    console.log(fullName);
+    res.json(requests);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 
 
 // GET requests by Type for Engineers 

@@ -45,6 +45,8 @@ import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
 import Contract from './Contract/Contract.jsx';
 import ScheduleMaintenanceForm from './ScheduleMaintenance/scheduleMaintenance.jsx';
 import InventoryCalendar from './Calandar/Calandar.jsx';
+import TrackChanges from './DashboardForDoctors/TrackChanges/TrackChanges.jsx';
+import EngineerInventoryCalendar from './DashBoardForEngineers/Calandar/Calandar.jsx';
 
 
 
@@ -71,7 +73,7 @@ function App() {
           <Route path='/DoctorDeviceShow' element={<DoctorDeviceShow/>}/> 
           <Route path='/DoctorMakeRequest' element={<DoctorMakeRequest/>}/> 
           <Route path='/Requested' element={<SortByRequestType/>}/> 
-          <Route path='/RequestHistory' element={<RequestHistory/>}/> 
+          <Route path='/RequestHistory' element={<TrackChanges/>}/> 
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
@@ -79,6 +81,7 @@ function App() {
           <Route path='/Requests' element={<Request_options/>}/>
           <Route path='/RequestsByEngineer' element={<Request_optionsEngineer/>}/>
           <Route path='/EngineerDashBoard' element={<EngineerDashboard/>}/>
+          <Route path='/EngineerCalendar' element={<EngineerInventoryCalendar/>}/>
           <Route path='/EngineerDeviceShow' element={<EngineerDeviceShow/>}/>
           <Route path='/EngineerSortByDep' element={<EngineerSortByDep/>}/>
           <Route path='/RequestsForEngineer' element={<RequestForEngineer/>}/>
