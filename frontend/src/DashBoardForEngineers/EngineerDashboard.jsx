@@ -10,6 +10,7 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { GrOverview, GrSchedule } from "react-icons/gr";
 import { FaSort } from "react-icons/fa";
 import { TbReportAnalytics } from "react-icons/tb";
+import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoNotifications } from "react-icons/io5";
 import axios from "axios";
 
@@ -45,8 +46,8 @@ const EngineerDashboard = () => {
             <span className={NotificationCount !== 0 ? "engineer-notification-count-display" : 'engineer-notification-null-count'}>
             {NotificationCount !== null ? NotificationCount : ''}
             </span></div>Announcement Board</div></Link>          
+            <Link to ='/EngineerCalendar' className='my-link'><div className="doctor-sort-by-dep"><FaRegCalendarAlt  className="engineer-dashboard-icons"/>Calendar</div></Link>
             <Link to ='/EngineerSortByDep' className='my-link'><div className="doctor-sort-by-dep"><FaSort className="engineer-dashboard-icons"/>Sort By Department</div></Link>
-        
         </div>
 
         <div className="piechart-in-the-dashboard-engineer">

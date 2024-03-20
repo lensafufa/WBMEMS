@@ -27,6 +27,10 @@ const Contract = sequelize.define('Contract', {
     type: DataTypes.DATE,
     allowNull: true,
   },
+  contractExpiryDate: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
   supplierContact: {
     type: DataTypes.STRING,
     allowNull: true,

@@ -4,6 +4,7 @@ const router = express.Router();
 const Requests=require('../models/AllRequests');
 const { Op } = require('sequelize');
 const User=require('../models/Users');
+const CalendarEvent = require('../models/CalendarEvent');
 
 // Route to handle the procurement form submission
 router.post('/procurement', async (req, res) => {
@@ -347,6 +348,29 @@ router.get('/occupation', async (req, res) => {
 });
 
 // ...
+// ... Get requests to Track changes
+router.get('/trackchanges', async (req, res) => {
+  try {
+    const fullName = req.query.fullName;
+    
+    // List of RequestType values you want to include
+    
+
+    const requests = await Requests.findAll({
+      where: {
+        requestedBy: fullName,
+       
+      },
+    });
+
+    console.log(fullName);
+    res.json(requests);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 
 
 // GET requests by Type for Engineers 
@@ -445,7 +469,51 @@ router.get('/users', async (req, res) => {
   }
 });
 
+// POST endpoint for form submission
+router.post('/calendarEvent', async (req, res) => {
+  try {
+    const {
+      equipmentName,
+      equipmentModel,
+      department,
+      eventDate,
+      title,
+      assignedTo,
+      
+    } = req.body;
 
+    // Create a new entry in the Inventory model
+    await CalendarEvent.create({
+      equipmentName,
+      equipmentModel,
+      department,
+      title, 
+      eventDate,
+      assignedTo,
+      
+    });
+
+    // Send a success response back to the client
+    res.status(201).json({ message: 'calendar request submitted successfully' });
+  } catch (error) {
+    console.error('Error submitting calendar request:', error);
+    // Send an error response back to the client
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+// routes/calendarEvents.js
+
+
+// GET endpoint to fetch calendar events
+router.get('/calendarEvent', async (req, res) => {
+  try {
+    const events = await CalendarEvent.findAll();
+    res.json(events);
+  } catch (error) {
+    console.error('Error fetching calendar events:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 
 

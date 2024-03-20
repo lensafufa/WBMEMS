@@ -14,7 +14,7 @@ const Inventory = () => {
   const [countryOfOrigin, setCountryOfOrigin] = useState('');
   const [warrantyExpiryDate, setWarrantyExpiryDate] = useState('');
   const [equipmentImage, setEquipmentImage] = useState(null);
-  
+  const [preventiveMaintenancePerAnnual, setPreventiveMaintenancePerAnnual] = useState(null);
 
   const handleEquipmentName = (e) => {
     setEquipmentName(e.target.value);
@@ -46,10 +46,12 @@ const Inventory = () => {
   const handleEquipmentImage = (e) => {
     setEquipmentImage(e.target.files[0]);
   };
-
+  const handlePreventiveMaintenance = (e) => {
+    setPreventiveMaintenancePerAnnual(e.target.value);
+  };
   const handleFormSubmit = async () => {
     try {
-          if(!equipmentName || !model || !serialNumber
+          if(!equipmentName || !model || !serialNumber|| !preventiveMaintenancePerAnnual
             || !equipmentDepartment || !equipmentDescription
             || !manufacturer || !countryOfOrigin || !warrantyExpiryDate || !equipmentImage){
               alert('Please fill all fields!')
@@ -66,6 +68,8 @@ const Inventory = () => {
       formData.append('countryOfOrigin', countryOfOrigin);
       formData.append('warrantyExpiryDate', warrantyExpiryDate);
       formData.append('equipmentImage', equipmentImage);
+      formData.append('preventiveMaintenancePerAnnual', preventiveMaintenancePerAnnual);
+
 
       await axios.post('http://localhost:7000/api/deviceRegistration', formData,{
         headers: {
@@ -83,7 +87,9 @@ const Inventory = () => {
       setManufacturer(''),
       setCountryOfOrigin(''),
       setWarrantyExpiryDate(''),
-      setWarrantyExpiryDate('')
+      setWarrantyExpiryDate(''),
+      setPreventiveMaintenancePerAnnual('')
+
   }
  
           
@@ -176,6 +182,16 @@ const Inventory = () => {
               required
               value={countryOfOrigin}
               onChange={handleCountryOfOrigin}
+            />
+          </div>
+          <div className="individual">
+            <label>PM per Annual*</label>
+            <input
+              className="inventory-input"
+              type="number"
+              
+              value={preventiveMaintenancePerAnnual}
+              onChange={handlePreventiveMaintenance}
             />
           </div>
           <div className="individual">
