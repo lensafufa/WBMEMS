@@ -21,8 +21,8 @@ const Contract = () => {
       supplierManufacturerEmail: '',
       agreementDate: '',
       supplierContact: '',
-      equipmentName:"",
-      equipmentModel:"",
+      equipmentName: "",
+      equipmentModel: "",
       contractDuration: '',
       terminationConditions: '',
       serviceLevelExpectations: '',
@@ -32,8 +32,10 @@ const Contract = () => {
       paymentTerms: '',
       warrantyTerms: '',
       liabilityLimitations: '',
-      defectHandlingProcedures: ''
+      defectHandlingProcedures: '',
+      contractExpiryDate: '', // New field for contract expiration date
     });
+    
 
     useEffect(() => {
       fetchInventory();
@@ -106,7 +108,8 @@ const Contract = () => {
             paymentTerms: '',
             warrantyTerms: '',
             liabilityLimitations: '',
-            defectHandlingProcedures: ''
+            defectHandlingProcedures: '',
+            contractExpiryDate:'',
         });
 
         // Close the contract form after submission
@@ -248,6 +251,7 @@ return (
                                 <th>Model</th>
                                 <th>Agreement Date</th>
                                 <th>Contract Duration</th>
+                                <th>Expire Date</th>
                                 <th></th>
                             </React.Fragment>
                       
@@ -269,6 +273,16 @@ return (
                                                   hour12: true,
                             })}</td>
                             <td>{contract.contractDuration}</td>
+                            <td>{new Date(contract.contractExpiryDate).toLocaleString('en-US', {
+                                                  year: 'numeric',
+                                                  month: '2-digit',
+                                                  day: '2-digit',
+                                                  hour: '2-digit',
+                                                  minute: '2-digit',
+                                                  second: '2-digit',
+                                                  hour12: true,
+                            })}</td>
+                            
                             <td>
                                 <button onClick={() => handleDetailClick(contract)}>Details</button>
                             </td>
@@ -380,9 +394,7 @@ return (
                       </label>
                       <label className="contract-contract-form-label">
                       <div className='contractlabel'>Defect Handling Procedures</div>
-
-
-<input type="text" name="defectHandlingProcedures" value={formData.defectHandlingProcedures} onChange={(e) => setFormData({ ...formData, defectHandlingProcedures: e.target.value })} className="contract-form-input" />
+                      <input type="text" name="defectHandlingProcedures" value={formData.defectHandlingProcedures} onChange={(e) => setFormData({ ...formData, defectHandlingProcedures: e.target.value })} className="contract-form-input" />
                       </label>
                       <label className="contract-contract-form-label">
                       <div className='contractlabel'>Equipment Name</div>
@@ -402,6 +414,11 @@ return (
                                         ))}
                                     </select>
                                  </label>
+                                 <label className="contract-contract-form-label">
+                      <div className='contractlabel'>Contract Expiry Date</div>
+                      <input type="date" name="contractExpiryDate" value={formData.contractExpiryDate} onChange={(e) => setFormData({ ...formData, contractExpiryDate: e.target.value })} className="contract-form-input" />
+                    </label>
+
                     </div>
                     <button type="button" onClick={handleSubmit}className="contract-form-submit-btn">Submit</button>
                     <button onClick={handleCloseContractForm} className='contarct-form-detail-close-button1'>Close</button>
