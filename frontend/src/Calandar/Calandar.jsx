@@ -123,16 +123,17 @@ const InventoryCalendar = () => {
         onSelectSlot={handleSelectSlot}
       />
       {selectedEvent && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal-calendar">
+          <div className="modal-content-calendar">
+            <div className='the-block'>
+              <h2>{selectedEvent.title}</h2>
+              <p><strong>Equipment Name:</strong> {selectedEvent.equipmentName}</p>
+              <p><strong>Model:</strong> {selectedEvent.model}</p>
+              <p><strong>Department:</strong> {selectedEvent.department}</p>
+              <p><strong>Assigned to:</strong> {selectedEvent.AssignedTo}</p>
+            </div>
             <span className="close" onClick={handleCloseModal}>&times;</span>
-            <h2>{selectedEvent.title}</h2>
-            <p><strong>Equipment:</strong> {selectedEvent.equipmentName}</p>
-            <p><strong>Model:</strong> {selectedEvent.model}</p>
-            <p><strong>Department:</strong> {selectedEvent.department}</p>
-            <p><strong>Assigned to:</strong> {selectedEvent.AssignedTo}</p>
-            {/* Additional features can be added here */}
-            {/* For example, buttons to edit or delete the event */}
+
           </div>
         </div>
       )}

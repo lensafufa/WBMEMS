@@ -53,38 +53,40 @@ const DoctorTrackChanges = () => {
     };
 
     return (
-        <div className='show-request-body-trackChanges'>
-            <div className="home-and-sort-title-trackChanges"><DoctorSidebar/><h2>Track Requests</h2></div>
-            <table className="request-table">
+        <div className=''>
+            <div className="track-and-sort-title-trackChanges"><DoctorSidebar/><h2>Track Requests</h2></div>
+            <div className="track-table-holder">
+            <table className="track-request-table">
                 <thead>
-                    <tr>
-                        <th>Request Type</th>
-                        <th>Request Date</th>
-                        <th>Equipment Name</th>
-                        <th>Department</th>
-                        <th>Status</th>
-                        <th>Assigned</th>
-                        <th>Requested By</th>
-                        <th>Details</th>
+                    <tr className="track-main-row">
+                        <th className="track-table-headers">Request Type</th>
+                        <th  className="track-table-headers">Request Date</th>
+                        <th  className="track-table-headers">Equipment Name</th>
+                        <th  className="track-table-headers">Department</th>
+                        <th  className="track-table-headers">Status</th>
+                        <th  className="track-table-headers">Assigned</th>
+                        <th  className="track-table-headers">Requested By</th>
+                        <th  className="track-table-headers">Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     {handleRequest.map((RequestByType) => (
                         <tr key={RequestByType.id}>
-                            <td>{RequestByType.requestType}</td>
-                            <td>{RequestByType.requestDate}</td>
-                            <td>{RequestByType.equipmentName}</td>
-                            <td>{RequestByType.department}</td>
-                            <td style={{ backgroundColor: getStatusColor(RequestByType.status) }}>{RequestByType.status}</td>
-                            <td>{RequestByType.action}</td>
-                            <td>{RequestByType.requestedBy}</td>
+                            <td className="track-data">{RequestByType.requestType}</td>
+                            <td className="track-data">{RequestByType.requestDate}</td>
+                            <td className="track-data">{RequestByType.equipmentName}</td>
+                            <td className="track-data">{RequestByType.department}</td>
+                            <td className="track-dataa" style={{ backgroundColor: getStatusColor(RequestByType.status) }}>{RequestByType.status}</td>
+                            <td className="track-data">{RequestByType.action}</td>
+                            <td className="track-data">{RequestByType.requestedBy}</td>
                             <td>
-                                <button onClick={() => getById(RequestByType.id)}>Detail</button>
+                                <button className="track-detail-button" onClick={() => getById(RequestByType.id)}>Detail</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </div>
             {detailed && (
                 <div className='detailed-view-1-trackchanges'>
                     <div className='detail-description-trackChanges'>

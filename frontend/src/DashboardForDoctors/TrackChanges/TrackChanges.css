@@ -1,109 +1,38 @@
-/* Updated CSS with Professional Class Names and White Background */
-.show-request-body-trackChanges {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  
-  .home-and-sort-title-trackChanges {
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to top left, #0a284a, #262930);
-    color: rgb(251, 251, 251);
-    width: 100%;
-    padding-left: 50px;
-    height: 100px;
-    font-size: 15px;
-  }
-  
- 
-  
-  
-.sort-by-request-trackChanges{
+.track-and-sort-title-trackChanges{
   display: flex;
-  height: fit-content;
-  flex-direction: column;
-  background-color: #ebeaea;
-  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin: 0px;
+ padding-left: 30px;
+  font-size: medium;
+  font-family: -apple-system;
 }
-  
-  
-  
-  /* Update the column value styles */
-  
-  
-  
- 
-  
-  /* Decrease brightness on hover for buttons */
-  
-  /* Decrease brightness on hover for detail-close-button */
-
-
-  .detailed-view-1-trackchanges {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-  
-  .detail-description-trackChanges {
-    background-color: #ebeaea;
-    padding: 20px;
-    width: 90%;
-    font-size: x-large;
-    font-family: -apple-system;
-    max-width: 900px;
-    border-radius: 5px;
-    max-height: 90vh; /* Adjust the maximum height as needed */
-    overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
-  }
-  
-  .device-description-trackChanges {
-    display: grid;
-    align-items:start;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    column-gap: 27px;
-    row-gap: 20px;
-    background-color: #ebeaea;
-    overflow-y: auto; 
-  }
-  
-  .detail-close-button-trackChanges {
-    background-color: #bb1409;
-    color: rgb(230, 227, 227);
-    border: none;
-    width: 100px;
-    margin-top: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: medium;
-    font-family: -apple-system;
-  }
-  
-  .columnName-trackChanges {
-    
-    padding: 3px 5px;
-    font-weight: bold;
-    font-size: medium;
-    font-family: -apple-system;
-    border-radius: 3px;
-  }
-  
-  /* Update the column value styles */
-  .columnValue-trackChanges {
-    font-size: medium;
-    font-family: -apple-system;
-  }
-  
-  
-  
+.track-request-table{
+  background:none;
+  margin-top: 20px;
+  font-size: medium;
+  font-family: -apple-system;
+}
+.track-table-headers{
+  background-color: rgb(48, 139, 219);
+  padding: 5px 10px;
+  border-radius: px;
+}
+.track-data{
+ padding: 5px 12px;
+}
+.track-dataa{
+  color: rgb(0, 0, 0);
+  padding: 5px 12px;
+}
+.track-detail-button{
+  width: 100%;
+  background-color: rgb(74, 162, 240);
+  color: black;
+}
+.track-table-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
