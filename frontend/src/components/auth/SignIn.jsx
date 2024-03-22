@@ -54,14 +54,15 @@ const SignIn = () => {
       dispatch(setUser(decoded));
       
     
-      if(decoded.occupation === 'Admin'){
+      if(decoded.occupation === 'Biomedical Head'){
         navigate('/Dashboard');
       }else if(decoded.occupation === 'Doctor'){
         navigate('/DoctorDashboard')
       }else if(decoded.occupation=== 'Engineer'){
         navigate('/EngineerDashBoard')
-      }
-      else{
+      }else if(decoded.occupation=== 'Administrator'){
+        navigate('/AdminstratorDashboard')
+      }else{
         navigate('/SignIn')
       }
       setUserName('');

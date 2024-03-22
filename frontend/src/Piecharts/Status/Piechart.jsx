@@ -94,7 +94,7 @@ const Piechart = () => {
   
   return (
     <div>
-      <canvas id="myPieChart2" width="230" height="230"></canvas>
+      <canvas id="myPieChart2" width="220" height="220"></canvas>
     </div>
   );
 };

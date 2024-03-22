@@ -13,7 +13,6 @@ import Home from "./Home";
 import Piechart from "../../Piecharts/Status/Piechart";
 import PieDepartment from "../../Piecharts/Department/pieDepartment";
 import axios from "axios";
-import BarChart from "../../Piecharts/BarChart";
 import WorkOrderStatus from "../../Piecharts/workorderstatus/WorkOrderStatus";
 import RequestType from "../../Piecharts/RequestType/RequestType";
 import EquipmentByCost from "../../Piecharts/EquipmentByCost/EquipmentByCost";
@@ -51,17 +50,19 @@ const Dashboard = () => {
     }
   };
   return (    
-    <div className="main-class">
-      <div className="right-part">
-        <div className="the-navigation-main-class"><Home/><h2 className="the-navigation-title">Navigation</h2></div>
-        <div className="analytical-device-data"><AnalyticalData/></div>
-        <div className="analytical-data-and-buttons">  
-          <div className="the-two-doughnuts">
-            <div className="admin-piechart-holder-status"><Piechart/></div>
-            <div className="admin-piechart-holder-department"><EquipmentByCost/></div>
-            <div className="admin-piechart-holder-department"><RequestType/></div>
+    <div className="main-classs">
+      <div className="the-navigation-main-class"><Home/><h2 className="the-navigation-title">Navigation</h2></div>
+      <div className="main-right-part">
+          <div className="analytical-data-and-buttons"> 
+            <div className="analytical-device-data"><div className="doooooo"></div><AnalyticalData/></div> 
+            <div className="the-two-doughnuts">
+              <div className="admin-piechart-holder-status"><Piechart/></div>
+              <div className="admin-piechart-holder-department"><EquipmentByCost/></div>
+              <div className="admin-piechart-holder-department"><RequestType/></div>
+            </div>
           </div>
-          <div className="admin-sub-class">
+        <div className="biomed-admin-sub-class">
+             <div className="links-background"></div>
               <Link to='/DeviceOverview' className='main-my-link'><div className="admin-dashboard-device-overview"> <div className="bell-and-notification-count"><GrOverview className="dashboard-icons-bell"/>
               <span className={NewDeviceNotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
                 {NewDeviceNotificationCount !== null ? NewDeviceNotificationCount : ''}
@@ -78,13 +79,11 @@ const Dashboard = () => {
               <Link to='/Report' className="main-my-link"><div className="dashboard-schedule-maintenance"> <TbReportAnalytics className="main-dashboard-icons"/>Reports</div></Link>
 
           </div>
-        </div>
-        <div className="admin-piechart-in-the-dashboard">
+      </div>
+      <div className="admin-piechart-in-the-dashboard">
           <div className="admin-piechart-holder-department"><WorkOrderStatus/></div>           
           <div className="admin-piechart-holder-department"><PieDepartment/></div>   
         </div>
-         <div className="admin-piechart-holder-department"><BarChart/></div>
-      </div>
       <div className="dashboard-bottom-bar">
           <h1 className="dashboard-computer-and-title">
             <TiDeviceDesktop className="computer-icon" />

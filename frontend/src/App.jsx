@@ -42,13 +42,16 @@ import SortByReportType from './Report/ShowReport.jsx';
 import CreateAccount from './CreateAccount/CreateAccount.jsx';
 import EngineerDeviceShow from './DashBoardForEngineers/EngineerDeviceShow.jsx';
 import EngineerSortByDep from './DashBoardForEngineers/EngineerSortByDep.jsx';
-import Contract from './Contract/Contract.jsx';
 import ScheduleMaintenanceForm from './ScheduleMaintenance/scheduleMaintenance.jsx';
 import InventoryCalendar from './Calandar/Calandar.jsx';
-import TrackChanges from './DashboardForDoctors/TrackChanges/TrackChanges.jsx';
 import EngineerInventoryCalendar from './DashBoardForEngineers/Calandar/Calandar.jsx';
 import DoctorTrackChanges from './DashboardForDoctors/TrackChanges/TrackChanges.jsx';
 import EngineerTrackChanges from './DashBoardForEngineers/TrackChanges/TrackChanges.jsx';
+import AdminstratorDashboard from './DashboardforAdmin/DashboardAdmin.jsx';
+import Contract from './DashboardforAdmin/Contract/Contract.jsx';
+import AdminDeviceOverview from './DashboardforAdmin/DeviceShowAdmin.jsx';
+import RequestedAdmin from './DashboardforAdmin/RequestedAdmin.jsx';
+import ViewAllRequest from './DashboardforAdmin/ViewAllRequests/ViewAllRequest.jsx';
 
 
 
@@ -103,7 +106,10 @@ function App() {
           <Route path='/EngineerAnnouncement' element={<EngineerAnnouncement/>}/>
           <Route path='/Report' element={<SortByReportType/>}/>
           <Route path='/Contract' element={<Contract/>}/>
-          
+          <Route path='/AdminstratorDashboard' element={<AdminstratorDashboard/>}/>
+          <Route path='/AdminDeviceOverview' element={<AdminDeviceOverview/>}/>
+          <Route path='/RequestedAdmin' element={<RequestedAdmin/>}/>
+          <Route path='/ViewAllRequest' element={<ViewAllRequest/>}/>
         </Routes>
       </div>
     </Router>

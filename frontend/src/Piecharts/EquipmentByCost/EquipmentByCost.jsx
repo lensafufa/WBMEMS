@@ -97,7 +97,7 @@ const EquipmentByCost = () => {
 
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart5" width="200" height="200"></canvas>
+      <canvas className='pieDepartment' id="myPieChart5" width="220" height="220"></canvas>
     </div>
   );
 };

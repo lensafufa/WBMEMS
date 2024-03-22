@@ -39,16 +39,16 @@ router.post('/', upload.single('profilePicture'), async (req, res) => {
 
   try {
     // Validate email using ZeroBounce API
-    const validationResponse = await validateEmail(email);
-   console.log('hello world',validationResponse.status);
-    if (validationResponse.status === 'valid') {
+   // const validationResponse = await validateEmail(email);
+   //console.log('hello world',validationResponse.status);
+   // if (validationResponse.status === 'valid') {
       // If email is valid, proceed with user creation
       const newUser = await User.create({ name, lastName, userName, phoneNumber, email, password, occupation, profilePicture });
       res.json(newUser);
-    } else {
+    //} else {
       // If email is invalid, return an error response
-      res.status(400).json({ error: 'Invalid email address' });
-    }
+     // res.status(400).json({ error: 'Invalid email address' });
+    //}
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -83,7 +83,7 @@ router.put('/:userId/profile', upload.single('profilePicture'), async (req, res)
 // GET all users
 router.get('/', async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.findAll();
     res.json(users);
   } catch (err) {
     console.error(err.message);

@@ -47,7 +47,6 @@ const Home = () => {
           <Link className='link' to='/Schedule'><div className='main-lists'><FaRegCalendarAlt className='icons'/><div>Schedule Work</div></div></Link> 
           <Link className='link' to='/Requested'><div className='main-lists'><CiSquareQuestion className='icons'/><div>Requested Issues</div></div></Link>
           <Link className='link' to='/DisposedDevices'><div className='main-lists'><RiDeleteBin6Line className='icons'/><div>Disposed Equipments</div></div></Link>
-          <Link className='link' to='/Contract'><div className='main-lists'><FaFileContract className='icons'/><div>Contract</div></div></Link> 
           <Link className='link' to='/Report'><div className='main-lists'><FaFileAlt className='icons'/><div>Report</div></div></Link> 
           <Link className='link' to='/Announcement'><div className='main-lists'><TfiAnnouncement className='icons'/><div>Announcement</div></div></Link>
           <Link className='link' to='/CreateAccount'><div className='main-lists'><MdAccountBox className='icons'/><div>Create Account</div></div></Link> 

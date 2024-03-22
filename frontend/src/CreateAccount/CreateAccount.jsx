@@ -158,7 +158,8 @@ const CreateAccount = () => {
             <label >Occupation*</label>
             <select className="occupation-input" value={occupation} type='text' onChange={handleOccupation}>
             <option value="" className="select-occupation-ph">Select an Occupation</option>
-            <option value="Admin">Admin</option>
+            <option value="Administrator">Administrator</option>
+            <option value="Biomedical Head">Biomedical Head</option>
             <option value="Engineer">Engineer</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>

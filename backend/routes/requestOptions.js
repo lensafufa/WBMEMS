@@ -254,6 +254,23 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+/////////////////////
+router.get('/forAdmin', async (req, res) => {
+  try {
+    const requests = await Requests.findAll({
+       where:{
+        requestType:{
+          [Op.or]: ['training', 'procurement']
+        },
+       }
+      
+    });
+    res.json(requests);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 /////////////////////////////////////
 router.get('/byStatus', async (req, res) => {
   try {

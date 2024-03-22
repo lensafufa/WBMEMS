@@ -1,0 +1,121 @@
+.Admin-request-table-headers{
+    width:max-content;
+    background-color: #0a284a;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-family: -apple-system;
+}
+.home-and-sort-title-Admin{
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  background-color: black;
+  color: white;
+  font-size: medium;
+  font-family: -apple-system;
+}
+.admin-request-table{
+  background: none;
+}
+.bubu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Admin-request-table-data{
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: 15px;
+    font-family: -apple-system;
+    border-bottom: 1px solid rgb(219, 218, 218);
+    border-left: 1px solid rgb(219, 218, 218);
+    border-right: 1px solid rgb(219, 218, 218);
+}
+.Request-Detail-for-admin{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.columnValue-trackChanges-admin{
+  font-size: medium;
+  margin-left: 5px;
+  font-family: -apple-system;
+}
+.Admin-request-table-dataa{
+  display: flex;
+  font-size: medium;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  font-family: -apple-system;
+  padding-left: 3px;
+  color: white;
+  font-weight: 530;
+}
+.Admin-request-table-Report-button{
+  background-color: rgb(6, 119, 57);
+  border: none;
+  margin-left: 3px;
+  border-radius: 3px;
+  font-family: -apple-system;
+}
+.Admin-request-table-Detail-button{
+  border: none;
+  background-color: #0a284a;
+  border-radius: 3px;
+  font-family: -apple-system;
+}
+.show-request-body-trackChanges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailed-view-1-trackchanges {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.detail-description-trackChanges {
+  background-color: #ebeaea;
+  padding: 20px;
+  width: 90%;
+  font-size: x-large;
+  font-family: -apple-system;
+  max-width: 900px;
+  border-radius: 5px;
+  max-height: 90vh; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
+  }
+
+.detail-close-button-trackChanges {
+  background-color: #bb1409;
+  color: rgb(230, 227, 227);
+  border: none;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: medium;
+  font-family: -apple-system;
+}
+.columnName-trackChanges {
+  padding: 3px 5px;
+  font-weight: bold;
+  font-size: medium;
+  font-family: -apple-system;
+  border-radius: 3px;
+}
+.columnValue-trackChanges {
+  font-size: medium;
+  font-family: -apple-system;
+}
+
+
+  

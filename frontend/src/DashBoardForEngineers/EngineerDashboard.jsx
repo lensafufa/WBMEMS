@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import './EngineerDashboard.css';
 import EngineerSidebar from "./EngineerSidebar";
-import Home from "../pages/Home/Home";
 import Piechart from "../Piecharts/Status/Piechart";
 import PieDepartment from "../Piecharts/Department/pieDepartment";
-import BarChart from "../Piecharts/BarChart";
 import { Link } from "react-router-dom";
-import { MdOutlinePendingActions } from "react-icons/md";
 import { GrOverview, GrSchedule } from "react-icons/gr";
 import { FaSort } from "react-icons/fa";
-import { TbReportAnalytics } from "react-icons/tb";
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoNotifications } from "react-icons/io5";
 import axios from "axios";
@@ -54,7 +50,6 @@ const EngineerDashboard = () => {
             <div className="piechart-holder-status-engineer"><Piechart/></div>
             <div className="piechart-holder-department-engineer"><PieDepartment/></div>            
          </div>
-         <div className="piechart-holder-department"><BarChart/></div>
       </div>
      
     </div>

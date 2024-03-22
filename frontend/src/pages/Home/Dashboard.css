@@ -19,16 +19,19 @@ body{
     border-radius: 50%;
     color: white;
 }
-.admin-sub-class{
+.biomed-admin-sub-class{
     display: flex;
+    position: relative;
     flex-direction: column;
     padding: 10px;
     border-radius: 5px;
     row-gap: 21px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    width: 300px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 5px;
+    width:fit-content;
+    color: white;
     margin-right: 20px;
+    margin-left: 40px;
 
 }
 .admin-schedule-maintenance:hover,
@@ -49,7 +52,7 @@ body{
 .admin-dashboard-device-overview{
     display: flex;
     align-items: center;
-    color: rgb(87, 85, 85);
+    color: white;
     font-weight: bold;
     font-size: medium;
     width: max-content;
@@ -87,17 +90,18 @@ body{
     text-decoration: none;
 }
 
-.right-part{
+.main-right-part{
   display: flex;
-  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row;
   width: 100%;
+ 
 }
 
-.main-class{
+.main-classs{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between; 
 }
 .computer-icon{ 
     margin-right: 20px;
@@ -177,25 +181,40 @@ body{
 .bottombar-description{
     padding: 20px;
 }
+.doooooo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:url('a2.jpg');
+  background-size:cover;
+  filter: blur(0px); /* Adjust the blur intensity as needed */
+  z-index: -1;
+  border-radius: 5px;
+}
 .analytical-device-data{
     display: flex;
     justify-content: center;
-    margin: 20px;
-    border-radius: 10px;
-    padding:10px;
+     margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
 }
 .analytical-data-and-buttons{
     display: flex;
-    align-items: start;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 10px;
     justify-content: space-between;
 }
 .the-two-doughnuts{
     display: flex;
-    background-color: rgba(255, 255, 255);
-    margin: 20px;
-    margin-top: 0px;
     border-radius: 10px;
     width: 100%;
+    background-color: rgba(255, 255, 255);
+    border: 1px solid rgb(201, 203, 204);
 }
 @media (min-width: 500px) {
     .the-two-doughnuts {
@@ -214,5 +233,17 @@ body{
         display: grid;
       grid-template-columns: 1fr 1fr 1fr ;
     }
+  }
+  .links-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-image: url('a2.jpg');
+    filter: blur(5px);
   }
  
