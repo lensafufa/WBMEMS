@@ -26,7 +26,7 @@ const AllReports = sequelize.define('AllReports', {
   },
   serialNumber: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   manufacturer: {
     type: DataTypes.STRING,

@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from 'chart.js/auto';
 
-const EquipmentByCost = () => {
+const Staff = () => {
   const [pieChartData, setPieChartData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/reportOptions/EquipmentWithCost');
+        const response = await axios.get('http://localhost:7000/api/registration/staff');
         setPieChartData(response.data);
-        console.log('the couple data', response.data);
       } catch (error) {
         console.error('Error fetching pie chart data:', error);
       }
@@ -26,15 +25,15 @@ const EquipmentByCost = () => {
   }, [pieChartData]);
 
   const drawPieChart = () => {
-    const labels = pieChartData.map((data) => data.reportType.replace(/^\w/, c => c.toUpperCase()));
-    const costs = pieChartData.map((data) => data.cost);
-    const ctx = document.getElementById('myPieChart5').getContext('2d');
+    const labels = pieChartData.map((data) => data.occupation);
+    const costs = pieChartData.map((data) => data.count);
+    const ctx = document.getElementById('myPieChart6').getContext('2d');
     new Chart(ctx, {
-      type: 'doughnut',
+      type: 'pie',
       data: {
         labels: labels,
         datasets: [{
-          data: costs,
+          data: costs,          
           backgroundColor: [
             'rgb(112, 112, 112)',
             'rgb(85, 79, 79)',
@@ -83,7 +82,7 @@ const EquipmentByCost = () => {
             },
             title: {
               display:true,
-              text: 'Respective Costs',
+              text: 'Staff Information',
               position:'bottom',
               color: 'black',
               font:{
@@ -98,9 +97,9 @@ const EquipmentByCost = () => {
 
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart5" width="230" height="230"></canvas>
+      <canvas className='pieDepartment' id="myPieChart6" width="240" height="240"></canvas>
     </div>
   );
 };
 
-export default EquipmentByCost;
+export default Staff;

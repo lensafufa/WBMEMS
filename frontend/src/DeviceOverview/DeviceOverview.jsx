@@ -10,7 +10,8 @@ const DeviceOverview = () => {
   const [warning, setWarning] = useState(false);
   const [idHolder, setIdHolder] = useState(null);
   const [detailed, setDetailed] = useState(null); // Changed state name to lowercase "detailed"
-
+  const [history, setHistory] = useState(false);
+  const [handleReport, setHandleReport] = useState([]);
   useEffect(() => {
     fetchDeviceOverview();
     EraseNotifications();
@@ -43,6 +44,22 @@ const DeviceOverview = () => {
     }
   };
 
+/////////////////////////////////////////////////////
+  const handleGetReportsBySerialNumber = async (serialNumber) => {
+    try {
+        const response = await axios.get(`http://localhost:7000/api/reportOptions/getBySerialNumber?serialNumber=${serialNumber}`);
+        setHandleReport(response.data);
+        console.log('received doooooo:', response.data);
+    } catch (error) {
+        console.error('error fetching the report', error);
+    }
+};
+
+const formatColumnName = (columnName) => {
+  return columnName.replace(/([a-z])([A-Z])/g, '$1 $2').charAt(0).toUpperCase() + columnName.slice(1);
+};
+const desiredColumns = ['equipmentName', 'Model', 'department', 'reportType', 'doneBy', 'reportDate', 'replacementCostInETB', 'durationInHours'];
+/////////////////////////////////////////
   const updateStatus = async (id, newStatus) => {
     try {
       const response = await axios.put(`http://localhost:7000/api/deviceRegistration/${id}`, { status: newStatus });
@@ -112,7 +129,7 @@ const DeviceOverview = () => {
         <div className='grand-device'>
           <div className='device-main'>
             <div><Home/></div>
-            <h2>Device Information</h2>
+            <h2>Equipment Information</h2>
           </div>
           <div className='device-table'>
             {deviceOverview.map((device) => (
@@ -135,13 +152,44 @@ const DeviceOverview = () => {
                       setWarning(true);
                       setIdHolder(device.id);
                     }} className='dispose-button'>Dispose</button>
-                    <button className='open-maintenance-button'>Maint. Hist.</button>
+                    <button className='open-maintenance-button' onClick={()=>{
+                      setHistory(true);
+                      handleGetReportsBySerialNumber(device.serialNumber);
+                      console.log('the serial number',device.serialNumber);
+                    }}>Maint. Hist.</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       )};
+      {history && handleReport.length >0 &&(
+        <div className='specific-Device-History-reportt'>
+          <div className="specific-Device-History-report-grid">
+            <h2 className='maint-hist'>Maintenance History</h2>
+            {handleReport.map((report, index) => (
+              <div className="grid-item" key={index}>
+                {Object.keys(report).map((columnName, colIndex) => {
+                  const value = report[columnName];
+                  if (value !== null) {
+                    return (
+                      <div className="grid-item-cell" key={colIndex}>
+                        <div className="grid-item-cell-label">{formatColumnName(columnName)}</div>
+                        <div className="grid-item-cell-value">{value}</div>
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+            ))}
+          </div>
+          <button className='specific-Device-History-report-button' onClick={()=>{
+            setHistory(false);
+          }}>Close</button>
+        </div>
+      )};
+
       {detailed && (
         <div className='detailed-view-2'>
           <div className='detail-description'>

@@ -61,7 +61,24 @@ router.get('/getByReportType', async(req, res) => {
       console.error(error.message);
   } 
  });
-
+////////////////////////////////////
+router.get('/getBySerialNumber', async(req, res) => {
+  try{
+   const serialNumber = req.query.serialNumber;
+   console.log('the recieved serial',serialNumber );
+   const Requiredreports = await AllReports.findAll({
+     where:{
+      serialNumber: serialNumber,
+     }
+   });
+   // Send the filtered equipments as response
+   res.json(Requiredreports);
+   console.log('reports:',Requiredreports);
+   console.log('the recieved serial',serialNumber );
+  }catch(error){
+      console.error(error.message);
+  } 
+ });
 
 // Route for inserting maintenance form data
 router.post('/maintenaceReport', async (req, res) => {

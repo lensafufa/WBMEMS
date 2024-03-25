@@ -32,7 +32,7 @@ const WorkOrderStatus = () => {
     
     const ctx = document.getElementById('myPieChart3').getContext('2d');
     new Chart(ctx, {
-      type: 'doughnut',
+      type: 'pie',
       data: {
         labels: labels,
         datasets: [{
@@ -80,7 +80,7 @@ const WorkOrderStatus = () => {
             labels: {
               color:'black',
               font:{
-                size: 17,
+                size: 20,
                 color: 'black',
                 weight: 'bold',
                 family: '-apple-system'
@@ -107,7 +107,7 @@ const WorkOrderStatus = () => {
   
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart3" width="300" height="300"></canvas>
+      <canvas className='pieDepartment' id="myPieChart3" width="220" height="220"></canvas>
     </div>
   );
 };

@@ -63,25 +63,27 @@ const Piechart = () => {
           legend: {
             position: 'bottom', 
             align: 'bottom' ,
+            color: 'black',
             labels: {
-              color:'black',
+              color: 'black',
               font: {
                  weight: 'bold',
                  size:20,
-                 family: '-apple-system'
+                 family: '-apple-system',
+                 color: 'black',
               }
             },
             
           },
           title: {
             display:true,
-            text: 'Pie chart representation of Active and Disposed Devices',
+            text: 'Active and Disposed Devices',
             position:'bottom',
             color: 'black',
             align: 'center',
             font:{
               weight: 'bold',
-              family: '-apple-system',
+              family: 'Arial',
               size: 25,
             }
             

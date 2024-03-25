@@ -40,37 +40,8 @@ const DeviceMaintenanceHistory = () => {
 
     return (
         <div className="sort-by-reportType-main-report">
-            <div className="home-and-sort-title-report"><Home /><h2>Report</h2></div>
+            <div className="home-and-sort-title-report"><Home /><h2>Maintenance History</h2></div>
             <div className="select-and-body-report">
-                <select className="sort-by-reportType-input-report" required type='text' value={reportType} onChange={handleReportType}>
-                    <option value=""> All Reports</option>
-                    <option value="calibration">Calibration</option>
-                    <option value="maintenance">Maintenance</option>
-                    <option value="specification">Specification</option>
-                    <option value="installation">Installation</option>
-                </select>
-                <div className="sort-by-reportType-output-report">
-                    <div className="button-container">
-                        <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-                        <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
-                        <button className="toggle-columns-btn" onClick={() => setShowAllColumns(!showAllColumns)}>
-                            {showAllColumns ? 'Show Specific Columns' : 'Show All Columns'}
-                        </button>
-                       
-                    </div>
-                    <div className="search-container1">
-                        <label className="search-label" htmlFor="searchInput">
-                            Search Report
-                        </label>
-                        <input
-                            id="searchInput"
-                            className="search-input"
-                            type="text"
-                            value={searchQuery}
-                            onChange={handleSearch}
-                        />
-                    </div>
-                </div>
                 <table className="report-table-report">
                     <thead>
                         <tr>

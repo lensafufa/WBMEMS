@@ -1,6 +1,7 @@
 .individual-device {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
   justify-content: space-between;
   border-radius: 7px;
   background-color: aliceblue;
@@ -69,8 +70,9 @@
 }
 .main-device-image {
   height: 150px;
-  width: 100%;
+  width: 300px;
   margin-right: 10px;
+  margin-left: 10px;
 
 }
 .device-profile-picture {
@@ -98,6 +100,9 @@
 
 .device-main {
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
   align-items: center;
   background-color: black;
   color: white;
@@ -106,6 +111,7 @@
   font-size: medium;
   font-family: -apple-system;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 .de-device-description {
   width: 100%;
@@ -247,8 +253,10 @@
   background-color: rgb(255, 255, 255);
 }
 .detail-close-button {
-  background-color: #042bd6;
+  background-color: #020f49;
   margin-top: 20px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .warning-icon{
   font-size: xxx-large;
@@ -271,4 +279,56 @@
 .device-description{
   font-size: medium;
   font-family: -apple-system;
+}
+.specific-Device-History-reportt{
+  position: fixed; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto; 
+  overflow-x: auto;
+  z-index: 1000;
+  margin-top: 40px;
+
+}
+.specific-Device-History-report-button{
+  background-color: rgb(10, 29, 92);
+  width: 1240px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.grid-item{
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: white;
+  gap: 20px;
+  padding: 20px;
+  width: 1200px;
+  font-size:medium ;
+  font-family: -apple-system;
+  border-bottom: 2px solid rgb(134, 134, 134);
+}
+.grid-item-cell-label{
+  background-color: #d9d9da;
+  margin-top: 15px;
+}
+.maint-hist{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-size: x-large;
+  font-family: -apple-system;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.specific-Device-History-report-grid{
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
 }

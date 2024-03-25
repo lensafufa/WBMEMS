@@ -151,7 +151,7 @@
   color: rgb(0, 0, 0);
   padding: 20px;
   width: 90%;
-  max-width: 800px;
+  max-width: 1200px;
   border-radius: 10px;
   max-height: 90vh; /* Adjust the maximum height as needed */
   overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
@@ -161,6 +161,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+  width: 1200px;
   margin-top: 20px;
   overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
 }

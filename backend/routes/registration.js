@@ -90,6 +90,26 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+////////////////////////
+router.get('/staff', async (req, res) => {
+  try {
+    const staff = await User.findAll();
+    console.log('the staff info', staff)
+    const countsByCategory = {};
+    staff.forEach(item => {
+      countsByCategory[item.occupation] = countsByCategory[item.occupation] ? countsByCategory[item.occupation] + 1 : 1;
+    });
+    const pieChartData = Object.keys(countsByCategory).map(occupation => ({
+      occupation,
+      count: countsByCategory[occupation]
+    }));
+    res.json(pieChartData);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+////////////////////////
 
 // GET user by ID
 router.get('/:id', async (req, res) => {

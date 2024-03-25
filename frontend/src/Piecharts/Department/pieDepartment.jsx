@@ -32,7 +32,7 @@ const PieDepartment = () => {
   
     const ctx = document.getElementById('myPieChart').getContext('2d');
     new Chart(ctx, {
-      type: 'line',
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
@@ -76,7 +76,7 @@ const PieDepartment = () => {
           legend: {
             display:true,
             align: 'bottom',
-            position: 'right', 
+            position: 'bottom', 
             labels: {
               color:'black',
               font:{
@@ -107,7 +107,7 @@ const PieDepartment = () => {
   
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart" width="300" height="300"></canvas>
+      <canvas className='pieDepartment' id="myPieChart" width="220" height="220"></canvas>
     </div>
   );
 };
