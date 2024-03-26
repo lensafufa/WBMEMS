@@ -17,6 +17,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiLogout } from "react-icons/ci";
 import { FaFileContract,FaFileAlt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaPeopleGroup } from "react-icons/fa6";
 import { LiaFileContractSolid } from "react-icons/lia";
 
 import ChangeProfilePicture from '../../components/Setting/Setting';
@@ -47,6 +48,7 @@ const Home = () => {
           <Link className='link' to='/Schedule'><div className='main-lists'><FaRegCalendarAlt className='icons'/><div>Schedule Work</div></div></Link> 
           <Link className='link' to='/Requested'><div className='main-lists'><CiSquareQuestion className='icons'/><div>Requested Issues</div></div></Link>
           <Link className='link' to='/DisposedDevices'><div className='main-lists'><RiDeleteBin6Line className='icons'/><div>Disposed Equipments</div></div></Link>
+          <Link className='link' to='/TrainingManagement'><div className='main-lists'><FaPeopleGroup className='icons'/><div>Training Events</div></div></Link>
           <Link className='link' to='/Report'><div className='main-lists'><FaFileAlt className='icons'/><div>Report</div></div></Link> 
           <Link className='link' to='/Announcement'><div className='main-lists'><TfiAnnouncement className='icons'/><div>Announcement</div></div></Link>
           <Link className='link' to='/CreateAccount'><div className='main-lists'><MdAccountBox className='icons'/><div>Create Account</div></div></Link> 

@@ -53,6 +53,11 @@ import AdminDeviceOverview from './DashboardforAdmin/DeviceShowAdmin.jsx';
 import RequestedAdmin from './DashboardforAdmin/RequestedAdmin.jsx';
 import ViewAllRequest from './DashboardforAdmin/ViewAllRequests/ViewAllRequest.jsx';
 
+import AdminTrainingManagement from './DashboardforAdmin/Training/Training.jsx';
+import DoctorTrainingManagement from './DashboardForDoctors/Training/Training.jsx';
+import EngineerTrainingManagement from './DashBoardForEngineers/Training/Training.jsx';
+import TrainingManagement from './Training/Training.jsx';
+
 
 
 function App() {
@@ -67,6 +72,7 @@ function App() {
           <Route path='/Dashboard' element={<Dashboard/>}/>
           <Route path='/Calendar' element={<InventoryCalendar/>}/>
           <Route path='/Schedule' element={<ScheduleMaintenanceForm/>}/>
+          <Route path='/TrainingManagement' element={<TrainingManagement/>}/>
 
           <Route path='/workorder' element={<WorkOrder/>}/>
           <Route path='/Announcement' element={<AnnouncementForm/>}/>
@@ -80,6 +86,7 @@ function App() {
           <Route path='/Requested' element={<SortByRequestType/>}/> 
           <Route path='/DoctorRequestHistory' element={<DoctorTrackChanges/>}/> 
           <Route path='/DoctorAnnouncement' element={<DoctorAnnouncement/>}/> 
+          <Route path='/DoctorTrainingManagement' element={<DoctorTrainingManagement/>}/> 
           <Route path='/DisposedDevices' element={<DisposedDevices/>}/> 
           <Route path='/SortByDepartment' element={<SortByDepartment/>}/> 
           <Route path='/DoctorSortByDep' element={<DoctorSortByDep/>}/>
@@ -89,6 +96,7 @@ function App() {
           <Route path='/EngineerCalendar' element={<EngineerInventoryCalendar/>}/>
           <Route path='/EngineerDeviceShow' element={<EngineerDeviceShow/>}/>
           <Route path='/EngineerSortByDep' element={<EngineerSortByDep/>}/>
+          <Route path='/EngineerTrainingManagement' element={<EngineerTrainingManagement/>}/>
           <Route path='/EngineerRequestHistory' element={<EngineerTrackChanges/>}/>
           <Route path='/RequestsForEngineer' element={<RequestForEngineer/>}/>
           <Route path='/Requests/Procurement' element={<ProcurementForm/>}/>
@@ -105,11 +113,13 @@ function App() {
           <Route path='/RequestsByEngineer/Installation' element={<InstallationFormEngineer/>}/>
           <Route path='/EngineerAnnouncement' element={<EngineerAnnouncement/>}/>
           <Route path='/Report' element={<SortByReportType/>}/>
-          <Route path='/Contract' element={<Contract/>}/>
+          <Route path='/AdminContract' element={<Contract/>}/>
           <Route path='/AdminstratorDashboard' element={<AdminstratorDashboard/>}/>
           <Route path='/AdminDeviceOverview' element={<AdminDeviceOverview/>}/>
           <Route path='/RequestedAdmin' element={<RequestedAdmin/>}/>
-          <Route path='/ViewAllRequest' element={<ViewAllRequest/>}/>
+          <Route path='/ViewAllRequestAdmin' element={<ViewAllRequest/>}/>
+          <Route path='/AdminTrainingManagement' element={<AdminTrainingManagement/>}/>
+          
         </Routes>
       </div>
     </Router>

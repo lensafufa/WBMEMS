@@ -74,6 +74,28 @@ const RequestedAdmin = () => {
         }
     };
 
+    const handlePurchased = async (id) => {
+        try {
+            await updateStatus(id, 'Purchased');
+            console.log('Status updated successfully');
+            setIdHolder(prevIdHolder => !prevIdHolder);
+        } catch (error) {
+            console.error('Error updating status:', error);
+        }
+    };
+
+    
+    const handleArranged = async (id) => {
+        try {
+            await updateStatus(id, 'Arranged');
+            console.log('Status updated successfully');
+            setIdHolder(prevIdHolder => !prevIdHolder);
+        } catch (error) {
+            console.error('Error updating status:', error);
+        }
+    };
+
+
     const handleAction = async (id, assignedTo) => {
         try {
             await updateAction(id, assignedTo);
@@ -184,28 +206,17 @@ return (
                             Accept
                         </button>
                         <button
-                            onClick={()=>getByIdReport(RequestByType.id)}
-                            className={RequestByType.status === 'Completed' ? 'viewReportButton' : 'deleteButton'}
+                            onClick={()=>handlePurchased(RequestByType.id)}
+                            className={RequestByType.status === 'Accepted'&&(RequestByType.requestType === 'procurement')  ? 'action-button-maintenance': 'deleteButton'  }
                         >
-                            View Report
+                            Complete
                         </button>
-                        
-                        
-                        {users.length > 0 && RequestByType.status==='Accepted'&& (
-                            <select 
-                                className="user-selecter"
-                                onChange={(e) => handleUserSelect(RequestByType.id, e.target.value)}
-                            >
-                                <option value="None" selected>Select Enginner</option>
-                                {users.map((user) => (
-                                    <option key={user.id} value={user.fullName}>
-                                        {user.fullName}
-                                    </option>
-                                ))}
-                            </select>
-                        )}
-                    
-
+                        <button
+                            onClick={()=>handleArranged(RequestByType.id)}
+                            className={RequestByType.status === 'Accepted'&&(RequestByType.requestType === 'training') ? 'action-button-maintenance': 'deleteButton'  }
+                        >
+                            Complete
+                        </button>
 
                     </div>
                     
