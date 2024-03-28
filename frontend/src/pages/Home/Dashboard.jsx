@@ -7,6 +7,8 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { FaSort } from "react-icons/fa";
 import { TbReportAnalytics } from "react-icons/tb";
 import { FaRegCalendarAlt } from 'react-icons/fa';
+import { BsCheckAll } from "react-icons/bs";
+
 
 import { Link } from "react-router-dom";
 import Home from "./Home";
@@ -18,6 +20,8 @@ import RequestType from "../../Piecharts/RequestType/RequestType";
 import EquipmentByCost from "../../Piecharts/EquipmentByCost/EquipmentByCost";
 import AnalyticalData from "../../Piecharts/AnalyticalData/AnalyticalData";
 import Staff from "../../Piecharts/Staff/Staff";
+import UserInfo from "../../StateManagement/UserInfo";
+import Clock from "../../Clock/Clock";
 
 const Dashboard = () => {
   const [NotificationCount, setNotificationCount] = useState(null);
@@ -52,35 +56,38 @@ const Dashboard = () => {
   };
   return (    
     <div className="main-classs">
-      <div className="the-title-navigation-main-class"><Home/><h2 className="the-navigation-title">Navigation</h2></div>
+      <div className="the-title-navigation-main-class"><Home/><div className="title-and-date"><h2 className="the-navigation-title">Biomedical Head Dashboard</h2><Clock/></div></div>
       <div className="main-right-part">
           <div className="analytical-data-and-buttons"> 
             <div className="analytical-device-data"><div className="doooooo"></div><AnalyticalData/></div> 
             <div className="the-two-doughnuts">
               <div className="admin-piechart-holder-status"><Piechart/></div>
-              <div className="admin-piechart-holder-department"><EquipmentByCost/></div>
+              <div className="admin-piechart-holder-department-cost"><EquipmentByCost/></div>
               <div className="admin-piechart-holder-department"><PieDepartment/></div> 
-              
           </div>
           </div>
         <div className="biomed-admin-sub-class">
-          <Link to='/DeviceOverview' className='main-my-link'><div className="admin-dashboard-device-overview"> <div className="bell-and-notification-count"><GrOverview className="dashboard-icons-bell"/>
-          <span className={NewDeviceNotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
-            {NewDeviceNotificationCount !== null ? NewDeviceNotificationCount : ''}
-            </span></div>Device Overview</div></Link>
+          <div className="navigation-section1">
+            <Link to='/DeviceOverview' className='main-my-link'><div className="admin-dashboard-device-overview"> <div className="bell-and-notification-count"><GrOverview className="dashboard-icons-bell"/>
+            <span className={NewDeviceNotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
+              {NewDeviceNotificationCount !== null ? NewDeviceNotificationCount : ''}
+              </span></div>Device Overview</div></Link>
 
-          <Link to='/AnnouncementDisplay' className='main-my-link'><div className="alert-and-notification-show">
-          <div className="bell-and-notification-count"> <IoNotifications className="dashboard-icons-bell"/> 
-          </div>Announcement Board<span className={NotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
-          {NotificationCount !== null ? NotificationCount : ''}
-          </span></div></Link>
+            <Link to='/AnnouncementDisplay' className='main-my-link'><div className="alert-and-notification-show">
+            <div className="bell-and-notification-count"> <IoNotifications className="dashboard-icons-bell"/> 
+            </div>Announcement Board<span className={NotificationCount !== 0 ? "main-notification-count-display" : ''}>
+            {NotificationCount !== 0 ? NotificationCount : <BsCheckAll className="tick"/>}
+            </span></div></Link>
 
-          <Link className="main-my-link" to='/Calendar'> <div className="dashboard-schedule-maintenance"> <FaRegCalendarAlt className="main-dashboard-icons"/>Calendar</div></Link>
-          <div className="dashboard-schedule-maintenance"><MdOutlinePendingActions className="main-dashboard-icons"/>Pending Requests</div>
-          <Link to ='/SortByDepartment' className='main-my-link'><div className="dashboard-schedule-maintenance"><FaSort className="main-dashboard-icons"/>Sort By Department</div></Link>
-          <Link to='/Report' className="main-my-link"><div className="dashboard-schedule-maintenance"> <TbReportAnalytics className="main-dashboard-icons"/>Reports</div></Link>
-          <Link to='/Report' className="main-my-link"><div className="dashboard-schedule-maintenance"> <TbReportAnalytics className="main-dashboard-icons"/>Reports</div></Link>
-        </div>
+            <Link className="main-my-link" to='/Calendar'> <div className="dashboard-schedule-maintenance"> <FaRegCalendarAlt className="main-dashboard-icons"/>Calendar</div></Link>
+          </div>
+          <div className="navigation-section2">
+            <div className="dashboard-schedule-maintenance"><MdOutlinePendingActions className="main-dashboard-icons"/>Pending Requests</div>
+            <Link to ='/SortByDepartment' className='main-my-link'><div className="dashboard-schedule-maintenance"><FaSort className="main-dashboard-icons"/>Sort By Department</div></Link>
+            <Link to='/Report' className="main-my-link"><div className="dashboard-schedule-maintenance"> <TbReportAnalytics className="main-dashboard-icons"/>Reports</div></Link>
+          </div>
+          
+          </div>
       </div>
       <div className="admin-piechart-in-the-dashboardd">
           <div className="admin-piechart-holder-department"><WorkOrderStatus/></div>

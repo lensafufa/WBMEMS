@@ -14,6 +14,7 @@ body{
      padding-right: 20px;
      border-radius: 10px;
  }
+ 
  .device-overview{
      display: flex;
      background-color: rgb(12, 104, 54);
@@ -95,6 +96,13 @@ body{
  .dashboard-icons{
      margin-right: 20px;
      font-size: xx-large;
+ }
+ .device-main-doctor{
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(10, 111, 151);
+    padding-left: 20px;
  }
  .my-link{
      text-decoration: none;

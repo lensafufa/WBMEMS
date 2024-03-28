@@ -32,29 +32,22 @@ const WorkOrderStatus = () => {
     
     const ctx = document.getElementById('myPieChart3').getContext('2d');
     new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130)',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
- 
+            'rgba(173, 1, 1)',
+            'rgba(173, 1, 1,0.9)',
+            'rgba(173, 1, 1,0.85)',
+            'rgba(173, 1, 1,0.6)',
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
           ],
           borderWidth: 1
         }]

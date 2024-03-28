@@ -113,13 +113,13 @@ const InstallationForm = () => {
     <div className="main-installation">
       <div className="installation-title">
         <DoctorSidebar />
-        <h2 className="Installation-Page">Installation Form</h2>
+        <h2 className="Installation-Page">Installation Request Form</h2>
       </div>
-      <div className="installation-form">
-        <div className="individual">
+      <div className="installation-formm">
+        <div className="individualll">
           <label>Equipment Name*</label>
           <select
-            className="installation-input"
+            className="installation-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -132,56 +132,58 @@ const InstallationForm = () => {
             ))}
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Department*</label>
           <input
-            className="installation-input"
+            className="installation-inputt"
             type="text"
             value={department}
             readOnly // Assuming department is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Model*</label>
           <input
-            className="installation-input"
+            className="installation-inputt"
             type="text"
             value={model}
             readOnly // Assuming model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Serial Number*</label>
           <input
-            className="installation-input"
+            className="installation-inputt"
             type="text"
             value={serialNumber}
             readOnly // Assuming serial number is not editable
           />
         </div>
         
-        <div className="individual">
+        <div className="individualll">
           <label>Due Date*</label>
           <input
-            className="installation-input"
+            className="installation-inputt"
             type="date"
             required
             value={dueDate}
             onChange={handleDueDate}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Specification</label>
-          <textarea
-            className="installation-description-input"
+          <input
+            className="installation-inputt"
+            type="text"
+            required
             value={specification}
             onChange={(e) => setSpecification(e.target.value)}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Description*</label>
           <textarea
-            className="installation-description-input"
+            className="installation-description-inputt"
             value={description}
             onChange={handleDescription}
           />

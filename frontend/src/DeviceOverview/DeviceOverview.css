@@ -1,19 +1,17 @@
 .individual-device {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 60px;
   justify-content: space-between;
   border-radius: 7px;
   background-color: aliceblue;
 }
 .individual-device:hover {
-  
   transition: all 0.3s;
   cursor: pointer;
 }
 .device-profile-picture {
   display: flex;
-
   height: 170px;
   width: 100%;
 }

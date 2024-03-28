@@ -108,13 +108,13 @@ const CalibrationForm = () => {
     <div className="main-calibration">
       <div className="calibration-title">
         <DoctorSidebar/>
-        <h2 className="Calibration-Page">Calibration Form</h2>
+        <h2 className="Calibration-Page">Calibration Request Form</h2>
       </div>
-      <div className="calibration-form">
-        <div className="individual">
+      <div className="calibration-formm">
+        <div className="individualll">
           <label>Equipment Name*</label>
           <select
-            className="calibration-input"
+            className="calibration-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -128,50 +128,50 @@ const CalibrationForm = () => {
           </select>
         </div>
         
-        <div className="individual">
+        <div className="individualll">
           <label>Equipment Model*</label>
           <input
-            className="calibration-input"
+            className="calibration-inputt"
             type="text"
             value={equipmentModel}
             onChange={() => {}} // Equipment model is populated based on selected equipment
             readOnly // Assuming equipment model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Department*</label>
           <input
-            className="calibration-input"
+            className="calibration-inputt"
             type="text"
             value={department}
             onChange={() => {}} // Department is populated based on selected equipment
             readOnly // Assuming department is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Serial Number*</label>
           <input
-            className="calibration-input"
+            className="calibration-inputt"
             type="text"
             value={serialNumber}
             onChange={() => {}} // Serial number is populated based on selected equipment
             readOnly // Assuming equipment model is not editable// Assuming serial number is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Due Date</label>
           <input
-            className="calibration-input"
+            className="calibration-inputt"
             type="date"
             required
             value={calibrationDueDate }
             onChange={handleDueDate}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Calibration Type</label>
           <select
-            className="calibration-input"
+            className="calibration-inputt"
             value={calibrationType}
             onChange={handleCalibrationType}
           >
@@ -181,10 +181,10 @@ const CalibrationForm = () => {
             <option value="Type 3">Type 3</option>
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Reason</label>
           <textarea
-            className="calibration-description-input"
+            className="calibration-description-inputt"
             required
             value={calibrationReason}
             onChange={handleReason}

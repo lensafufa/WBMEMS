@@ -153,13 +153,13 @@ const ProcurementForm = () => {
 
   return (
     
-      <div className="main-procurement-request">
-        <div className="procurement-title"><DoctorSidebar /><h2 className="Procurement-Page">Procurement Form</h2></div>
-        <div className="procurement-form">
-        <div className="individual">
-          <label className="procurement-form-label">Equipment Name*</label>
+      <div className="main-procurement-requestt">
+        <div className="procurement-title"><DoctorSidebar /><h2 className="Procurement-Page">Procurement Request Form</h2></div>
+        <div className="procurement-formmm">
+        <div className="individuallll">
+          <label className="procurement-form-labell">Equipment Name*</label>
           <select
-            className="procurement-input"
+            className="procurement-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -173,10 +173,10 @@ const ProcurementForm = () => {
           </select>
         </div>
               
-        <div className="individual">
-          <label className="procurement-form-label">Equipment Type*</label>
+        <div className="individuallll">
+          <label className="procurement-form-labell">Equipment Type*</label>
           <select
-            className="procurement-input"
+            className="procurement-inputt"
             required
             value={equipmentType}
             onChange={handleEquipmentType}
@@ -190,10 +190,10 @@ const ProcurementForm = () => {
           </select>
         </div>
           
-          <div className="individual">
-          <label className="procurement-form-label">Department*</label>
+          <div className="individuallll">
+          <label className="procurement-form-labell">Department*</label>
           <select
-            className="procurement-input"
+            className="procurement-inputt"
             required
             value={department}
             onChange={handleDepartment}
@@ -206,18 +206,18 @@ const ProcurementForm = () => {
         ))}
           </select>
         </div>
-        <div className="individual">
-            <label className="procurement-form-label">Specification</label>
+        <div className="individuallll">
+            <label className="procurement-form-labell">Specification</label>
             <textarea
-              className="procurement-description-input"
+              className="procurement-description-inputt"
               value={specification}
               onChange={handleSpecification}
             />
           </div>  
-        <div className="individual">
-            <label className="procurement-form-label">Procurement Reason*</label>
+        <div className="individuallll">
+            <label className="procurement-form-labell">Procurement Reason*</label>
             <textarea
-              className="procurement-description-input"
+              className="procurement-description-inputt"
               required
               value={procurementReason}
               onChange={handleProcurementReason}

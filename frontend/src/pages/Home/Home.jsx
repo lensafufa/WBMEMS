@@ -5,14 +5,11 @@ import { IoIosHome } from "react-icons/io";
 import { MdAccountBox } from "react-icons/md";
 import { MdInventory } from "react-icons/md";
 import { MdWorkHistory } from "react-icons/md";
-import { MdOutlineBorderColor } from "react-icons/md";
 import { GrUserWorker } from "react-icons/gr";
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
-import { TfiAnnouncement } from "react-icons/tfi";
 import UserInfo from '../../StateManagement/UserInfo';
 import LogOut from '../../components/auth/LogOut';
-import { CiSquareQuestion } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiLogout } from "react-icons/ci";
 import { FaFileContract,FaFileAlt } from "react-icons/fa";
@@ -22,6 +19,8 @@ import { LiaFileContractSolid } from "react-icons/lia";
 
 import ChangeProfilePicture from '../../components/Setting/Setting';
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
+import { MdMessage } from "react-icons/md";
+import { FaMicrophone } from "react-icons/fa6";
 
 
 const Home = () => {

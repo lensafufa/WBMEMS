@@ -30,27 +30,26 @@ const RequestType = () => {
     
     const ctx = document.getElementById('myPieChart4').getContext('2d');
     new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 200)',
-          
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(4, 38, 90)',
+            'rgba(4, 38, 90,0.9)',
+            'rgba(4, 38, 90,0.8)',
+            'rgba(4, 38, 90,0.7)',
+            'rgba(4, 38, 90,0.6)',
+            'rgba(4, 38, 90,0.5)'
  
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-      
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
           ],
           borderWidth: 2
         }]

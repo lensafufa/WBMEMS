@@ -31,11 +31,14 @@
   max-width: 300px;
   background-color: rgb(247, 246, 246);
 }
-
+.show-request-body{
+  background-color: #d8d7d7;
+}
 .sortt-by-request{
   margin-left: 30px;
   font-size: medium;
   padding: 5px;
+  margin-left: 48px;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -50,23 +53,19 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 50px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 2px 7px 5px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  padding-top: 0px;
+  background: none;
+  border-radius: 5px;
 }
 
 .request-by-type {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   background-color: aliceblue;
 }
-
-
-
 .sort-by-requestType-desc {
   margin-bottom: 10px;
   padding: 10px;
@@ -83,14 +82,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: black;
-  background-color: rgb(216, 217, 218);
+  color: rgb(56, 56, 56);
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   font-family: -apple-system;
   font-size: large;
   text-transform: capitalize; 
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .sort-by-requestType {
   padding: 5px;
@@ -107,24 +106,26 @@
 
 .when-accept-button {
   padding: 7px;
-  background-color:green;
+  background-color:rgb(3, 104, 53);
   color: white;
   border: none;
   font-family: -apple-system;
   font-size: medium;
   cursor: pointer;
+  border-radius: 5px;
   height: 33px;
 }
 .when-accept-button:hover{
-  background-color:rgb(14, 68, 14) ;
+  background-color:rgb(2, 107, 60) ;
 }
 .viewReportButton{
   padding: 7px;
-  background-color: dodgerblue;
+  background-color: rgb(0, 60, 119);
   color: white;
   border: none;
   cursor: pointer;
   height: 33px;
+  border-radius: 2px;
   font-family: -apple-system;
   font-size: medium;
 }
@@ -234,7 +235,10 @@
   height: 30px;
   font-family: -apple-system;
   font-size: medium;
-  background-color: #51206d;
+  background-color: #390458;
+  border-radius: 2px;
+  border: none;
+  outline: none;
 }
 
 @media (max-width: 600px) {
