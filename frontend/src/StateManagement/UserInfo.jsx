@@ -44,7 +44,7 @@ const UserInfo = () => {
         <div className='logged-in-description-section'>
           <img className='profile-image' src={`http://localhost:7000/${userData.profilePicture}`} alt='Profile' />
           <div className='log-in-description'>
-            <p className='name-and-lastname'>{userData.name} {userData.lastName}</p>
+            <p className='name-and-lastname'>{userData.name}</p>
             <p className='user-name'>{userData.occupation}</p>
           </div>
         </div>

@@ -38,12 +38,12 @@ const Piechart = () => {
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130)',
-            'rgba(160, 167, 171)',
+            'rgb(4, 45, 92)',
+            'rgba(4, 45, 92, 0.8)',
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgba(160, 167, 171)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
           
           ],
           borderWidth: 1

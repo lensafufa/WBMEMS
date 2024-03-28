@@ -134,13 +134,13 @@ const TrainingForm = () => {
     <div className="main-training">
       <div className="training-title">
         <DoctorSidebar />
-        <h2 className="Training-Page">Training Form</h2>
+        <h2 className="Training-Page">Training Request Form</h2>
       </div>
-      <div className="training-form">
-        <div className="individual">
+      <div className="training-formm">
+        <div className="individualll">
           <label>Equipment Name*</label>
           <select
-            className="training-input"
+            className="training-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -154,38 +154,38 @@ const TrainingForm = () => {
           </select>
         </div>
         
-        <div className="individual">
+        <div className="individualll">
           <label>Department*</label>
           <input
-            className="training-input"
+            className="training-inputt"
             type="text"
             value={department}
             readOnly // Assuming department is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Model*</label>
           <input
-            className="training-input"
+            className="training-inputt"
             type="text"
             value={model}
             onChange={handleModel}
             readOnly // Assuming equipment model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Serial Number*</label>
           <input
-            className="training-input"
+            className="training-inputt"
             type="text"
             value={serialNumber}
             readOnly // Assuming serial number is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Trainee Type*</label>
           <select
-            className="training-input"
+            className="training-inputt"
             value={traineeType}
             onChange={handleTraineeType}
           >
@@ -194,10 +194,10 @@ const TrainingForm = () => {
             <option value="Technical">Technical Personnel Training</option>
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Level*</label>
           <select
-            className="training-input"
+            className="training-inputt"
             value={level}
             onChange={handleLevel}
           >
@@ -208,19 +208,19 @@ const TrainingForm = () => {
           </select>
         </div>
         
-        <div className="individual">
+        <div className="individualll">
           <label>Duration*</label>
           <input
-            className="training-input"
+            className="training-inputt"
             type="text"
             value={duration}
             onChange={handleDuration}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Description*</label>
           <textarea
-            className="training-description-input"
+            className="training-description-inputt"
             value={description}
             onChange={handleDescription}
           />

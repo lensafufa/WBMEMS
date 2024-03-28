@@ -205,15 +205,6 @@ const Inventory = () => {
             />
           </div>
           <div className="inventory-individual">
-            <label>Equipment Image*</label>
-            <input
-              className="inventory-input"
-              type="file"
-              required
-              onChange={handleEquipmentImage}
-            />
-          </div>
-          <div className="inventory-individual">
               <label>Equipment Description*</label>
               <textarea
                 className="inventory-description-input"
@@ -230,6 +221,15 @@ const Inventory = () => {
                 onChange={handleMaintenanceHistory}
               ></textarea>
             </div>
+            <div className="inventory-individual">
+            <label>Equipment Image*</label>
+            <input
+              className="inventory-input"
+              type="file"
+              required
+              onChange={handleEquipmentImage}
+            />
+          </div>
   
         </div>
         <button className="register-button" onClick={handleFormSubmit}>Register</button>

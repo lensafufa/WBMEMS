@@ -1,16 +1,13 @@
-.calibration-form {
+.calibration-formm {
   display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 15px;
-  background: rgb(240, 240, 240); /* Replace the URL with your desired pattern */
-  margin: 50px;
-  margin-bottom: 0px;
-  padding: 50px;
-  padding-bottom: 0px;
-  border-radius: 5px;
-  box-shadow: inset 0 0 4px rgba(0,0,0,0.3) ;
+  background: rgb(255, 255, 255); /* Replace the URL with your desired pattern */
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 80px;
 }
 .calibration-Page {
   display: flex;
@@ -22,6 +19,8 @@
   padding-left: 30px;
   color: white;
   height: 100px;
+  font-size: medium;
+  font-family: -apple-system;
   background-color: black;
 }
 
@@ -43,16 +42,16 @@
   background: rgb(240, 239, 239);
   padding-right: 2px;
 }
-.calibration-input,.calibration-description-input {
+.calibration-inputt,.calibration-description-inputt {
   outline: none;
   border: none;
-  background-color: rgb(252, 254, 255);
+  background-color: rgb(233, 238, 238);
   height: 25px;
   max-width: 100%;
   border-radius: 5px;
   margin-top: 5px;
 }
-.calibration-description-input {
+.calibration-description-inputt {
   outline: none;
   border-radius: 7px;
 

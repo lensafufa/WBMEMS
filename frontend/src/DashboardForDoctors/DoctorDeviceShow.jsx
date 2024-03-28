@@ -113,14 +113,14 @@ const DeviceOverview = () => {
 }
        {(
         <div className='grand-device'>
-          <div className='device-main'>
+          <div className='device-main-doctor'>
             <div><DoctorSidebar/></div>
             <h2>Device Information</h2>
           </div>
           <div className='device-table'>
             {deviceOverview.map((device) => (
               <div>
-                <div className='individual-device' key={device.id} onClick={() => getById(device.id)}>
+                <div className='individual-device-doctor' key={device.id} onClick={() => getById(device.id)}>
                   <div className='device-profile-picture'>
                     <img className='device-image' src={`http://localhost:7000/${device.equipmentImage}`} alt='Profile' />
                   </div>

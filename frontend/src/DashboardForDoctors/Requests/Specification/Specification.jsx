@@ -126,13 +126,13 @@ const SpecificationForm = () => {
     <div className="main-specification-request">
       <div className="specification-title-request">
         <DoctorSidebar />
-        <h2 className="Specification-Page-request1">Specification Form</h2>
+        <h2 className="Specification-Page-request1">Specification Request Form</h2>
       </div>
-      <div className="specification-form-request">
-        <div className="individual">
+      <div className="specification-form-requestt">
+        <div className="individualll">
           <label>Equipment Name*</label>
           <select
-            className="specification-input"
+            className="specification-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -145,50 +145,50 @@ const SpecificationForm = () => {
             ))}
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Model*</label>
           <input
-            className="specification-input"
+            className="specification-inputt"
             type="text"
             value={model}
             onChange={handleModel}
             readOnly // Assuming equipment model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Serial Number*</label>
           <input
-            className="specification-input"
+            className="specification-inputt"
             type="text"
             value={serialNumber}
             onChange={handleSerialNumber}
             readOnly // Assuming equipment model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Department*</label>
           <input
-            className="specification-input"
+            className="specification-inputt"
             type="text"
             value={department}
             onChange={handleDepartment}
             readOnly // Assuming equipment model is not editable
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Due Date*</label>
           <input
-            className="specification-input"
+            className="specification-inputt"
             type="date"
             required
             value={dueDate}
             onChange={handleDueDate}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Description*</label>
           <textarea
-            className="specification-description-input"
+            className="specification-description-inputt"
             value={description}
             onChange={handleDescription}
           />

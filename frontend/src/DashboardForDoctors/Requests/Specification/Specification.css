@@ -1,26 +1,18 @@
 /* Specification.css */
 
-.specification-form-request {
+.specification-form-requestt {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     column-gap: 20px;
-    background: whitesmoke; /* Replace the URL with your desired pattern */
-    padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 100px;
-    margin-top: 0px;
-    border-radius: 5px;
-    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
-    margin: 20px 50px 10px 50px;
+    background: rgb(255, 255, 255); /* Replace the URL with your desired pattern */
+    align-items: center;
+    justify-content:space-between;
+    padding: 50px;
   }
-  
   .Specification-Page-request {
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
   }
-  
   .specification-title-request {
     display: flex;
     align-items: center;
@@ -51,7 +43,7 @@
     min-width: 50px;
   }
   
-  .specification-input {
+  .specification-inputt {
     outline: none;
     border: none;
     height: 30px;
@@ -59,10 +51,10 @@
     border-radius: 5px;
     margin-top: 5px;
     padding: 0px 10px;
-    background-color: white;
+    background-color: rgb(241, 240, 240);
   }
   
-  .specification-description-input {
+  .specification-description-inputt {
     outline: none;
     border:none;
     border-radius: 7px;
@@ -71,6 +63,7 @@
     min-width: 100%;
     max-height: 100px;
     min-height: 100px;
+    background-color: rgb(240, 241, 241);
   }
   
   .submit-buttonSpecification {

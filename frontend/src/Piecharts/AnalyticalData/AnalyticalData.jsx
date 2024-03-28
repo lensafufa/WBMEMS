@@ -7,12 +7,9 @@ import { BsFillChatSquareQuoteFill } from "react-icons/bs";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { BiSolidSave } from "react-icons/bi";
-
-
-
+import { BiDollar } from "react-icons/bi";
 
 const AnalyticalData = () => {
-
     const [devicecounter, setDeviceCounter] = useState(null);
     const [Requestcounter, setRequestcounter] = useState(null);
     const [RequestAcceptedcounter, setRequestAcceptedcounter] = useState(null);
@@ -63,7 +60,6 @@ const AnalyticalData = () => {
         setRequestcounter(response.data.length);
         console.log('main', response.data)
 
-
         let acceptedCount = 0;
         let pendingCount = 0;
         let completedCount = 0;
@@ -95,12 +91,12 @@ const AnalyticalData = () => {
    }
     return ( 
         <div className="main-analysis">
-            <div className="individual-data"><MdDevices className="analytical-icons1"/><div className="real-number-data">{devicecounter}</div><h4>Total Devices </h4></div>
-            <div  className="individual-data"><FaSackDollar className="analytical-icons2"/><div  className="real-number-data">{Costcounter}</div><h4>Spent Cost </h4></div>
-            <div  className="individual-data"><BsFillChatSquareQuoteFill className="analytical-icons3"/><div  className="real-number-data">{Requestcounter}</div><h4>Total Requests </h4></div>
-            <div  className="individual-data"><BiSolidSave className="analytical-icons4"/><div  className="real-number-data">{RequestAcceptedcounter}</div><h4>Accepted Requests </h4></div>
-            <div  className="individual-data"><MdOutlinePendingActions className="analytical-icons5"/><div  className="real-number-data">{RequestPendingcounter}</div><h4>Pending Requests </h4></div>
-            <div  className="individual-data"><FaRegCalendarCheck className="analytical-icons6"/><div  className="real-number-data">{RequestCompletedcounter}</div><h4>Completed Requests </h4></div>
+            <div  className="analytical-icons1"><MdDevices className="di1"/><h4>Total Equipments </h4><div className="real-number-data">{devicecounter}</div></div>
+            <div  className="analytical-icons2"><FaSackDollar className="di1"/><h4>Spent Cost </h4><div className="dollar"><div  className="real-number-data">ETB {Costcounter}</div></div></div>
+            <div  className="analytical-icons3"><BsFillChatSquareQuoteFill className="di1"/><h4>Total Requests </h4><div  className="real-number-data">{Requestcounter}</div></div>
+            <div  className="analytical-icons4"><BiSolidSave className="di1"/><h4>Accepted Requests </h4><div  className="real-number-data">{RequestAcceptedcounter}</div></div>
+            <div  className="analytical-icons5"><MdOutlinePendingActions className="di1"/><h4>Pending Requests </h4><div  className="real-number-data">{RequestPendingcounter}</div></div>
+            <div  className="analytical-icons6"><FaRegCalendarCheck className="di1"/><h4>Completed Requests </h4><div  className="real-number-data">{RequestCompletedcounter}</div></div>
         </div>
      );
 }

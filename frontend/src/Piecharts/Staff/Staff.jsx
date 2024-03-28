@@ -29,28 +29,28 @@ const Staff = () => {
     const costs = pieChartData.map((data) => data.count);
     const ctx = document.getElementById('myPieChart6').getContext('2d');
     new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
           data: costs,          
           backgroundColor: [
-            'rgb(112, 112, 112)',
-            'rgb(85, 79, 79)',
-            'rgb(195, 139, 197)',
-            'rgb(41, 41, 41)',
-            'rgb(34, 34, 34)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(2, 92, 54)',
+            'rgba(2, 92, 54,0.95)',
+            'rgba(2, 92, 54,0.8)',
+            'rgba(2, 92, 54,0.7)',
+            'rgba(2, 92, 54,0.6)',
+            'rgba(2, 92, 54,0.5)',
+            'rgba(2, 92, 54,0.4)'
           ],
           borderColor: [
-            'rgb(34, 34, 34)',
-            'rgb(85, 79, 79)',
-            'rgb(195, 139, 197)',
-            'rgb(41, 41, 41)',
-            'rgb(34, 34, 34)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)'
           ],
           borderWidth: 1
         }]
