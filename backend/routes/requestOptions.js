@@ -15,7 +15,8 @@ router.post('/procurement', async (req, res) => {
       specification,
       procurementReason,
       requestDate,
-      requestedBy  } = req.body;
+      requestedBy,
+      } = req.body;
 
     // Create a new Procurement instance using the Sequelize model
     const procurement = await Requests.create({
@@ -27,6 +28,7 @@ router.post('/procurement', async (req, res) => {
       requestDate,
       requestedBy,
       requestType:'procurement',
+      action: 'Administrator',
     });
 
     res.status(201).json(procurement);
@@ -185,6 +187,7 @@ router.post('/training', async (req, res) => {
       requestDate,
       requestedBy,
       requestType:'training',
+      action:'Administrator',
     });
 
     res.status(201).json(training);

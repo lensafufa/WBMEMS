@@ -183,19 +183,19 @@ return (
                         </div>
                         <button
                             onClick={() => handleAccept(RequestByType.id)}
-                            className={RequestByType.status === 'Pending' ? 'when-accept-button' : 'deleteButton'}
+                            className={(RequestByType.status === 'Pending')&&(RequestByType.requestType !== 'procurement')&&(RequestByType.requestType !== 'training') ? 'when-accept-button' : 'deleteButton'}
                         >
                             Accept
                         </button>
                         <button
                             onClick={()=>getByIdReport(RequestByType.id)}
-                            className={RequestByType.status === 'Completed' ? 'viewReportButton' : 'deleteButton'}
+                            className={(RequestByType.status === 'Completed')&&(RequestByType.requestType !== 'procurement')&&(RequestByType.requestType !== 'training') ? 'viewReportButton' : 'deleteButton'}
                         >
                             View Report
                         </button>
                         
                         
-                        {users.length > 0 && RequestByType.status==='Accepted'&& (
+                        {users.length > 0 && RequestByType.status==='Accepted'&&(RequestByType.requestType !== 'procurement')&&(RequestByType.requestType !== 'training')&& (
                             <select 
                                 className="user-selecter"
                                 onChange={(e) => handleUserSelect(RequestByType.id, e.target.value)}

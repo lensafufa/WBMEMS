@@ -134,6 +134,7 @@ const ProcurementForm = () => {
           procurementReason,
           requestDate: formattedDate,
           requestedBy:`${user.name} ${user.lastName}`,
+        
         };
 
         await axios.post('http://localhost:7000/api/requestOptions/procurement', formData);
