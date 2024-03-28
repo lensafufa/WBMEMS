@@ -46,10 +46,11 @@ const Piechart = () => {
             'rgb(255, 255, 255)',
           
           ],
-          borderWidth: 1
+          borderWidth: 0.5
         }]
       },
       options: {
+        cutout: '60%',
         plugins: {
           tooltip: {
             callbacks: {
@@ -84,7 +85,7 @@ const Piechart = () => {
             font:{
               weight: 'bold',
               family: 'Arial',
-              size: 25,
+              size: 20,
             }
             
           }
@@ -96,7 +97,7 @@ const Piechart = () => {
   
   return (
     <div>
-      <canvas id="myPieChart2" width="220" height="220"></canvas>
+      <canvas id="myPieChart2" width="210" height="210"></canvas>
     </div>
   );
 };

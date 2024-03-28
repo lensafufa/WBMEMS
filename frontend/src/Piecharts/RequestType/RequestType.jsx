@@ -51,10 +51,11 @@ const RequestType = () => {
             'rgba(255, 255, 255)',
             'rgba(255, 255, 255)',
           ],
-          borderWidth: 2
+          borderWidth: 0.5
         }]
       },
       options: {
+        cutout: '60%',
         plugins: {
           customCanvasBackgroundColor: {
             color: 'white',

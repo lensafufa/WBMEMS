@@ -52,11 +52,11 @@ const Staff = () => {
             'rgb(255, 255, 255)',
             'rgb(255, 255, 255)'
           ],
-          borderWidth: 1
+          borderWidth: 0.5
         }]
       },
       options: {
-        // Add your options here
+        cutout: '60%',
         plugins: {
             customCanvasBackgroundColor: {
               color: 'black',

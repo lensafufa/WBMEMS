@@ -49,10 +49,11 @@ const WorkOrderStatus = () => {
             'rgba(255, 255, 255)',
             'rgba(255, 255, 255)',
           ],
-          borderWidth: 1
+          borderWidth: 0.5
         }]
       },
       options: {
+        cutout: '60%',
         plugins: {
           customCanvasBackgroundColor: {
             color: 'white',
