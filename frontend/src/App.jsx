@@ -57,6 +57,18 @@ import AdminTrainingManagement from './DashboardforAdmin/Training/Training.jsx';
 import DoctorTrainingManagement from './DashboardForDoctors/Training/Training.jsx';
 import EngineerTrainingManagement from './DashBoardForEngineers/Training/Training.jsx';
 import TrainingManagement from './Training/Training.jsx';
+import RadiologistDashboard from './Radiologist/Dashboard/dashboard.jsx';
+import RadiologistDeviceOverview from './Radiologist/deviceOverview/deviceOverview.jsx';
+import RadiologistAnnouncement from './Radiologist/announcement/announcement.jsx';
+import Request_options_Radiologist from './Radiologist/Requests/Request_options.jsx';
+import RadiologistProcurementForm from './Radiologist/Requests/Procurement/Procurement.jsx';
+import RadiologistCalibrationForm from './Radiologist/Requests/Calibration/Calibration.jsx';
+import RadiologistMaintenanceForm from './Radiologist/Requests/Maintenance/Maintenance.jsx';
+import RadiologistSpecificationForm from './Radiologist/Requests/Specification/Specification.jsx';
+import RadiologistTrainingForm from './Radiologist/Requests/Training/Training.jsx';
+import RadiologistInstallationForm from './Radiologist/Requests/Installation/Installation.jsx';
+import RadiologistTrackChanges from './Radiologist/TrackChanges/TrackChanges.jsx';
+import RadiologistTrainingManagement from './Radiologist/Training/Training.jsx';
 
 
 
@@ -119,6 +131,21 @@ function App() {
           <Route path='/RequestedAdmin' element={<RequestedAdmin/>}/>
           <Route path='/ViewAllRequestAdmin' element={<ViewAllRequest/>}/>
           <Route path='/AdminTrainingManagement' element={<AdminTrainingManagement/>}/>
+          <Route path='/RadiologistDashboard' element={<RadiologistDashboard/>}/>
+          <Route path='/RadiologistDeviceOverview' element={<RadiologistDeviceOverview/>}/>
+          <Route path='/RadiologistAnnouncement' element={<RadiologistAnnouncement/>}/>
+          <Route path='/Request_options_Radiologist' element={<Request_options_Radiologist/>}/>
+          <Route path='/Request_options_Radiologist/Procurement' element={<RadiologistProcurementForm/>}/>
+          <Route path='/Request_options_Radiologist/Calibration' element={<RadiologistCalibrationForm/>}/>
+          <Route path='/Request_options_Radiologist/Maintenance' element={<RadiologistMaintenanceForm/>}/>
+          <Route path='/Request_options_Radiologist/Specification' element={<RadiologistSpecificationForm/>}/>
+          <Route path='/Request_options_Radiologist/Training' element={<RadiologistTrainingForm/>}/>
+          <Route path='/Request_options_Radiologist/Installation' element={<RadiologistInstallationForm/>}/>
+          <Route path='/RadiologistTrackChanges' element={<RadiologistTrackChanges/>}/>
+          <Route path='/RadiologistTrainingManagement' element={<RadiologistTrainingManagement/>}/>
+          
+          
+          
           
         </Routes>
       </div>

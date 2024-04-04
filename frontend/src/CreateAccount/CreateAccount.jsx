@@ -163,6 +163,9 @@ const CreateAccount = () => {
             <option value="Engineer">Engineer</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>
+            <option value="Radiologist">Radiologist</option>
+            <option value="Laboratory Technician">Laboratory Technician</option>
+            
             </select>
         </div>
         <div className="create-label-and-input">

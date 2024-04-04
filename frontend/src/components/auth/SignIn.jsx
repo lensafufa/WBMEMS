@@ -53,11 +53,12 @@ const SignIn = () => {
       // Dispatch the decoded token to Redux (if needed)
       dispatch(setUser(decoded));
       
-    
       if(decoded.occupation === 'Biomedical Head'){
         navigate('/Dashboard');
       }else if(decoded.occupation === 'Doctor'){
         navigate('/DoctorDashboard')
+      }else if(decoded.occupation === 'Radiologist'){
+        navigate('/RadiologistDashboard')
       }else if(decoded.occupation=== 'Engineer'){
         navigate('/EngineerDashBoard')
       }else if(decoded.occupation=== 'Administrator'){
