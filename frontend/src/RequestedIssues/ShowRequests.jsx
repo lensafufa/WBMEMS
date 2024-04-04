@@ -139,10 +139,10 @@ const SortByRequestType = () => {
         handleAction(id, userName);
     };
 return (
-<div className='show-request-body'>
+<div className='show-request-body-head'>
     <div className="sort-by-requestType-main">
-    <div className="home-and-sort-title-request"><Home /><h2>Request</h2></div>
-    <div className="sort-and-main">
+    <div className="home-and-sort-title-request-head"><Home /><h2>Request</h2></div>
+    <div className="sort-and-main-head">
         <select className="sortt-by-request" required type='text' value={RequestType} onChange={handleRequestType}>
             <option value=""> All Requests</option>
             <option value="procurement">Procurement</option>
@@ -154,17 +154,17 @@ return (
         </select>
         <div className="sort-by-requestType-output">
             {handleRequest.map((RequestByType) => (
-                <div className="request-whole-view" key={RequestByType.id}>
+                <div className="request-whole-view-head" key={RequestByType.id}>
                         <div  onClick={() => getById(RequestByType.id)}>
-                            <div className="header">
+                            <div className="header-head">
                                 <strong> {RequestByType.requestType}</strong> <strong> {RequestByType.requestDate} </strong>
                             </div>
-                            <div className="sort-by-requestType-desc">
-                            <div className="body-item" key={RequestByType}>
+                        
+                            <div className="body-item-head" key={RequestByType}>
                                     {Object.entries(RequestByType).map(([columnName, value]) => {
                                         if (columnName === 'equipmentName' || columnName === 'department' ) {
                                             return (
-                                                <div className='department-color ' key={columnName}>
+                                                <div className='department-color-head ' key={columnName}>
                                                         
                                                     {value}
                                                 </div>
@@ -174,8 +174,7 @@ return (
                                     })}
                                 </div>
 
-                            </div>
-                            <div className="footer">
+                            <div className="footer-head">
                                 <strong> Status: </strong><span className='status'> {RequestByType.status}</span><br/>
                                 <strong> Ass. to: </strong>{RequestByType.action}<br/>
                                 <strong>Req. by: </strong>{RequestByType.requestedBy}

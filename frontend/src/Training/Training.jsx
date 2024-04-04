@@ -10,25 +10,10 @@ import Home from "../pages/Home/Home";
 const TrainingManagement = () => {
     const [handleTraining, setHandleTraining] = useState([]);
     const [inventory, setInventory] = useState([]);
-    const [showAllColumns, setShowAllColumns] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedTraining, setSelectedTraining] = useState(null);
-    const [showTrainingForm, setShowTrainingForm] = useState(false);
+   
     
-    const [formData, setFormData] = useState({
-      trainingName: '',
-      equipmentName: '',
-      model: '',
-      department: '',
-      length: '',
-      startDate: '',
-      endDate: '',
-      trainingType: '',
-      trainingLevel: '',
-      location: '',
-      trainer: '',
-      trainee: '',
-    });
     
 
     useEffect(() => {
@@ -46,104 +31,8 @@ const TrainingManagement = () => {
         console.error('Error fetching inventory:', error);
     }
   };
-  const handleEquipmentName = (e) => {
-    const selectedEquipment = inventory.find(item => item.equipmentName === e.target.value);
-    if (selectedEquipment) {
-      setFormData({
-        ...formData,
-        equipmentName: selectedEquipment.equipmentName,
-        model: selectedEquipment.model,
-        department: selectedEquipment.equipmentDepartment
-      });
-    }
-  };
   
 
-    const handleAddTrainingClick = () => {
-      setShowTrainingForm(true);
-  };
-
-  const handleCloseTrainingForm = () => {
-      setShowTrainingForm(false);
-  };
-  const handleChange = (e, index) => {
-    const { name, value } = e.target;
-    const equipments = [...formData.equipments];
-    equipments[index][name] = value;
-    setFormData({ ...formData, equipments });
-  };
-
-  
-
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Format start date and end date
-    const formattedStartDate = new Date(formData.startDate).toLocaleString('en-US', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true,
-    });
-
-    const formattedEndDate = new Date(formData.endDate).toLocaleString('en-US', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true,
-    });
-
-    // Update formData with formatted dates
-    const updatedFormData = {
-        ...formData,
-        startDate: formattedStartDate,
-        endDate: formattedEndDate,
-    };
-
-    // Perform training-form validation
-    if (!validateForm()) {
-        return;
-    }
-
-    try {
-        // Call the API endpoint to submit the training-form data with updated formData
-        const response = await axios.post('http://localhost:7000/api/contract/training', updatedFormData);
-
-        // Handle the response
-        console.log('Form submitted successfully:', response.data);
-
-        // Reset the form data after successful submission
-        setFormData({
-            trainingName: '',
-            equipmentName: '',
-            model: '',
-            department: '',
-            length: '',
-            startDate: '',
-            endDate: '',
-            trainingType: '',
-            trainingLevel: '',
-            location: '',
-            trainer: '',
-            trainee: '',
-        });
-
-        // Close the training form after submission
-        setShowTrainingForm(false);
-
-        // Refresh the training list
-        defaultTrainingList();
-    } catch (error) {
-        console.error('Error submitting form:', error);
-    }
-};
 
 
 const defaultTrainingList = async () => {
@@ -245,15 +134,15 @@ const defaultTrainingList = async () => {
 
 
   return (
-    <div className="training-container">
-      <div className="training-home-and-sort-title">
+    <div className="training-containerr">
+      <div className="training-home-and-sort-title-head">
         <Home />
         <h2>Training Management</h2>
       </div>
       <div className="training-search-and-export">
         <div className="training-export-buttons">
-          <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-          <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
+          <button className="export-btn-csv-training" onClick={handleExportCSV}>Export to CSV</button>
+          <button className="export-btn-pdf-training" onClick={handleExportPDF}>Export to PDF</button>
         </div>
         <div className="search-container">
           <IoSearchSharp className="search-icon1" />
@@ -267,173 +156,8 @@ const defaultTrainingList = async () => {
           />
         </div>
       </div>
-      <button className="add-training-btn" onClick={handleAddTrainingClick}>Add New Training</button>
       
-      {showTrainingForm ? (
-        <div className="training-form-container">
-        <div className="training-form-title">Training Event Form</div>
-        <form className="training-form-group-main" onSubmit={handleSubmit}>
-            <div className="training-form-group">
-                <label className="training-training-form-label">Training Name:</label>
-                <input
-                    type="text"
-                    id="trainingName"
-                    name="trainingName"
-                    value={formData.trainingName}
-                    onChange={(e) => setFormData({ ...formData, trainingName: e.target.value })}
-                    required
-                    className="training-form-input"
-                />
-            </div>
-            <div className="training-form-group">
-            <label className="training-training-form-label">Equipment Name*</label>
-                <select
-                    className="training-form-input"
-                    required
-                    value={formData.equipmentName}
-                    onChange={ handleEquipmentName}
-                    
-                >
-            <option value="">Select Equipment</option>
-            {inventory.map((item, index) => (
-              <option key={index} value={item.equipmentName}>
-                {item.equipmentName}
-              </option>
-            ))}
-          </select>
-            </div>
-            <div className="training-form-group">
-            <label className="training-training-form-label">Equipment Model*</label>
-                <input
-                    className="training-form-input"
-                    type="text"
-                    value={formData.model}
-                    onChange={() => {}} // Equipment model is populated based on selected equipment
-                    readOnly // Assuming equipment model is not editable
-                />    
-            </div>
-            <div className="training-form-group">
-                    <label>Department*</label>
-                        <input
-                            className="training-form-input"
-                            type="text"
-                            value={formData.department}
-                            onChange={() => {}} // Department is populated based on selected equipment
-                            readOnly // Assuming department is not editable
-                        />
-            </div>
-            <div className="training-form-group">
-                <label htmlFor="length">Length:</label>
-                <input
-                    className="training-form-input"
-                    type="text"
-                    id="length"
-                    name="length"
-                    value={formData.length}
-                    onChange={(e) => setFormData({ ...formData, length: e.target.value })}
-                    required
-
-                />
-            </div>
-            <div className="training-form-group">
-            <label htmlFor="startDate">Start Date:</label>
-                <input
-                    className="training-form-input"
-                    type="date" 
-                    id="startDate"
-                    name="startDate"
-                    value={formData.startDate}
-                    onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                    required
-                />
-            </div>
-            <div className="training-form-group">
-            <label htmlFor="endDate">End Date:</label>
-                <input
-                    className="training-form-input"
-                    type="date" 
-                    id="endDate"
-                    name="endDate"
-                    value={formData.endDate}
-                    onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                    required
-                />
-            </div>
-            <div className="training-form-group">
-                <label htmlFor="trainingType">Training Type:</label>
-                <select
-                    className="training-form-input"
-                    id="trainingType"
-                    name="trainingType"
-                    value={formData.trainingType}
-                    onChange={(e) => setFormData({ ...formData, trainingType: e.target.value })}
-                    required
-                >
-                    <option value="">Select Training Type</option>
-                    <option value="End user training">End User Training</option>
-                    <option value="Technical personnel training">Technical Personnel Training</option>
-                </select>
-            </div>
-            <div className="training-form-group">
-                <label htmlFor="trainingLevel">Training Level:</label>
-                <select
-                    className="training-form-input"
-                    id="trainingLevel"
-                    name="trainingLevel"
-                    value={formData.trainingLevel}
-                    onChange={(e) => setFormData({ ...formData, trainingLevel: e.target.value })}
-                    required
-                >
-                    <option value="">Select Training Level</option>
-                    <option value="Basic">Basic</option>
-                    <option value="Advanced">Advanced</option>
-                    <option value="Refreshment">Refreshment</option>
-                </select>
-            </div>
-            <div className="training-form-group">
-                
-                <label htmlFor="location">Location:</label>
-                <input
-                    className="training-form-input"
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    required
-                />
-            </div>
-            <div className="training-form-group">
-                <label htmlFor="trainer">Trainer:</label>
-                <input
-                    className="training-form-input"
-                    type="text"
-                    id="trainer"
-                    name="trainer"
-                    value={formData.trainer}
-                    onChange={(e) => setFormData({ ...formData, trainer: e.target.value })}
-                    required
-                />
-            </div>
-            <div className="training-form-group">
-                <label htmlFor="trainee">Trainee:</label>
-                <input
-                    className="training-form-input"
-                    type="text"
-                    id="trainee"
-                    name="trainee"
-                    value={formData.trainee}
-                    onChange={(e) => setFormData({ ...formData, trainee: e.target.value })}
-                    required
-                />
-            </div>
-        </form>
-        <button type="submit" className="add-btn">Add Training</button>
-        <button type="button" className="cancel-btn" onClick={handleCloseTrainingForm}>Cancel</button>
-    </div>
-    
-      ) : null}
-      <div className="training-table-container">
+      <div className="training-table-containerrr">
       <table className="main-training-management-table">
                 <thead>
                     <tr>

@@ -2,14 +2,27 @@
 .current-date{
     display: flex;
     align-items: center;
-
     padding: 2px;
     margin-top: 5px;
-    font-size: medium;
+    font-size: small;
     border-radius: 5px;
 }
 .the-clock{
-    font-size: x-large;
+    font-size: small;
     margin-right: 10px;
     font-weight: bold;
+}
+.date-and-time-at-dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: rgb(148, 9, 9);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: medium;
+    font-family: -apple-system;
+    font-weight: bold;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255);
 }

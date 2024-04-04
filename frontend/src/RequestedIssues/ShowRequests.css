@@ -1,7 +1,8 @@
-.show-request-body {
+.show-request-body-head {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: none;
 }
 
 .sort-by-requestType-main {
@@ -10,29 +11,35 @@
   align-items: center;
   width: 100%;
 }
-.sort-and-main{
-  margin-top: 20px;
+.sort-and-main-head{
+  margin-top: 100px;
+  background: none;
 }
-.home-and-sort-title-request {
+.body-item-head{
+  background-color: rgba(0, 0, 0, 0.048);
+}
+.home-and-sort-title-request-head {
   display: flex;
+  position: fixed;
   align-items: center;
-  background: linear-gradient(to top left, #000000, #000000);
+  background-color: rgb(2, 26, 70);
   color: rgb(251, 251, 251);
   width: 100%;
   padding-left: 50px;
-  height: 100px;
-  font-size: medium;
+  height: 70px;
+  font-size: small;
   font-family: -apple-system;
 }
-.request-whole-view {
+.request-whole-view-head{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 300px;
-  background-color: rgb(247, 246, 246);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.027);
 }
-.show-request-body{
-  background-color: #d8d7d7;
+.show-request-body-head{
+  background: none;
 }
 .sortt-by-request{
   margin-left: 30px;
@@ -42,7 +49,7 @@
   border-radius: 5px;
   border: none;
   outline: none;
-  width: 150px;
+  width: 200px;
   font-family: -apple-system;
   margin-bottom: 20px;
   background-color: #ebebeb;
@@ -57,33 +64,20 @@
   background: none;
   border-radius: 5px;
 }
-
-.request-by-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: aliceblue;
-}
-.sort-by-requestType-desc {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-family: -apple-system;
-  background-color: rgb(247, 246, 246);
-}
-.department-color {
-  background-color: rgb(247, 246, 246);
+.department-color-head {
+  background-color: rgba(255, 255, 255, 0.027);
   font-size: medium;
   font-weight: bold;
+  padding-left:5px;
+  font-family: -apple-system;
 }
 
-.header {
+.header-head {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: rgb(56, 56, 56);
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(124, 122, 122, 0.089);
   padding: 10px;
   font-family: -apple-system;
   font-size: large;
@@ -91,17 +85,12 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.sort-by-requestType {
-  padding: 5px;
-  background-color: #ffffff;
-}
-
-.footer {
+.footer-head {
   font-size: medium;
   font:bold;
   padding: 5px;
   font-family: -apple-system;
-  background-color: rgb(247, 246, 246);
+  background-color: rgba(0, 0, 0, 0.055);
 }
 
 .when-accept-button {

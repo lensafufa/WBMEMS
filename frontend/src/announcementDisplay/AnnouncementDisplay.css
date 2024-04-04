@@ -2,18 +2,20 @@
     display: flex;
     align-items: center;
     color: white;
-    height: 100px;
 }
-.announcement-main{
+.announcement-main-head{
     display: flex;
-    height: 100px;
-    padding-left: 20px;
+    position: fixed;
     align-items: center;
-    justify-content: left;
-    margin-bottom: 20px;
-    font-size: medium;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    padding-left: 20px;
+    font-size: small;
     font-family: -apple-system;
-    background-color: black;
+    background-color: rgb(2, 26, 70); 
+
 }
 .announcement-description{
     color: black;
@@ -31,7 +33,7 @@
     vertical-align: middle;
     justify-content: space-between;
     color: white;
-    background-color: rgb(3, 109, 60);
+    background-color: rgb(2, 26, 70);
     padding: 7px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -61,6 +63,7 @@
     padding: 20px;
     justify-content: center;
     font-size: medium;
+    margin-top: 80px;
     font-family: -apple-system;
 }
 .tick-seen{

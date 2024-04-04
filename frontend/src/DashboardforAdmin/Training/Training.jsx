@@ -267,15 +267,15 @@ const defaultTrainingList = async () => {
 
 
   return (
-    <div className="training-container">
-      <div className="training-home-and-sort-title">
+    <div className="training-containerr">
+      <div className="training-home-and-sort-titleee">
         <AdminstratorHome />
         <h2>Training Management</h2>
       </div>
-      <div className="training-search-and-export">
+      <div className="training-search-and-exportt">
         <div className="training-export-buttons">
-          <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-          <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
+          <button className="export-btn-csvv" onClick={handleExportCSV}>Export to CSV</button>
+          <button className="export-btn-pdff" onClick={handleExportPDF}>Export to PDF</button>
         </div>
         <div className="search-container">
           <IoSearchSharp className="search-icon1" />
@@ -289,12 +289,13 @@ const defaultTrainingList = async () => {
           />
         </div>
       </div>
-      <button className="add-training-btn" onClick={handleAddTrainingClick}>Add New Training</button>
+      <button className="add-training-btnn" onClick={handleAddTrainingClick}>Add New Training</button>
       
       {showTrainingForm ? (
-        <div className="training-form-container">
-        <div className="training-form-title">Training Event Form</div>
-        <div className="training-form-group-main" >
+        <div className="joe-biden">
+            <div className="training-form-containerr">
+        <div className="trainingg-form-title">Training Event Form</div>
+        <div className="training-form-group-mainn" >
             <div className="training-form-group">
                 <label className="training-training-form-label">Training Name:</label>
                 <input
@@ -304,13 +305,13 @@ const defaultTrainingList = async () => {
                     value={formData.trainingName}
                     onChange={(e) => setFormData({ ...formData, trainingName: e.target.value })}
                     required
-                    className="training-form-input"
+                    className="training-formm-input"
                 />
             </div>
             <div className="training-form-group">
             <label className="training-training-form-label">Equipment Name*</label>
                 <select
-                    className="training-form-input"
+                    className="training-formm-input"
                     required
                     value={formData.equipmentName}
                     onChange={ handleEquipmentName}
@@ -327,7 +328,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
             <label className="training-training-form-label">Equipment Model*</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="text"
                     value={formData.model}
                     onChange={() => {}} // Equipment model is populated based on selected equipment
@@ -337,7 +338,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                     <label>Department*</label>
                         <input
-                            className="training-form-input"
+                            className="training-formm-input"
                             type="text"
                             value={formData.department}
                             onChange={() => {}} // Department is populated based on selected equipment
@@ -347,7 +348,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                 <label htmlFor="length">Length:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="text"
                     id="length"
                     name="length"
@@ -360,7 +361,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
             <label htmlFor="startDate">Start Date:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="date" 
                     id="startDate"
                     name="startDate"
@@ -372,7 +373,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
             <label htmlFor="endDate">End Date:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="date" 
                     id="endDate"
                     name="endDate"
@@ -384,7 +385,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                 <label htmlFor="trainingType">Training Type:</label>
                 <select
-                    className="training-form-input"
+                    className="training-formm-input"
                     id="trainingType"
                     name="trainingType"
                     value={formData.trainingType}
@@ -399,7 +400,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                 <label htmlFor="trainingLevel">Training Level:</label>
                 <select
-                    className="training-form-input"
+                    className="training-formm-input"
                     id="trainingLevel"
                     name="trainingLevel"
                     value={formData.trainingLevel}
@@ -416,7 +417,7 @@ const defaultTrainingList = async () => {
                 
                 <label htmlFor="location">Location:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="text"
                     id="location"
                     name="location"
@@ -428,7 +429,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                 <label htmlFor="trainer">Trainer:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="text"
                     id="trainer"
                     name="trainer"
@@ -440,7 +441,7 @@ const defaultTrainingList = async () => {
             <div className="training-form-group">
                 <label htmlFor="trainee">Trainee:</label>
                 <input
-                    className="training-form-input"
+                    className="training-formm-input"
                     type="text"
                     id="trainee"
                     name="trainee"
@@ -450,25 +451,27 @@ const defaultTrainingList = async () => {
                 />
             </div>
         </div>
-        <button type="button" className="add-btn" onClick={handleSubmit}>Add Training</button>
-        <button type="button" className="cancel-btn" onClick={handleCloseTrainingForm}>Cancel</button>
-    </div>
-    
+        <div className="training-two-buttons">
+            <button type="button" className="add-btnn" onClick={handleSubmit}>Add Training</button>
+            <button type="button" className="cancel-btnn" onClick={handleCloseTrainingForm}>Cancel</button>
+        </div>
+     </div>
+    </div>   
       ) : null}
       <div className="training-table-container">
       <table className="main-training-management-table">
                 <thead>
                     <tr>
-                        <th className="training-management-thead">Training </th>
-                        <th className="training-management-thead">Equipment </th>
-                        <th className="training-management-thead">Location</th>
-                        <th className="training-management-thead">Department</th>
-                        <th className="training-management-thead">Length</th>
-                        <th className="training-management-thead">Start Date</th>
-                        <th className="training-management-thead">End Date</th>
-                        <th className="training-management-thead">Training Type</th>
-                        <th className="training-management-thead">Training Level</th>
-                        <th className="training-management-thead">Details</th>
+                        <th className="training-management-theadd">Training </th>
+                        <th className="training-management-theadd">Equipment </th>
+                        <th className="training-management-theadd">Location</th>
+                        <th className="training-management-theadd">Department</th>
+                        <th className="training-management-theadd">Length</th>
+                        <th className="training-management-theadd">Start Date</th>
+                        <th className="training-management-theadd">End Date</th>
+                        <th className="training-management-theadd">Training Type</th>
+                        <th className="training-management-theadd">Training Level</th>
+                        <th className="training-management-theadd">Details</th>
 
                     </tr>
                 </thead>

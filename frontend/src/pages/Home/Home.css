@@ -1,5 +1,5 @@
  
-.main-manu{
+.main-manu-head{
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -8,7 +8,6 @@
     width: fit-content;
     height:100vh;
     z-index: 100;
-    top: 0;
     left:0;
     bottom: 0;
     top: 0;
@@ -68,7 +67,7 @@
     background: none;
     display: flex;
     color: white;
-    font-size: medium;
+    font-size: small;
     margin-right: 20px;
     height: 100px;
     font-family: -apple-system;

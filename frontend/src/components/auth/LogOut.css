@@ -9,8 +9,9 @@
    font-weight: bold;
 }
 .Log-out-button:hover{
-   transition: all 0.3s;
+   transition: background-color 0.3s;
    background-color: rgb(199, 197, 197);
+   color: rgb(139, 5, 5);
 }
 .logout-icon{
    margin-right: 20px;

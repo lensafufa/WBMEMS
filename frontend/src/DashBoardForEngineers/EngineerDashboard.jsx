@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import './EngineerDashboard.css';
-import EngineerSidebar from "./EngineerSidebar";
-import Piechart from "../Piecharts/Status/Piechart";
-import PieDepartment from "../Piecharts/Department/pieDepartment";
-import { Link } from "react-router-dom";
-import { GrOverview, GrSchedule } from "react-icons/gr";
-import { FaSort } from "react-icons/fa";
-import { FaRegCalendarAlt } from 'react-icons/fa';
 import { IoNotifications } from "react-icons/io5";
+import { GrOverview } from "react-icons/gr";
+import { FaSort } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import EngineerSidebar from "./EngineerSidebar";
+import AnalyticalData from "../Piecharts/AnalyticalData/AnalyticalData";
+import Piechart from "../Piecharts/Status/Piechart";
+import EquipmentByCost from "../Piecharts/EquipmentByCost/EquipmentByCost";
+import PieDepartment from "../Piecharts/Department/pieDepartment";
 
 const EngineerDashboard = () => {
-
   const [NotificationCount, setNotificationCount] = useState(null);
+  const [NewDeviceNotificationCount, setNewDeviceNotificationCount] = useState(null);
   useEffect(() => {
     NotificationNumber();
-  }, [NotificationCount]);
+    NotificationNumberNewDevice();
+  }, [NotificationCount,NewDeviceNotificationCount]);
 
   useEffect(() => {
    
@@ -30,26 +32,42 @@ const EngineerDashboard = () => {
       console.error('error fetching the notifications', error);
     }
   };
+  const NotificationNumberNewDevice = async()=>{
+    try{
+      const response = await axios.get(`http://localhost:7000/api/alertAndNotification/getByType?notificationType=${'NewDevice'}`);
+      console.log('The response data:', response.data);
+      const counter1 = response.data.length;
+      setNewDeviceNotificationCount(counter1);
+    }catch(error){
+      console.error('error fetching the notifications', error);
+    }
+  };
+  return (    
+    <div className="main-classs-engineer">
+      <div className="the-title-navigation-main-class-engineer"><EngineerSidebar/><h2 className="the-navigation-title">Engineers Dashboard</h2></div>
+      <div className="main-right-part-engineer">
+          <div className="analytical-data-and-buttons-engineer"> 
+            <div className="analytical-device-data-engineer"><div className="doooooo"></div><AnalyticalData/></div> 
+            <div className="the-two-doughnuts">
+              <div className="admin-piechart-holder-status-engineer"><Piechart/></div>
+              <div className="admin-piechart-holder-department"><EquipmentByCost/></div>
+              <div className="admin-piechart-holder-department"><PieDepartment/></div> 
+              
+          </div>
+          </div>
+        <div className="doctor-sub">
+          <Link to='/EngineerDeviceShow' className='main-my-link'><div className="admin-dashboard-device-overview"> <div className="bell-and-notification-count"><GrOverview className="dashboard-icons-bell"/>
+          <span className={NewDeviceNotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
+            {NewDeviceNotificationCount !== null ? NewDeviceNotificationCount : ''}
+            </span></div>Device Overview</div></Link>
 
-    return ( 
-      <div className="main-class-engineer">
-      <div className="dashboard-home-engineer"></div>
-      <div className="right-part-engineer">
-        <div className="engineer-the-navigation-main-class"><EngineerSidebar/><h2 className="the-navigation-title-engineer">Navigation</h2></div>
-        <div className="sub-class-engineer">
-            <Link to='/EngineerDeviceShow' className='my-link'><div className="dashboard-device-overview-engineer"> <GrOverview className="engineer-dashboard-icons"/>Device Overview</div></Link>      
-            <Link to='/EngineerAnnouncement' className='my-link'><div className="alert-and-notification-show-engineer"><div className="bell-and-notification-count"> <IoNotifications className="engineer-dashboard-icons-bell"/> 
-            <span className={NotificationCount !== 0 ? "engineer-notification-count-display" : 'engineer-notification-null-count'}>
-            {NotificationCount !== null ? NotificationCount : ''}
-            </span></div>Announcement Board</div></Link>          
-            <Link to ='/EngineerCalendar' className='my-link'><div className="doctor-sort-by-dep"><FaRegCalendarAlt  className="engineer-dashboard-icons"/>Calendar</div></Link>
-            <Link to ='/EngineerSortByDep' className='my-link'><div className="doctor-sort-by-dep"><FaSort className="engineer-dashboard-icons"/>Sort By Department</div></Link>
+          <Link to='/EngineerAnnouncement' className='main-my-link'><div className="alert-and-notification-show">
+          <div className="bell-and-notification-count"> <IoNotifications className="dashboard-icons-bell"/> 
+          </div>Announcement Board<span className={NotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
+          {NotificationCount !== null ? NotificationCount : ''}
+          </span></div></Link>
+          <Link to ='/EngineerSortByDep' className='main-my-link'><div className="dashboard-schedule-maintenance"><FaSort className="main-dashboard-icons"/>Sort By Department</div></Link>
         </div>
-
-        <div className="piechart-in-the-dashboard-engineer">
-            <div className="piechart-holder-status-engineer"><Piechart/></div>
-            <div className="piechart-holder-department-engineer"><PieDepartment/></div>            
-         </div>
       </div>
      
     </div>

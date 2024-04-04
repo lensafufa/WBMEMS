@@ -1,208 +1,127 @@
 body{
     overflow-y:auto;
     overflow-x: auto;
-    background-color:white;
  }
  
- .engineer-notification-count-display{
+ .main-notification-count-display{
      display: flex;
      align-items: center;
-     position: relative;
      justify-content: center;
      height: 20px;
      width: 20px;
      left: -15px;
-     top:-3px;
-     font-size: small;
-     background-color: rgba(230, 4, 4, 0.9);
-     border-radius: 50%;
-     color: white;
+     top: -3px;
      border: 2px solid white;
- }
- .sub-class-engineer{
-     display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     row-gap: 40px;
-     column-gap: 20px;
-     background-color: rgb(255, 255, 255);
-     padding-bottom: 50px;
-     padding-left: 20px;
-     padding-right: 20px;
- }
- .dashboard-device-overview-engineer:hover,
- .sort-by-dep-engineer:hover,
- .alert-and-notification-show-engineer:hover{
-     box-shadow: 5px 5px 7px rgba(0,0,0,0.1);
-     transition: all 0.3s ;
-     background-color: rgba(231, 229, 229, 0.3); 
-     cursor: pointer;
-     color: black;
- }
- .alert-and-notification-show-engineer{
-     display: flex;
-     background-color:white;
-     color: black;
-     padding-right: 10px;
-     align-items: center;
-     font-size: large;
-     height: 70px;
-     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-     padding-left: 10px;
-     border-radius: 5px;
-     justify-content: center;
-     font-family:-apple-system;
-     color: rgb(87, 85, 85);
-     font-weight: bold;
- }
- .doctor-sort-by-dep{
-     display: flex;
-     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-     color: rgb(87, 85, 85);
-     background-color: white;
-     font-weight: bold;
-     font-size: large;
-     padding-right: 10px;
-     align-items: center;
-     height: 70px;
-     padding-left: 10px;
-     border-radius: 5px;
-     justify-content: center;
-     font-family:-apple-system;
- }
- .dashboard-device-overview-engineer{
-     display: flex;
-     background-color: white;
-     color: rgb(87, 85, 85);
-     font-weight: bold;
-     font-size: large;
-     padding-right: 10px;
-     align-items: center;
-     height: 70px;
-     padding-left: 10px;
-     border-radius: 5px;
-     justify-content: center;
-     font-family:-apple-system;
-     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
- }
- .schedule-maintenance{
-     display: flex;
-     background-color: black;
-     align-items: center;
+     font-size: small;
      color: white;
+     background-color: rgb(16, 109, 44);
+     margin-left: 10px;
      border-radius: 5px;
-     padding-left: 10px;
-     height: 70px;
-     font-size: x-large;
-     justify-content: center;
  }
- .pending-requests{
+ .biomed-admin-sub-class{
      display: flex;
-     background-color: rgb(16, 107, 138);
-     align-items: center;color: white;
+     flex-direction: column;
+     background: none;
+     padding: 20px;
+     row-gap: 20px;
+     margin-right: 40px;
+     width: 290px;
+ }
+ .navigation-section1,
+ .navigation-section2{
+     background-color: white;
      border-radius: 5px;
-     font-size: x-large;
+     padding: 10px;
+ }
+ 
+ .admin-schedule-maintenance:hover,
+ .admin-dashboard-device-overview:hover,
+ .pending-requests:hover,
+ .dashboard-schedule-maintenance:hover,
+ .alert-and-notification-show:hover,
+ .sorts:hover,
+ .reports:hover{
+     transition: all 0.3s ; 
+     cursor: pointer;
+     background-color: #07612913;
+ }
+ .schedule-maintenance,
+ .pending-requests,
+ .alert-and-notification-show,
+ .dashboard-schedule-maintenance,
+ .admin-dashboard-device-overview{
+     display: flex;
+     align-items: center;
+     color: rgb(83, 82, 82);
+     font-weight: bold;
+     font-size: medium;
+     width: 260px;
+     border-radius: 10px;
+     font-family:-apple-system;
+     padding-top: 10px;
+     padding-bottom: 7px;
      padding-left: 10px;
-     justify-content: center;
  }
  .sorts{
      display: flex;
      background-color: rgb(15, 15, 0);
      align-items: center;
      color: white;
-     height: 70px;
-     padding-left: 10px;
-     border-radius: 5px;
      font-size: x-large;
      justify-content: center;
  }
- .reports{
-     display: flex;
-     background-color: rgb(18, 100, 55);
-     align-items: center;
-     color: white;
-     padding-left: 10px;
-     border-radius: 5px;
-     font-size: x-large;
-     justify-content: center;
- }
- .engineer-dashboard-icons{
-     margin-right: 20px;
-     font-size:large;
-     min-width: 20px;
-     min-height: 20px;
-     background-color: #3e7ad4;
+ .main-dashboard-icons{
+     margin-right: 10px;
+     font-size: medium;
+     min-width: 12px;
+     min-height:12px;
+     background-color: rgba(4, 31, 107, 0.842);
      color: white;
      padding: 7px;
      border-radius: 50%;
  }
- .engineer-dashboard-icons-bell{
-     font-size: large;
-     background-color: #3e7ad4;
+ .dashboard-icons-bell{
+     font-size: medium;
+     background-color: rgba(4, 31, 107, 0.842);
      padding: 7px;
      color: white;
      border-radius: 50%;
-     min-width: 20px;
-     min-height: 20px;
+     margin-right: 5px;
+     min-width: 15px;
+     min-height: 15px;
  }
- .my-link{
+ .main-my-link{
      text-decoration: none;
-     height: 70px;
- 
  }
- 
- .right-part{
+ .main-right-part-engineer{
    display: flex;
-   flex-direction: column;
-   margin-left: 0px;
-   margin-right: 0px;
-   width: 100%;
+   align-items: start;
+   justify-content: left;
+   flex-direction: row;
+   margin-top: 150px;
+   margin-left: 20px;
  }
- 
- .main-class{
+ .main-classs-engineer{
      display: flex;
      flex-direction: column;
-     align-items: center;
-     justify-content: space-between; 
+     background-color: #e6e2e2;
+     width: 100%;
  }
- .computer-icon{ 
-     margin-right: 20px;
-     align-items: center;
-     justify-content: center;
- }
- 
- .computer-and-title{
+ .the-title-navigation-main-class-engineer{
      display: flex;
-     align-items: center;
-     margin-right: 30px;
- }
- .bottom-bar-icons{
-     display: flex;
-     position: relative;
-     flex-direction: column;
- }
- .adresses{
-     display: flex;
-     align-items: center;
-     margin-bottom: 10px;
-     border-bottom: 1px solid white;
- }
- .adresses:hover{
-     color: yellow;
-     cursor: pointer;
- }
- .engineer-the-navigation-main-class{
-     display: flex;
-     position: relative;
+     position: fixed;
      flex-direction: row;
      align-items: center;
      font-family:-apple-system;
-     background-color: black;
+     background-color: rgb(2, 26, 70);
      color: white;
      height: 100px;
+     width: 100%;
      padding-left: 30px;
      margin-bottom: 30px;
      box-shadow: 2px 1px 10px rgba(106, 4, 189, 0.342);
-     font-size: medium;
+     font-size: small;
+     z-index: 100;
  }
  
  .piecharts{
@@ -215,30 +134,21 @@ body{
  .bell-and-notification-count{
      display: flex;
  }
- .engineer-notification-null-count{
+ .notification-null-count{
      opacity: 0;
  }
- .piechart-in-the-dashboard{
+ .admin-piechart-in-the-dashboard{
      display: grid;
-     grid-template-columns: 1fr 1fr;
+     grid-template-columns: repeat(
+     auto-fit,
+     minmax(250px, 400px)
+   );
+     margin-right: 50px;
      align-items: center;
      justify-content: center;
-     background-color: rgb(255, 255, 255);
-     padding-right: 100px;
-     padding-left: 100px;
-     column-gap: 0px;
- }
- .dashboard-bottom-bar{
-     display: flex;
-     flex-direction: column;
-     color: white;
-     align-items: center;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     justify-content: space-between;
-     width: 100%;
-     margin-top: 50px;
-     background-color: #000000;
+     margin-left: 50px;
+     background:none;
+    
  }
  .dashboard-computer-and-title{
      display: flex;
@@ -249,9 +159,103 @@ body{
  .bottombar-description{
      padding: 20px;
  }
- .the-navigation-title-engineer{
-    font-size: large;
-    font-family: -apple-system;
+ .analytical-device-data-engineer{
+     display: flex;
+     justify-content: center;
+     justify-content: right;
+      margin-bottom: 10px;
+     border-radius: 5px;
+     position: relative;
+     width: 100%;
+     background-color: #ffffff;
  }
- 
- 
+ .analytical-data-and-buttons-engineer{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: left;
+     border-radius: 10px;
+ }
+ .the-two-doughnuts-engineer{
+     display: flex;
+     border-radius: 10px;
+     width: 100%;
+     background: none;
+ }
+ @media (min-width: 500px) {
+     .the-two-doughnuts {
+         display: grid;
+       grid-template-columns: 1fr;
+     }
+   }
+ @media (min-width: 900px) {
+     .the-two-doughnuts {
+         display: grid;
+       grid-template-columns: 1fr 1fr;
+     }
+   }
+ @media (min-width: 1300px) {
+     .the-two-doughnuts {
+         display: grid;
+       grid-template-columns: 1fr 1fr 1fr ;
+     }
+   }
+   .links-background{
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-radius: 5px;
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     background-size: cover;
+     background-image: url('a2.jpg');
+     filter: blur(5px);
+   }
+   .piechart-background{
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-radius: 5px;
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     background-size: cover;
+     background-image: url('a2.jpg');
+     filter: blur(0px);
+   }
+   .content{
+     position: relative;
+   }
+  .admin-piechart-in-the-dashboardd{
+     display: flex;
+     align-items: top;
+     justify-content: top;
+     background:none;
+     margin: 10px 20px;
+     border-radius: 10px;
+     margin-bottom: 50px;
+  }
+  .head-dashboard-bottom-bar{
+     height: 200px;
+     background-color: rgba(120, 122, 122, 0.445);
+  }
+  .tick{
+     display: flex;
+     font-size: x-large;
+     margin-left: 30px;
+  }
+  .admin-piechart-holder-status-engineer,
+  .admin-piechart-holder-department-engineer,
+  .admin-piechart-holder-department-cost-engineer{
+     background-color: rgb(255, 255, 255);
+     margin: 5px;
+     border-radius: 5px;
+  }
+  .title-and-date{
+     display: flex;
+     align-items: center;
+     width: 100%;
+     margin-right: 100px;
+     justify-content: space-between;
+  }

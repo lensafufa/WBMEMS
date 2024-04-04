@@ -51,7 +51,7 @@ const DisplayAnnouncement = () => {
   
   return (
     <div className='announcement-table'>
-      <div className='announcement-main'> <Home/> <h2 className='announcements-main-title'>Announcements</h2></div>
+      <div className='announcement-main-head'> <Home/> <h2 className='announcements-main-title'>Announcements</h2></div>
       <div className='main-individual'>
       {announcements.map((announcement) => (
         <div className='individual-announcement-display' key={announcement.id}>

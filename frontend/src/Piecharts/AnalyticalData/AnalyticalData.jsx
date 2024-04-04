@@ -76,6 +76,12 @@ const AnalyticalData = () => {
                 case 'Completed':
                     completedCount++;
                     break;
+                case 'Arranged':
+                    completedCount++;
+                    break;
+                case 'Purchased':
+                    completedCount++;
+                    break;
                 default:
                     break;
             }
@@ -91,12 +97,12 @@ const AnalyticalData = () => {
    }
     return ( 
         <div className="main-analysis">
-            <div  className="analytical-icons1"><MdDevices className="di1"/><h4>Total Equipments </h4><div className="real-number-data">{devicecounter}</div></div>
-            <div  className="analytical-icons2"><FaSackDollar className="di1"/><h4>Spent Cost </h4><div className="dollar"><div  className="real-number-data">ETB {Costcounter}</div></div></div>
-            <div  className="analytical-icons3"><BsFillChatSquareQuoteFill className="di1"/><h4>Total Requests </h4><div  className="real-number-data">{Requestcounter}</div></div>
-            <div  className="analytical-icons4"><BiSolidSave className="di1"/><h4>Accepted Requests </h4><div  className="real-number-data">{RequestAcceptedcounter}</div></div>
-            <div  className="analytical-icons5"><MdOutlinePendingActions className="di1"/><h4>Pending Requests </h4><div  className="real-number-data">{RequestPendingcounter}</div></div>
-            <div  className="analytical-icons6"><FaRegCalendarCheck className="di1"/><h4>Completed Requests </h4><div  className="real-number-data">{RequestCompletedcounter}</div></div>
+            <div  className="analytical-icons1"><div className="icon-and-title"><MdDevices className="di1"/><h4>Total Equipments </h4></div><div className="real-number-data">{devicecounter}</div></div>
+            <div  className="analytical-icons2"><div className="icon-and-title"><FaSackDollar className="di1"/><h4>Spent Cost </h4></div><div className="dollar"><div  className="real-number-data">ETB {Costcounter}</div></div></div>
+            <div  className="analytical-icons3"><div className="icon-and-title"><BsFillChatSquareQuoteFill className="di1"/><h4>Total Requests </h4></div><div  className="real-number-data">{Requestcounter}</div></div>
+            <div  className="analytical-icons4"><div className="icon-and-title"><BiSolidSave className="di1"/><h4>Accepted Requests </h4></div><div  className="real-number-data">{RequestAcceptedcounter}</div></div>
+            <div  className="analytical-icons5"><div className="icon-and-title"><MdOutlinePendingActions className="di1"/><h4>Pending Requests </h4></div><div  className="real-number-data">{RequestPendingcounter}</div></div>
+            <div  className="analytical-icons6"><div className="icon-and-title"><FaRegCalendarCheck className="di1"/><h4>Completed Requests </h4></div><div  className="real-number-data">{RequestCompletedcounter}</div></div>
         </div>
      );
 }

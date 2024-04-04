@@ -91,7 +91,7 @@ const ScheduleMaintenanceForm = () => {
 
   return (
     <div className="schedule-maintenance-request">
-      <div className="schedule-maintenance-title">
+      <div className="schedule-maintenance-titlee">
         <Home />
         <h2 className="schedule-Maintenance-Page">Work Scheduler Form</h2>
       </div>

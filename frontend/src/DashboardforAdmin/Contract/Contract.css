@@ -2,10 +2,20 @@
   display: flex;
   align-items: center;
   padding-left: 20px;
-  background-color: black;
+  background-color: rgb(2, 26, 70);
   color: white;
-  font-size: large;
+  font-size: medium;
   font-family: -apple-system;
+}
+.export-btn-pdf-admin,
+.export-btn-csv-admin{
+  background-color: rgba(2, 26, 70, 0.897);
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.export-btn-pdf-admin:hover,
+.export-btn-csv-admin:hover{
+  background-color: rgb(2, 26, 70);
 }
 .search-container{
   display: flex;
@@ -35,7 +45,7 @@
   font-size: medium;
   font-family: -apple-system;
   padding: 5px;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(2, 26, 70);
 }
 .contract-export-buttons{
     margin-bottom: 10px;

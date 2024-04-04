@@ -26,7 +26,7 @@ const Clock = () => {
   };
 
   return (
-    <div>
+    <div className='date-and-time-at-dashboard'>
       <h2 className='current-time'><MdAccessTime className='the-clock'/>{formatTime(currentTime)}</h2>
       <h2 className='current-date'><CiCalendarDate className='the-clock'/>{formatDate(currentTime)}</h2>
     </div>

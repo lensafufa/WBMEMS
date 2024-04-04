@@ -11,11 +11,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 20px;
-    height: 100px;
+    padding-left: 30px;
+    height: 70px;
     color: white;
-    background-color: black;
-    font-size: medium;
+    background-color: rgb(2, 26, 70);
+    font-size: small;
     font-family: -apple-system;
 }
 .createAccount-section{
@@ -40,7 +40,7 @@
 .descriptions-for-password{
     margin-top: 10px;
     border-radius: 10px;
-    background-color: #0a284a;
+    background-color: rgb(4, 31, 107);
     color: white;
     padding: 5px;
 }
@@ -125,12 +125,12 @@
     background-color: #e4e4e6;
 }
 .create-account-buttonn{
-    background-color: #0a284a;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-bottom: 20px;
-    width: 1030px;
-
+    background-color: rgba(4, 31, 107, 0.918);
+    border-radius: 5px;
+    width: 150px;
+}
+.create-account-buttonn:hover{
+    background-color: rgb(4, 31, 107);
 }
 @media (max-width: 890px) {
     .create-account-button {

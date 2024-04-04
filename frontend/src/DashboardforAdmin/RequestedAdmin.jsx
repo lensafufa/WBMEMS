@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import AdminstratorHome from "./SidebarAdmin";
+import './RequestedAdmin.css'; 
 
 const RequestedAdmin = () => {
     const [RequestType, setRequestType] = useState('');
@@ -160,18 +161,19 @@ const RequestedAdmin = () => {
         handleAction(id, userName);
     };
 return (
-<div className='show-request-body'>
-    <div className="sort-by-requestType-main">
-    <div className="home-and-sort-title-request"><AdminstratorHome /><h2>Request</h2></div>
-    <div className="sort-and-main">
-        <select className="sortt-by-request" required type='text' value={RequestType} onChange={handleRequestType}>
+<div className='show-request-body-admin'>
+    <div className="sort-by-requestType-main-admin">
+    <div className="home-and-sort-title-requestt"><AdminstratorHome /><h2>Requestd Issues</h2></div>
+    <select className="sortt-by-request-admin" required type='text' value={RequestType} onChange={handleRequestType}>
             <option value=""> All Requests</option>
             <option value="procurement">Procurement</option>
             <option value="training">Training</option>
         </select>
-        <div className="sort-by-requestType-output">
+    <div className="sort-and-main-admin">
+        
+        <div className="sort-by-requestType-output-admin">
             {handleRequest.map((RequestByType) => (
-                <div className="request-whole-view" key={RequestByType.id}>
+                <div className="request-whole-view-admin" key={RequestByType.id}>
                         <div  onClick={() => getById(RequestByType.id)}>
                             <div className="header">
                                 <strong> {RequestByType.requestType}</strong> <strong> {RequestByType.requestDate} </strong>

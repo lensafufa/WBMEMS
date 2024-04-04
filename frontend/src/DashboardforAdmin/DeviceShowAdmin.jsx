@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { RiErrorWarningLine } from "react-icons/ri";
 import AdminstratorHome from './SidebarAdmin';
-
+import './DeviceShowAdmin.css';
 
 const AdminDeviceOverview = () => {
   const [deviceOverview, setDeviceOverview] = useState([]);
@@ -109,7 +109,7 @@ const AdminDeviceOverview = () => {
 }
        {(
         <div className='grand-device'>
-          <div className='device-main'>
+          <div className='Admin-device-main'>
             <div><AdminstratorHome/></div>
             <h2>Device Information</h2>
           </div>
@@ -130,11 +130,6 @@ const AdminDeviceOverview = () => {
                   </div>
                 </div>
                 <div className='the-two-inventory-buttons'>
-                <button onClick={() => {
-                      setWarning(true);
-                      setIdHolder(device.id);
-                    }} className='dispose-button'>Dispose</button>
-                    <button className='open-maintenance-button'>Maint. Hist.</button>
                 </div>
               </div>
             ))}

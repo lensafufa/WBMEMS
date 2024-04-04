@@ -93,7 +93,7 @@ const InventoryCalendar = () => {
 
   return (
     <div>
-      <div className='device-main'>
+      <div className='device-main-calender'>
         <div><Home/></div>
         <h2>Calendar</h2>
       </div>
@@ -103,7 +103,7 @@ const InventoryCalendar = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: '600px' }}
+        style={{ height: '500px' }}
         components={{ event: EventComponent }}
         onSelectEvent={handleSelectEvent}
         eventPropGetter={(event, start, end, isSelected) => {
@@ -130,7 +130,6 @@ const InventoryCalendar = () => {
               <p><strong>Equipment Name:</strong> {selectedEvent.equipmentName}</p>
               <p><strong>Model:</strong> {selectedEvent.model}</p>
               <p><strong>Department:</strong> {selectedEvent.department}</p>
-              <p><strong>Assigned to:</strong> {selectedEvent.AssignedTo}</p>
             </div>
             <span className="close" onClick={handleCloseModal}>&times;</span>
 

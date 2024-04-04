@@ -14,43 +14,43 @@ const Request_optionsEngineer = () => {
   return (
     <div className="main-class-request-options">
       <div className="right-part">
-        <div className="the-navigation-main-class-requests">
+        <div className="the-navigation-main-class-requestss">
           <EngineerSidebar />
-          <h2 className="the-request-title">Requests</h2>
+          <h2 className="the-request-title">Make Requests</h2>
         </div>
-        <div className="sub-class-requests">
+        <div className="sub-class-requestss">
           <Link to="Procurement" className="my-link">
-            <div className="procurement">
+            <div className="procurementt">
               <FaShoppingCart className="Request_options-icons" />
               Procurement
             </div>
           </Link>
           <Link to="Calibration" className="my-link">
-            <div className="calibration">
+            <div className="calibrationn">
               <IoNotificationsOutline className="Request_options-icons" />
               Calibration
             </div>
           </Link>
           <Link to="Maintenance" className="my-link">
-            <div className="maintenance">
+            <div className="maintenancee">
               <GrSchedule className="Request_options-icons" />
               Maintenance
             </div>
           </Link>
           <Link to="Specification" className="my-link">
-            <div className="specification">
+            <div className="specificationn">
               <MdAssignment className="Request_options-icons" />
               Specification
             </div>
           </Link>
           <Link to="Training" className="my-link">
-            <div className="training">
+            <div className="trainingg">
               <FaChalkboardTeacher className="Request_options-icons" />
               Training
             </div>
           </Link>
           <Link to="Installation" className="my-link">
-            <div className="installation">
+            <div className="installationn">
               <FaDownload  className="Request_options-icons" />
               Installation
             </div>

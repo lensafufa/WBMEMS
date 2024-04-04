@@ -97,7 +97,7 @@ const DeviceOverview = () => {
   };
 
   return (
-    <div className='cc'>
+    <div className='cc-doctor'>
       {warning && (
         <div className='alert-main'>
           <div className='dispose-warning-alert'>
@@ -112,12 +112,12 @@ const DeviceOverview = () => {
       )
 }
        {(
-        <div className='grand-device'>
+        <div className='grand-device-doctor'>
           <div className='device-main-doctor'>
             <div><DoctorSidebar/></div>
             <h2>Device Information</h2>
           </div>
-          <div className='device-table'>
+          <div className='device-table-doc'>
             {deviceOverview.map((device) => (
               <div>
                 <div className='individual-device-doctor' key={device.id} onClick={() => getById(device.id)}>

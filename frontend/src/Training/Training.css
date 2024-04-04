@@ -2,14 +2,19 @@
   padding: 20px;
 }
 
-.training-home-and-sort-title {
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  background-color: black;
-  color: white;
-  font-size: large;
-  font-family: -apple-system;
+.training-home-and-sort-title-head {
+ display: flex;
+ position: fixed;
+ top: 0;
+ right: 0;
+ left: 0;
+ background-color: rgb(2, 26, 70);
+ color: white;
+ align-items: center;
+ padding-left: 20px;
+ font-size: small;
+ height: 70px;
+ font-family: -apple-system;
 }
 
 .training-home-and-sort-title h2 {
@@ -21,27 +26,29 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  margin-top: 90px;
+  padding: 10px;
 }
 
 .training-export-buttons {
   display: flex;
 }
 
-.export-btn-csv,
-.export-btn-pdf {
+.export-btn-pdf-training,
+.export-btn-csv-training {
   margin-right: 10px;
   padding: 8px 12px;
-  background-color: #ebfc00;
-  color: black;
+  background-color: #046e3dde;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.export-btn-csv:hover,
-.export-btn-pdf:hover {
-  background-color: #ebfc00c0;
+.export-btn-pdf-training:hover,
+.export-btn-csv-training:hover {
+  background-color: #046e3c;
 }
 
 .search-container {
@@ -146,8 +153,10 @@
   background-color: #0056b3;
 }
 
-.training-table-container {
+.training-table-containerrr{
   margin-top: 20px;
+  background: none;
+  padding: 10px;
 }
 
 .main-training-management-table {
@@ -157,7 +166,7 @@
 
 .training-management-thead {
   padding: 10px;
-  background-color: #2d8ef7;
+  background-color: rgb(2, 26, 70);
   color: #fff;
   text-align: left;
   font-family: -apple-system;
@@ -174,7 +183,7 @@
 
 .training-detail-button {
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #046e3dde;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -183,7 +192,7 @@
 }
 
 .training-detail-button:hover {
-  background-color: #0056b3;
+  background-color: #046e3c;
 }
 
 .detailed-view-1-Training-detail {

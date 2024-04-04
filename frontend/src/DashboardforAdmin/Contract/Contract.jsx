@@ -244,12 +244,12 @@ return (
         <div className="contract-container">
           <div className="contract-home-and-sort-title">
             <AdminstratorHome />
-            <h2>Contract</h2>
+            <h2 className="contract-heading">Contract Management</h2>
           </div>
           <div className="contract-search-and-export">
             <div className="contract-export-buttons">
-                <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-                <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
+                <button className="export-btn-csv-admin" onClick={handleExportCSV}>Export to CSV</button>
+                <button className="export-btn-pdf-admin" onClick={handleExportPDF}>Export to PDF</button>
             </div>
             <div className="search-container">
               <IoSearchSharp  className="search-icon"/>
@@ -273,7 +273,7 @@ return (
                     <th className="contract-thead">Agreement Date</th>
                     <th className="contract-thead">Contract Duration</th>
                     <th className="contract-thead">Expire Date</th>
-                    <th></th>
+                    <th className="contract-thead">See detail</th>
                   </React.Fragment>
                 </tr>
               </thead>

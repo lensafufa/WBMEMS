@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   border-radius: 5px;
-  z-index: 1;
+  column-gap: 7px;
 }
 h4{
   font-size: medium;
@@ -24,31 +25,40 @@ h4{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin:  10px;
   font-size: medium;
-  color: rgb(61, 60, 60);
   font-family: -apple-system;
-  border-radius: 3px;
-  color: white;
-  padding: 5px;
+  border-radius: 5px;
+  font-weight:200;
+  height: 70px;
+  color: rgb(255, 255, 255);
+  padding: 0px 5px 5px;
+}
+
+.analytical-icons1:hover,
+.analytical-icons2:hover,
+.analytical-icons3:hover,
+.analytical-icons4:hover,
+.analytical-icons5:hover,
+.analytical-icons6:hover{
+   cursor: pointer;
 }
 .analytical-icons1{
-  background-color: rgb(4, 38, 90);
+  background-color: rgb(122, 63, 170);
 }
 .analytical-icons2{
-  background-color: rgb(95, 11, 128);
+  background-color: rgb(68, 100, 189);
 }
 .analytical-icons3{
-  background-color: rgba(5, 105, 39, 0.897);
+  background-color: rgb(201, 58, 58);
 }
 .analytical-icons4{
-  background-color: rgba(0, 49, 88, 0.849);
+  background-color: rgb(212, 60, 162);
 }
 .analytical-icons5{
-  background-color: #9b0505fd;
+  background-color: rgb(32, 182, 95);
 }
 .analytical-icons6{
-    background-color:rgba(4, 85, 35, 0.897) ;
+  background-color: rgb(206, 51, 90);
 }
 
 @media (min-width: 500px) {
@@ -91,7 +101,6 @@ h4{
   font-size: large;
   color: white;
   font-family:'Franklin Gothic Medium';
-  margin-top: 10px;
  }
  .di1{
   font-size: x-large;
@@ -100,6 +109,14 @@ h4{
   display: flex;
   align-items: center;
   font-size: large;
-
+ }
+ .icon-and-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  padding: 5px;
+  width: 100%;
+  margin-top: 5px;
  }
  

@@ -58,7 +58,7 @@ const ViewAllRequest = () => {
             case 'Pending':
                 return '#d80a0a';
             case 'Accepted':
-                return '#7d99b8';
+                return '#0db83';
             case 'Completed':
                 return '#0b7e3b';
             default:
@@ -68,7 +68,7 @@ const ViewAllRequest = () => {
 
     return (
         <div className='show-request-body-admin-trackChanges'>
-            <div className="home-and-sort-title-Admin"><AdminstratorHome/><h2>Track Requests</h2></div>
+            <div className="home-and-sort-title-Adminn"><AdminstratorHome/><h2>Track Requests</h2></div>
            <div className="bubu">
            <table className="admin-request-table">
                 <thead>

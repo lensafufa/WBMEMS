@@ -81,13 +81,17 @@
 }
 .main-home-and-sort-title{
     display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     flex-direction: row;
     align-items: center;
     color: white;
     padding-left: 30px;
-    background-color: black;
-    height: 100px;
-    font-size: medium;
+    background-color: rgb(2, 26, 70);
+    height: 70px;
+    font-size: small;
     font-family: -apple-system;
 }
 .sort-by-dep{
@@ -108,9 +112,8 @@
     font-family: -apple-system;
 }
 .main-select-and-body{
-    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
     background-color: rgb(255, 255, 255);
-    margin: 10px;
     border-radius: 10px;
 }
 .sort-by-department1{

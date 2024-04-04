@@ -56,17 +56,18 @@ const Dashboard = () => {
   };
   return (    
     <div className="main-classs">
-      <div className="the-title-navigation-main-class"><Home/><div className="title-and-date"><h2 className="the-navigation-title">Biomedical Head Dashboard</h2><Clock/></div></div>
-      <div className="main-right-part">
-          <div className="analytical-data-and-buttons"> 
+      <div className="the-title-navigation-main-class"><Home/><div className="title-and-date"><h2 className="the-navigation-title">Biomedical Head Dashboard</h2></div></div>
+      <div className="three-sections">
+          <div className="analytical-data-and-charts"> 
             <div className="analytical-device-data"><div className="doooooo"></div><AnalyticalData/></div> 
-            <div className="the-two-doughnuts">
+            <div className="first-section-doughnuts">
               <div className="admin-piechart-holder-status"><Piechart/></div>
               <div className="admin-piechart-holder-department-cost"><EquipmentByCost/></div>
               <div className="admin-piechart-holder-department"><PieDepartment/></div> 
           </div>
           </div>
-        <div className="biomed-admin-sub-class">
+        <div className="short-cuts">
+        <Clock/>
           <div className="navigation-section1">
             <Link to='/DeviceOverview' className='main-my-link'><div className="admin-dashboard-device-overview"> <div className="bell-and-notification-count"><GrOverview className="dashboard-icons-bell"/>
             <span className={NewDeviceNotificationCount !== 0 ? "main-notification-count-display" : 'notification-null-count'}>
@@ -89,7 +90,7 @@ const Dashboard = () => {
           
           </div>
       </div>
-      <div className="admin-piechart-in-the-dashboardd">
+      <div className="head-piechart-in-the-dashboardd">
           <div className="admin-piechart-holder-department"><WorkOrderStatus/></div>
           <div className="admin-piechart-holder-department"><Staff/></div>           
           <div className="admin-piechart-holder-department"><RequestType/></div> 

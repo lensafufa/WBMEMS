@@ -181,10 +181,10 @@ const CreateAccount = () => {
         </div >
             <label className="descriptions-for-password">
                 <p className="password-description-title">Password should contain:</p>
-                <p className="password-description">* at least one letter</p>
-                <p className="password-description">* at least one number</p>
-                <p className="password-description">* at least one special character</p>
-                <p className="password-description">* and have length of 8 characters</p>
+                <p className="password-description">- at least one letter</p>
+                <p className="password-description">- at least one number</p>
+                <p className="password-description">- at least one special character</p>
+                <p className="password-description">- and have length of 8 characters</p>
             </label>
         </div>
         <div className="create-label-and-input">
@@ -206,8 +206,8 @@ const CreateAccount = () => {
             onChange={handleProfilePicture}
             />
         </div>
-      </div>
         <button onClick={handlePost} className="create-account-buttonn" >Create Account</button>
+      </div>
       </div>
     </div>
   );

@@ -127,7 +127,7 @@ const desiredColumns = ['equipmentName', 'Model', 'department', 'reportType', 'd
 }
        {(
         <div className='grand-device'>
-          <div className='device-main'>
+          <div className='device-main-head'>
             <div><Home/></div>
             <h2>Equipment Information</h2>
           </div>
@@ -151,8 +151,8 @@ const desiredColumns = ['equipmentName', 'Model', 'department', 'reportType', 'd
                 <button onClick={() => {
                       setWarning(true);
                       setIdHolder(device.id);
-                    }} className='dispose-button'>Dispose</button>
-                    <button className='open-maintenance-button' onClick={()=>{
+                    }} className='dispose-button-head'>Dispose</button>
+                    <button className='open-maintenance-button-head' onClick={()=>{
                       setHistory(true);
                       handleGetReportsBySerialNumber(device.serialNumber);
                       console.log('the serial number',device.serialNumber);
@@ -192,7 +192,7 @@ const desiredColumns = ['equipmentName', 'Model', 'department', 'reportType', 'd
 
       {detailed && (
         <div className='detailed-view-2'>
-          <div className='detail-description'>
+          <div className='detail-description-head'>
             <div className='device-profile-picture'>
               <img className='main-device-image' src={`http://localhost:7000/${detailed.equipmentImage}`} alt='Profile' />
               <div><p className='device-manufacturer'><p className='detail-title'>Description </p> {detailed.equipmentDescription}</p></div>
@@ -205,10 +205,10 @@ const desiredColumns = ['equipmentName', 'Model', 'department', 'reportType', 'd
                   <p className='device-manufacturer'><p className='detail-title'>Country of Origin </p> {detailed.countryOfOrigin}</p>
                   <p className='device-manufacturer'><p className='detail-title'>Warranty Expiry Date</p> {detailed.warrantyExpiryDate}</p>
                   <p className='device-manufacturer'><p className='detail-title'>Status </p> {detailed.status}</p>
+              
               </div>
+              <button onClick={handleClose} className='detail-close-button-head'>Close</button>
             </div>
-
-              <button onClick={handleClose} className='detail-close-button'>Close</button>
             </div>
           </div>
        
