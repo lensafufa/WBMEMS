@@ -4,6 +4,8 @@ import './AnnouncementDisplay.css';
 import { DateTime } from 'luxon';
 import Home from '../pages/Home/Home'
 import { useDispatch } from 'react-redux';
+import { BsCheckAll } from "react-icons/bs";
+
 import { decrementNotificationCount } from '../StateManagement/actions/notificationActions';
 
 const DisplayAnnouncement = () => {
@@ -47,18 +49,15 @@ const DisplayAnnouncement = () => {
     }
   };
   
-
   return (
     <div className='announcement-table'>
-      <div className='announcement-main'> <Home/> <h2 className='announcements-main-title'>Announcements</h2></div>
+      <div className='announcement-main-head'> <Home/> <h2 className='announcements-main-title'>Announcements</h2></div>
       <div className='main-individual'>
       {announcements.map((announcement) => (
-        
-          <div className='individual-announcement-display' key={announcement.id}>
-            <h3 className='announcement-heading'>{announcement.title} <p className='announcememnt-moment'>{announcement.announcement_time}</p></h3>
-            <p className='announcement-description'>{announcement.description}</p>
-          </div>
-       
+        <div className='individual-announcement-display' key={announcement.id}>
+          <h3 className='announcement-heading'>{announcement.title} <p className='announcememnt-moment'>{announcement.announcement_time}</p><BsCheckAll className='tick-seen'/></h3>
+          <p className='announcement-description'>{announcement.description}</p>
+        </div>
       ))}
        </div>
     </div>

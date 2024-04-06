@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { CSVLink } from "react-csv";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import { CiSearch } from "react-icons/ci";
 
 const SortByReportType = () => {
     const [reportType, setReportType] = useState('');
@@ -104,7 +105,7 @@ const SortByReportType = () => {
 
     return (
         <div className="sort-by-reportType-main-report">
-            <div className="home-and-sort-title-report"><Home /><h2>Report</h2></div>
+            <div className="home-and-sort-title-report"><Home /><h2>Task Report</h2></div>
             <div className="select-and-body-report">
                 <select className="sort-by-reportType-input-report" required type='text' value={reportType} onChange={handleReportType}>
                     <option value=""> All Reports</option>
@@ -115,17 +116,15 @@ const SortByReportType = () => {
                 </select>
                 <div className="sort-by-reportType-output-report">
                     <div className="button-container">
-                        <button className="export-btn-csv" onClick={handleExportCSV}>Export to CSV</button>
-                        <button className="export-btn-pdf" onClick={handleExportPDF}>Export to PDF</button>
-                        <button className="toggle-columns-btn" onClick={() => setShowAllColumns(!showAllColumns)}>
+                        <button className="export-btn-csv-head" onClick={handleExportCSV}>Export to CSV</button>
+                        <button className="export-btn-pdf-head" onClick={handleExportPDF}>Export to PDF</button>
+                        <button className="toggle-columns-btn-head" onClick={() => setShowAllColumns(!showAllColumns)}>
                             {showAllColumns ? 'Show Specific Columns' : 'Show All Columns'}
                         </button>
                        
                     </div>
                     <div className="search-container1">
-                        <label className="search-label" htmlFor="searchInput">
-                            Search Report
-                        </label>
+                        <CiSearch className="search-icon-for-report"/>
                         <input
                             id="searchInput"
                             className="search-input"
@@ -136,12 +135,12 @@ const SortByReportType = () => {
                     </div>
                 </div>
                 <table className="report-table-report">
-                    <thead>
-                        <tr>
+                    <thead >
+                        <tr className="the-report-table-heading">
                             {showAllColumns ? Object.keys(filteredReport[0] || {}).map((columnName) => (
-                                <th key={columnName}>{formatColumnName(columnName)}</th>
+                                <th className="the-report-table-heading" key={columnName}>{formatColumnName(columnName)}</th>
                             )) : desiredColumns.map((columnName) => (
-                                <th key={columnName}>{formatColumnName(columnName)}</th>
+                                <th className="the-report-table-heading" key={columnName}>{formatColumnName(columnName)}</th>
                             ))}
                         </tr>
                     </thead>

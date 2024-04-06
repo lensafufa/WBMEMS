@@ -19,14 +19,14 @@ const upload = multer({ storage });
 
 // POST create a new user with image upload
 router.post('/', upload.single('equipmentImage'), async (req, res) => {
-  const {  equipmentName, model, serialNumber, equipmentDepartment,
+  const {  equipmentName, model, serialNumber, equipmentDepartment,preventiveMaintenancePerAnnual,
     equipmentDescription, maintenanceHistory, manufacturer,
     countryOfOrigin, warrantyExpiryDate, status } = req.body;
   const equipmentImage = req.file ? req.file.path : null; // Store image path if uploaded, otherwise null
 
   try {
     const newDevice = await Inventorys.create({ equipmentName, model, serialNumber, equipmentDepartment,
-        equipmentDescription, maintenanceHistory, manufacturer,
+        equipmentDescription, maintenanceHistory, manufacturer,preventiveMaintenancePerAnnual,
         countryOfOrigin, warrantyExpiryDate,equipmentImage, status});
     res.json(newDevice);
   } catch (err) {

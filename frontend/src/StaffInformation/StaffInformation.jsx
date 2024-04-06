@@ -19,6 +19,7 @@ const StaffInformation = () => {
           name: user.name,
           lastName: user.lastName,
           email: user.email,
+          phoneNumber: user.phoneNumber,
           occupation: user.occupation,
           profilePicture: user.profilePicture, // Assuming you have a field named 'profilePicture' in your user object
         }));
@@ -39,7 +40,7 @@ const StaffInformation = () => {
           <div className='individual-user' key={user.id}>
             <img className='image' src={`http://localhost:7000/${user.profilePicture}`} alt='Profile' />
             <div className='staff-description'>
-              <p className='staff-name'>{user.name} {user.lastName} <div className='occ'>{user.occupation}</div></p>
+              <p className='staff-name'>{user.name} {user.lastName} <div className='occ'> <div>{user.occupation}</div> {user.phoneNumber}</div></p>
               <p className='staff-occupation'></p>
               <p className='staff-email'>{user.email}</p>
             </div> 

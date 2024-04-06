@@ -32,34 +32,35 @@ const PieDepartment = () => {
   
     const ctx = document.getElementById('myPieChart').getContext('2d');
     new Chart(ctx, {
-      type: 'line',
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgb(133, 6, 6)',
+            'rgba(133, 6, 6,0.9)',
+            'rgba(133, 6, 6, 0.8)',
+            'rgba(133, 6, 6, 0.7)',
+            'rgba(133, 6, 6,0.5)',
+            'rgba(133, 6, 6,0.2)',
+            'rgba(133, 6, 6)'
  
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)'
           ],
-          borderWidth: 1
+          borderWidth: 0.5
         }]
       },
       options: {
+        cutout: '60%',
         plugins: {
           customCanvasBackgroundColor: {
             color: 'white',
@@ -75,12 +76,12 @@ const PieDepartment = () => {
           },
           legend: {
             display:true,
-            align: 'bottom',
-            position: 'right', 
+            align: 'left',
+            position: 'bottom', 
             labels: {
               color:'black',
               font:{
-                size: 17,
+                size: 20,
                 color: 'black',
                 weight: 'bold',
                 family: '-apple-system'
@@ -95,7 +96,7 @@ const PieDepartment = () => {
             color: 'black',
             font:{
               weight: 'bold',
-              size: 20,
+              size: 22,
               family: '-apple-system'
             }   
           }
@@ -107,7 +108,7 @@ const PieDepartment = () => {
   
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart" width="300" height="300"></canvas>
+      <canvas className='pieDepartment' id="myPieChart" width="240" height="240"></canvas>
     </div>
   );
 };

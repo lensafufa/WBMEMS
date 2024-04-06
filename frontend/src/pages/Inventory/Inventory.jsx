@@ -14,7 +14,7 @@ const Inventory = () => {
   const [countryOfOrigin, setCountryOfOrigin] = useState('');
   const [warrantyExpiryDate, setWarrantyExpiryDate] = useState('');
   const [equipmentImage, setEquipmentImage] = useState(null);
-  
+  const [preventiveMaintenancePerAnnual, setPreventiveMaintenancePerAnnual] = useState(null);
 
   const handleEquipmentName = (e) => {
     setEquipmentName(e.target.value);
@@ -46,10 +46,12 @@ const Inventory = () => {
   const handleEquipmentImage = (e) => {
     setEquipmentImage(e.target.files[0]);
   };
-
+  const handlePreventiveMaintenance = (e) => {
+    setPreventiveMaintenancePerAnnual(e.target.value);
+  };
   const handleFormSubmit = async () => {
     try {
-          if(!equipmentName || !model || !serialNumber
+          if(!equipmentName || !model || !serialNumber|| !preventiveMaintenancePerAnnual
             || !equipmentDepartment || !equipmentDescription
             || !manufacturer || !countryOfOrigin || !warrantyExpiryDate || !equipmentImage){
               alert('Please fill all fields!')
@@ -66,6 +68,8 @@ const Inventory = () => {
       formData.append('countryOfOrigin', countryOfOrigin);
       formData.append('warrantyExpiryDate', warrantyExpiryDate);
       formData.append('equipmentImage', equipmentImage);
+      formData.append('preventiveMaintenancePerAnnual', preventiveMaintenancePerAnnual);
+
 
       await axios.post('http://localhost:7000/api/deviceRegistration', formData,{
         headers: {
@@ -83,7 +87,9 @@ const Inventory = () => {
       setManufacturer(''),
       setCountryOfOrigin(''),
       setWarrantyExpiryDate(''),
-      setWarrantyExpiryDate('')
+      setWarrantyExpiryDate(''),
+      setPreventiveMaintenancePerAnnual('')
+
   }
  
           
@@ -103,11 +109,11 @@ const Inventory = () => {
   }}
 
   return (
-    <div className="grand-page">
-      <div className="main-inventory">
+    <div className="">
+      <div className="main-inventoryy">
         <div className="inventory-titlee"><Home/><h2 className="Inventory-Page">Inventory Page</h2></div>
-        <div className="inventory">
-          <div className="individual">
+        <div className="sub-inventoryy">
+          <div className="inventory-individual">
             <label className="first-label">Equipment Name*</label>
             <input
               className="inventory-input"
@@ -117,7 +123,7 @@ const Inventory = () => {
               onChange={handleEquipmentName}
             />
           </div>
-          <div className="individual">
+          <div className="inventory-individual">
             <label>Model*</label>
             <input
               className="inventory-input"
@@ -127,7 +133,7 @@ const Inventory = () => {
               onChange={handleModel}
             />
           </div>
-          <div className="individual">
+          <div className="inventory-individual">
             <label>Serial Number*</label>
             <input
               className="inventory-input"
@@ -137,7 +143,7 @@ const Inventory = () => {
               onChange={handleSerialNumber}
             />
           </div>
-          <div className="individual">
+          <div className="inventory-individual">
             <label>Equipment Department*</label>
               <select className="inventory-input" required type='text' value={equipmentDepartment} onChange={handleEquipmentDepartment}>
                   <option value="">Select Department</option>
@@ -158,7 +164,7 @@ const Inventory = () => {
               </select>
           </div>
           
-          <div className="individual">
+          <div className="inventory-individual">
             <label>Manufacturer*</label>
             <input
               className="inventory-input"
@@ -168,7 +174,7 @@ const Inventory = () => {
               onChange={handleManufacturer}
             />
           </div>
-          <div className="individual">
+          <div className="inventory-individual">
             <label>Country of Origin*</label>
             <input
               className="inventory-input"
@@ -178,7 +184,17 @@ const Inventory = () => {
               onChange={handleCountryOfOrigin}
             />
           </div>
-          <div className="individual">
+          <div className="inventory-individual">
+            <label>PM per Annual*</label>
+            <input
+              className="inventory-input"
+              type="number"
+              
+              value={preventiveMaintenancePerAnnual}
+              onChange={handlePreventiveMaintenance}
+            />
+          </div>
+          <div className="inventory-individual">
             <label>Warranty Expiry Date*</label>
             <input
               className="inventory-input"
@@ -188,16 +204,7 @@ const Inventory = () => {
               onChange={handleWarrantyExpiryDate}
             />
           </div>
-          <div className="individual">
-            <label>Equipment Image*</label>
-            <input
-              className="inventory-input"
-              type="file"
-              required
-              onChange={handleEquipmentImage}
-            />
-          </div>
-          <div className="individual">
+          <div className="inventory-individual">
               <label>Equipment Description*</label>
               <textarea
                 className="inventory-description-input"
@@ -206,7 +213,7 @@ const Inventory = () => {
                 onChange={handleEquipmentDescription}
               ></textarea>
             </div>
-            <div className="individual">
+            <div className="inventory-individual">
               <label>Maintenance History*</label>
               <textarea
                 className="inventory-description-input"
@@ -214,6 +221,15 @@ const Inventory = () => {
                 onChange={handleMaintenanceHistory}
               ></textarea>
             </div>
+            <div className="inventory-individual">
+            <label>Equipment Image*</label>
+            <input
+              className="inventory-input"
+              type="file"
+              required
+              onChange={handleEquipmentImage}
+            />
+          </div>
   
         </div>
         <button className="register-button" onClick={handleFormSubmit}>Register</button>

@@ -14,14 +14,16 @@
 }
 .home-and-sort-title-report {
   display: flex;
+  position: fixed;
   align-items: center;
   padding-left: 30px;
   color: white;
-  height: 100px;
+  height: 70px;
   width: 100%;
-  background-color: #000;
-  font-size: medium;
+  font-size: smaller;
+  background-color: rgb(2, 26, 70); 
   font-family: -apple-system;
+  z-index: 10;
 }
 .report-table-report {
   border-collapse: collapse;
@@ -41,11 +43,11 @@
 
 .report-table-report th {
   font-weight: bold;
-  color: #000;
+  color: white;
   padding: 10px;
   font-family: -apple-system;
   font-size: medium;
-  background-color: rgb(235, 237, 238);
+  background-color: rgb(3, 22, 77);
   border-top: 1px solid #c9c7c7;
 }
 .report-table-report tr:nth-child(even) {
@@ -71,8 +73,12 @@
 .search-container1 {
   display: flex;
   align-items:center;
+  background-color: #eaecea;
+  width: fit-content;
+  height: max-content;
   margin-top: 20px;
   font-size: medium;
+  border-radius: 5px;
   font-family: -apple-system;
 }
 .search-input {
@@ -81,7 +87,8 @@
   font-family: -apple-system;
   border: none;
   outline: none;
-  background-color: #dedfde;
+  background-color: #eaecea;
+  border-radius: 5px;
 }
 
 .search-label {
@@ -89,37 +96,34 @@
   font-size: large;
   margin-right: 10px;
 }
-
-
-.toggle-columns-btn,
-.export-btn-csv,
-.export-btn-pdf {
+.search-icon-for-report{
+  display: flex;
+  height: 25px;
+  width: 25px;
+  background-color: #eaecea;
+}
+.toggle-columns-btn-head,
+.export-btn-csv-head,
+.export-btn-pdf-head {
   cursor: pointer;
   padding: 10px 15px;
   margin: 5px;
   border-radius: 5px;
   font-family: -apple-system;
   font-size: medium;
+  background-color: rgba(4, 31, 107, 0.911);
 }
-
-.toggle-columns-btn {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.export-btn-csv {
-  background-color: rgb(28, 75, 122);
-  color: white;
-
-}
-
 .export-btn-pdf {
   background-color: brown;
   color: white;
 }
-
-.toggle-columns-btn:hover,
-.export-btn-csv:hover,
-.export-btn-pdf:hover {
-  filter: brightness(90%); 
+.the-report-table-heading{
+  background-color: rgb(3, 22, 77);
+  font-size: large;
+}
+.toggle-columns-btn-head:hover,
+.export-btn-csv-head:hover,
+.export-btn-pdf-head:hover {
+  transition: all 0.3s ;
+  background-color: rgb(4, 31, 107);
 }

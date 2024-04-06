@@ -60,6 +60,13 @@ const CreateAccount = () => {
         email.length > 0 && password.length > 0 &&
         occupation.length > 0
         ){
+            // Validate email address format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+              alert('Please enter a valid email address');
+              return;
+            }
+
             const formData = new FormData();
             formData.append('name', name);
             formData.append('lastName', lastName);
@@ -81,11 +88,16 @@ const CreateAccount = () => {
           alert('please fill all fields')
         }  
     } catch (error) {
+  
       console.error('Error in Registration:', error);
+      if(error.message==='Request failed with status code 400'){
+        alert('Invalid E-mail, Please Enter the correct E-mail');
+      }else if(error.message==='Request failed with status code 500') {
+        alert('Taken User-Name, E-mail or Phone-Number')
+      }   
+    
     }
   };
-
-  
 
   return (
     <div className="createAccount-section">
@@ -146,10 +158,14 @@ const CreateAccount = () => {
             <label >Occupation*</label>
             <select className="occupation-input" value={occupation} type='text' onChange={handleOccupation}>
             <option value="" className="select-occupation-ph">Select an Occupation</option>
-            <option value="Admin">Admin</option>
+            <option value="Administrator">Administrator</option>
+            <option value="Biomedical Head">Biomedical Head</option>
             <option value="Engineer">Engineer</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>
+            <option value="Radiologist">Radiologist</option>
+            <option value="Laboratory Technician">Laboratory Technician</option>
+            
             </select>
         </div>
         <div className="create-label-and-input">
@@ -168,10 +184,10 @@ const CreateAccount = () => {
         </div >
             <label className="descriptions-for-password">
                 <p className="password-description-title">Password should contain:</p>
-                <p className="password-description">* at least one letter</p>
-                <p className="password-description">* at least one number</p>
-                <p className="password-description">* at least one special character</p>
-                <p className="password-description">* and have length of 8 characters</p>
+                <p className="password-description">- at least one letter</p>
+                <p className="password-description">- at least one number</p>
+                <p className="password-description">- at least one special character</p>
+                <p className="password-description">- and have length of 8 characters</p>
             </label>
         </div>
         <div className="create-label-and-input">
@@ -193,8 +209,8 @@ const CreateAccount = () => {
             onChange={handleProfilePicture}
             />
         </div>
+        <button onClick={handlePost} className="create-account-buttonn" >Create Account</button>
       </div>
-        <button onClick={handlePost} className="create-account-button" >Create Account</button>
       </div>
     </div>
   );

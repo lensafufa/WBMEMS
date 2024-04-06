@@ -25,7 +25,7 @@ const RequestType = () => {
   }, [pieChartData]);
 
   const drawPieChart = () => {
-    const labels = pieChartData.map((data) => data.requestType);
+    const labels = pieChartData.map((data) => data.requestType.replace(/^\w/, c => c.toUpperCase()));
     const counts = pieChartData.map((data) => data.count);
     
     const ctx = document.getElementById('myPieChart4').getContext('2d');
@@ -36,26 +36,26 @@ const RequestType = () => {
         datasets: [{
           data: counts,
           backgroundColor: [
-            'rgba(12, 89, 130)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-          
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(4, 38, 90)',
+            'rgba(4, 38, 90,0.9)',
+            'rgba(4, 38, 90,0.8)',
+            'rgba(4, 38, 90,0.7)',
+            'rgba(4, 38, 90,0.6)',
+            'rgba(4, 38, 90,0.5)'
  
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-      
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
+            'rgba(255, 255, 255)',
           ],
-          borderWidth: 2
+          borderWidth: 0.5
         }]
       },
       options: {
+        cutout: '60%',
         plugins: {
           customCanvasBackgroundColor: {
             color: 'white',
@@ -68,9 +68,9 @@ const RequestType = () => {
             align: 'bottom',
             position: 'bottom', 
             labels: {
-              color:'black',
+              color: 'black',
               font:{
-                size: 17,
+                size: 20,
                 color: 'black',
                 weight: 'bold',
                 family: '-apple-system'
@@ -80,12 +80,13 @@ const RequestType = () => {
           },
           title: {
             display:true,
-            text: 'Request Status',
+            text: 'Request Type',
             position:'bottom',
             color: 'black',
             font:{
               weight: 'bold',
-              size: 20,
+              size: 25,
+              color: 'black',
               family: '-apple-system'
             }   
           }
@@ -97,7 +98,7 @@ const RequestType = () => {
   
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart4" width="230" height="230"></canvas>
+      <canvas className='pieDepartment' id="myPieChart4" width="250" height="250"></canvas>
     </div>
   );
 };

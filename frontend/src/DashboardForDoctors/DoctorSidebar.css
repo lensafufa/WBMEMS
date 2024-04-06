@@ -91,14 +91,12 @@
     justify-content: space-between;
     text-decoration: none;
     color: white;
-
-
 }
 .doctor-hum-button{
     background: none;
     display: flex;
-    color: white;
-    font-size: medium;
+    color: rgb(255, 255, 255);
+    font-size: small;
     margin-right: 20px;
     height: 100px;
     font-family: -apple-system;

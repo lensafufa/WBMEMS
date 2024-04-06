@@ -107,16 +107,16 @@ const MaintenanceForm = () => {
   };
 
   return (
-    <div className="main-maintenance-request">
+    <div className="main-maintenance-requestt">
       <div className="maintenance-title">
         <DoctorSidebar />
-        <h2 className="Maintenance-Page">Maintenance Form</h2>
+        <h2 className="Maintenance-Page">Maintenance Request Form</h2>
       </div>
-      <div className="maintenance-form-request">
-        <div className="individual">
+      <div className="maintenance-form-requestt">
+        <div className="individualll">
           <label>Equipment Name*</label>
           <select
-            className="maintenance-input"
+            className="maintenance-inputt"
             required
             value={equipmentName}
             onChange={handleEquipmentName}
@@ -129,10 +129,10 @@ const MaintenanceForm = () => {
             ))}
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Serial Number</label>
           <input
-            className="maintenance-input"
+            className="maintenance-inputt"
             type="text"
             value={serialNumber}
             onChange={() => {}} // This field is readonly
@@ -140,30 +140,30 @@ const MaintenanceForm = () => {
           />
         </div>
       
-        <div className="individual">
+        <div className="individualll">
           <label>Department*</label>
           <input
-            className="maintenance-input"
+            className="maintenance-inputt"
             type="text"
             value={department}
             onChange={() => {}} // This field is readonly
             readOnly
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Equipment Model*</label>
           <input
-            className="maintenance-input"
+            className="maintenance-inputt"
             type="text"
             value={equipmentModel}
             onChange={() => {}} // This field is readonly
             readOnly
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Priority*</label>
           <select
-            className="maintenance-input"
+            className="maintenance-inputt"
             value={priority}
             onChange={handlePriority}
           >
@@ -173,20 +173,20 @@ const MaintenanceForm = () => {
             <option value="High">High</option>
           </select>
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Due Date*</label>
           <input
-            className="maintenance-input"
+            className="maintenance-inputt"
             type="date"
             required
             value={dueDate}
             onChange={handleDueDate}
           />
         </div>
-        <div className="individual">
+        <div className="individualll">
           <label>Issue*</label>
           <textarea
-            className="maintenance-description-input"
+            className="maintenance-description-inputt"
             required
             value={issue}
             onChange={handleIssue}

@@ -26,7 +26,7 @@ const EquipmentByCost = () => {
   }, [pieChartData]);
 
   const drawPieChart = () => {
-    const labels = pieChartData.map((data) => data.reportType);
+    const labels = pieChartData.map((data) => data.reportType.replace(/^\w/, c => c.toUpperCase()));
     const costs = pieChartData.map((data) => data.cost);
     const ctx = document.getElementById('myPieChart5').getContext('2d');
     new Chart(ctx, {
@@ -36,43 +36,42 @@ const EquipmentByCost = () => {
         datasets: [{
           data: costs,
           backgroundColor: [
-            'rgba(12, 89, 130)',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgb(3, 59, 38)',
+            'rgba(3, 59, 38,0.9)',
+            'rgba(3, 59, 38,0.8)',
+            'rgba(3, 59, 38,0.7)',
+            'rgba(3, 59, 38,0.6)',
           ],
           borderColor: [
-            'rgba(12, 89, 130)',
-            'rgb(190, 228, 21)',
-            'rgb(195, 139, 197)',
-            'rgb(77, 6, 99)',
-            'rgb(94, 1, 44)',
-            'rgb(89, 163, 108)',
-            'rgb(145, 15, 155)'
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)',
+            'rgb(255, 255, 255)'
           ],
-          borderWidth: 1
+          borderWidth: 0.5
         }]
       },
       options: {
-        // Add your options here
+        cutout: '60%',
         plugins: {
             customCanvasBackgroundColor: {
-              color: 'white',
+              color: 'black',
             },
             tooltip: {
               
             },
             legend: {
               display:true,
+              color: 'white',
               align: 'bottom',
               position: 'bottom', 
               labels: {
-                color:'black',
+                color: 'black',
                 font:{
-                  size: 17,
+                  size: 20,
                   color: 'black',
                   weight: 'bold',
                   family: '-apple-system'
@@ -87,7 +86,7 @@ const EquipmentByCost = () => {
               color: 'black',
               font:{
                 weight: 'bold',
-                size: 20,
+                size: 25,
                 family: '-apple-system'
               }   
             }
@@ -97,7 +96,7 @@ const EquipmentByCost = () => {
 
   return (
     <div className='charter'>
-      <canvas className='pieDepartment' id="myPieChart5" width="200" height="200"></canvas>
+      <canvas className='pieDepartment' id="myPieChart5" width="230" height="230"></canvas>
     </div>
   );
 };

@@ -1,13 +1,11 @@
 body{
    overflow-y:auto;
    overflow-x: auto;
-   background-color:white;
 }
 
 .main-notification-count-display{
     display: flex;
     align-items: center;
-    position: relative;
     justify-content: center;
     height: 20px;
     width: 20px;
@@ -15,22 +13,24 @@ body{
     top: -3px;
     border: 2px solid white;
     font-size: small;
-    background-color: rgba(230, 4, 4, 0.9);
-    border-radius: 50%;
     color: white;
+    background-color: rgb(16, 109, 44);
+    margin-left: 10px;
+    border-radius: 5px;
 }
-.admin-sub-class{
+.short-cuts{
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border-radius: 5px;
-    row-gap: 21px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    width: 300px;
-    margin-right: 20px;
-
+    background: none;
+    row-gap: 7px;
+    height: 420px;
 }
+.navigation-section1,
+.navigation-section2{
+    background-color: rgb(3, 22, 73);
+    border-radius: 5px;
+}
+
 .admin-schedule-maintenance:hover,
 .admin-dashboard-device-overview:hover,
 .pending-requests:hover,
@@ -40,7 +40,7 @@ body{
 .reports:hover{
     transition: all 0.3s ; 
     cursor: pointer;
-    color: black;
+    background-color: #07612913;
 }
 .schedule-maintenance,
 .pending-requests,
@@ -49,12 +49,15 @@ body{
 .admin-dashboard-device-overview{
     display: flex;
     align-items: center;
-    color: rgb(87, 85, 85);
+    color: rgb(83, 82, 82);
     font-weight: bold;
     font-size: medium;
-    width: max-content;
-    border-radius: 5px;
+    width: 260px;
+    border-radius: 10px;
     font-family:-apple-system;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    padding-left: 10px;
 }
 .sorts{
     display: flex;
@@ -65,69 +68,58 @@ body{
     justify-content: center;
 }
 .main-dashboard-icons{
-    margin-right: 20px;
-    font-size:medium;
-    min-width: 15px;
-    min-height:15px;
-    background-color: #910f86;
+    margin-right: 10px;
+    font-size: medium;
+    min-width: 12px;
+    min-height:12px;
+    background-color: rgba(4, 31, 107, 0.842);
     color: white;
     padding: 7px;
     border-radius: 50%;
 }
 .dashboard-icons-bell{
     font-size: medium;
-    background-color: #910f86;
+    background-color: rgba(4, 31, 107, 0.842);
     padding: 7px;
     color: white;
     border-radius: 50%;
+    margin-right: 5px;
     min-width: 15px;
     min-height: 15px;
 }
 .main-my-link{
     text-decoration: none;
 }
-
-.right-part{
+.three-sections{
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 90px;
+  column-gap: 7px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
-
-.main-class{
+.main-classs{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between; 
+    background-color: #c9c7c7;
 }
-.computer-icon{ 
-    margin-right: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.computer-and-title{
+.the-title-navigation-main-class{
     display: flex;
-    align-items: center;
-    margin-right: 30px;
-}
-.bottom-bar-icons{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-}
-.the-navigation-main-class{
-    display: flex;
-    position: relative;
+    position: fixed;
     flex-direction: row;
     align-items: center;
     font-family:-apple-system;
-    background-color: black;
+    background-color: rgb(2, 26, 70);
     color: white;
-    height: 100px;
+    height: 70px;
+    width: 100%;
     padding-left: 30px;
     margin-bottom: 30px;
     box-shadow: 2px 1px 10px rgba(106, 4, 189, 0.342);
     font-size: small;
+    z-index: 100;
 }
 
 .piecharts{
@@ -149,24 +141,11 @@ body{
     auto-fit,
     minmax(250px, 400px)
   );
-    margin-right: 50px;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
     background:none;
+    padding: 20px;
    
-}
-.dashboard-bottom-bar{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 50px;
-    background-color: #000000;
 }
 .dashboard-computer-and-title{
     display: flex;
@@ -179,22 +158,100 @@ body{
 }
 .analytical-device-data{
     display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    border-radius: 10px;
-
-   
-}
-.analytical-data-and-buttons{
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-}
-.the-two-doughnuts{
-    display: flex;
-    background-color: rgba(255, 255, 255);
-    margin: 20px;
-    margin-top: 0px;
-    border-radius: 10px;
+    justify-content: center;
+    border-radius: 5px;
     width: 100%;
 }
+.analytical-data-and-charts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    justify-content: center;
+    width: 100%;
+    
+}
+.first-section-doughnuts{
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+    column-gap: 7px;
+}
+@media (min-width: 500px) {
+    .the-two-doughnuts {
+        display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+@media (min-width: 900px) {
+    .the-two-doughnuts {
+        display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+@media (min-width: 1300px) {
+    .the-two-doughnuts {
+        display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+    }
+  }
+  .links-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-image: url('a2.jpg');
+    filter: blur(5px);
+  }
+  .piechart-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-image: url('a2.jpg');
+    filter: blur(0px);
+  }
+  .content{
+    position: relative;
+  }
+ .head-piechart-in-the-dashboardd{
+    display: flex;
+    align-items: top;
+    background:none;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    column-gap: 7px;
+ }
+ .head-dashboard-bottom-bar{
+    height: 200px;
+    background-color: rgba(120, 122, 122, 0.445);
+ }
+ .tick{
+    display: flex;
+    font-size: x-large;
+    margin-left: 30px;
+ }
+ .admin-piechart-holder-status,
+ .admin-piechart-holder-department,
+ .admin-piechart-holder-department-cost{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 100%;
+ }
+ .title-and-date{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 100px;
+    justify-content: space-between;
+ }

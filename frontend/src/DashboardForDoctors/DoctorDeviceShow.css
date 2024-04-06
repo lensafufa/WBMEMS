@@ -7,13 +7,14 @@ body{
      grid-template-columns: 1fr 1fr 1fr;
      row-gap: 40px;
      column-gap: 20px;
-     background-color: rgb(204, 207, 211);
+     background-color: rgb(255, 255, 255);
      padding-top: 80px;
      padding-bottom: 80px;
      padding-left: 20px;
      padding-right: 20px;
      border-radius: 10px;
  }
+ 
  .device-overview{
      display: flex;
      background-color: rgb(12, 104, 54);
@@ -31,8 +32,27 @@ body{
  .alert-and-notification:hover,
  .sorts:hover,
  .reports:hover{
-     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
      transition: all 0.3s ;
+ }
+ .cc-doctor{
+    background: none;
+ }
+ .grand-device-doctor{
+   background: none;
+ }
+ .device-table-doc{
+    display: grid;
+    margin-top: 100px;
+    row-gap: 20px;
+    column-gap: 20px;
+    height: 100%;
+    background: none;    
+    grid-template-columns: repeat(
+        auto-fit,
+      minmax(200px, 240px)
+    ); /* Dynamic number of columns */
+    padding: 20px;
+    border-radius: 10px;
  }
  .alert-and-notification{
      display: flex;
@@ -95,6 +115,19 @@ body{
  .dashboard-icons{
      margin-right: 20px;
      font-size: xx-large;
+ }
+ .device-main-doctor{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    align-items: center;
+    color: white;
+    height: 70px;
+    font-size: small;
+    background-color: rgb(90, 4, 4);    padding-left: 20px;
  }
  .my-link{
      text-decoration: none;
